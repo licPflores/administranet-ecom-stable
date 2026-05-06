@@ -1,0 +1,15 @@
+2020-09-26-01-40-39|5||cliente:23022|error:Table 'administranet59.sp_movimiento_premio' doesn't exist sql:INSERT INTO sp_movimiento_premio
+                        SET    
+                        id_cliente=23022,
+                        fecha='2020/09/26',
+                        tipo_comp='AJS',
+                        nro_comp='colocar',
+                        monto_neto=0,
+                        monto_final=0,
+                        puntos_acumulados='',
+                        valor_calculo_puntaje=1,
+                        valor_cada_puntaje=1,
+                        codigo_movimiento=NULL,
+                        codigo_movimiento_anul=NULL;
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 4 sql:
+||

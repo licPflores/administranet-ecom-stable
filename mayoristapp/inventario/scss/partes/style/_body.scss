@@ -1,0 +1,246 @@
+html {
+    font-size: 16px;
+    @media (max-width: 576px) {
+        font-size: 14px;
+    }
+}
+body {
+    background-color: nth($color-web, 1);
+    color: nth($color-web, 3);
+    overflow: hidden auto;
+}
+.btn-primary {
+    background-color: nth($color-web, 5);
+}
+
+.btn.focus,
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn:not(:disabled):not(.disabled).active:focus,
+.btn:not(:disabled):not(.disabled):active:focus,
+.show>.btn.dropdown-toggle:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.bootstrap-select .dropdown-toggle:focus,
+.bootstrap-select>select.mobile-device:focus+.dropdown-toggle {
+    outline: unset !important;
+    outline-offset: unset !important;
+}
+
+.administranet-caractaristicas,
+.administranet-modulos,
+.administranet-tecnologia,
+.productos,
+.faq,
+.youtube,
+.descarga {
+    background-image: url('../img/logo-fondo.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100%;
+}
+
+.administranet-caractaristicas,
+.administranet-modulos,
+.administranet-tecnologia,
+.clientes,
+.formulario-compra,
+.formulario-contactos,
+.productos,
+.precios,
+.faq,
+.data-tecnica,
+.testimonios,
+.youtube,
+.descarga {
+    h2 {
+        color: nth($color-web, 5);
+        @include font(1, normal, normal, 48px);
+        text-align: center;
+        
+        padding: 118px 0 58px 0;
+        &:after {
+            content: '';
+            border-bottom: 2px solid nth($color-web, 4);
+            width: calc(100% / 6);
+            margin: 8px auto 0 auto;
+            display: block;
+        }
+        @media (max-width: 576px) {
+            font-size: 2.25rem;
+        }
+    }
+    h3 {
+        color: nth($color-web, 3);
+        @include font(1, normal, normal, 32px);
+        text-align: center;
+        margin-bottom: 58px;
+    }
+    h4 {
+        color: nth($color-web, 5);
+        @include font(1, normal, normal, 24px);
+        text-align: center;
+        margin-bottom: 58px;
+    }
+}
+
+.descarga {
+    .button-link {
+        border: none;
+        margin: 0;
+        padding: 0;
+        .text-link {
+            @include font(3, normal, normal, 14px);
+            line-height: 22px;
+            
+            background-color: nth($color-web, 4);
+            border-color: nth($color-web, 4);
+            height: 48px;
+            border-radius: 12px;
+            margin-top: 0;
+            i {
+                font-size: 24px;
+                position: relative;
+                top: 0px;
+            }
+        }
+    }
+}
+
+.modal-descarga {
+    .modal-title {
+        color: nth($color-web, 4);
+        @include font(1, normal, normal, 24px);
+    }
+    p {
+        @include font(1, normal, normal, 14px);
+        margin-top: 24px;
+        color: nth($color-web, 6);
+    }
+    input,
+    label {
+        font-family: "Lato";
+    }
+    .btn-primary {
+        @include font(1, normal, normal, 12px);
+        line-height: 22px;
+        background-color: nth($color-web, 4);
+        border-color: nth($color-web, 4);
+        border-radius: 12px;
+        margin-top: 12px;
+        i {
+            font-size: 24px;
+            position: relative;
+            top: 0px;
+        }
+    }
+    .btn-secondary {
+        @include font(1, normal, normal, 12px);
+        line-height: 22px;
+        border-radius: 12px;
+        margin-top: 12px;
+        i {
+            font-size: 24px;
+            position: relative;
+            top: 0px;
+        }
+    }
+}
+
+//-------------- custom range
+.range {
+    .label-range {
+        //
+    }
+    .custom-range {
+        //
+    }
+    .number-range {
+        width: 112px;
+    }
+}
+.custom-range {
+    border: 1px solid transparent;
+    border-radius: .25rem;
+  }
+  /* leave above out to not have the non .input-group ranges
+   * bordered when invalid or valid
+   */
+  
+  .custom-range.is-invalid,
+  .was-validated .custom-range:invalid {
+    border-color: #dc3545;
+  }
+  .custom-range.is-invalid:focus,
+  .was-validated .custom-range:invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 .2rem rgba(220,53,69,.25);
+  }
+  .custom-range.is-valid,
+  .was-validated .custom-range:valid {
+    border-color: #28a745;
+  }
+  .custom-range.is-valid:focus,
+  .was-validated .custom-range:valid:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 .2rem rgba(40,167,69,.25);
+  }
+.input-group > .custom-range {
+    display: block;
+    height: calc(2.25rem + 2px);
+    padding: 0 .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  }
+  .input-group > .custom-range {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+  }
+  .input-group > .custom-range:focus {
+    z-index: 3;
+  }
+  .input-group-sm > .custom-range {
+    height: calc(1.8125rem + 2px);
+    padding: 0 .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+  }
+  .input-group-lg > .custom-range {
+    height: calc(2.875rem + 2px);
+    padding-left: 0 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+  }
+  .input-group > .custom-range:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .input-group > .custom-range:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  /* Style for focusing custom-range when inside an .input-group.
+   * Normally only the range thumb has focus styling, but this keeps
+   * input-group inputs looking consistent during validation
+   */
+  .input-group .custom-range:focus {
+      background-color: #fff;
+      border-color: #80bdff;
+      outline: 0;
+      box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+  }

@@ -1,0 +1,42 @@
+@import "variables/functions";
+@import "variables/variables";
+@import "variables/mixins";
+@import "variables/mixins-general";
+@import "variables/mixinstransitions";
+
+/* ====  AUTOR  ====
+
+ nnnnnn  vvv  vvv 
+nnn  nnn vvv  vvv 
+nnn  nnn vvv  vvv 
+888  nnn  vvvvvv  
+nnn  nnn   vvvv 
+
+Pagina web Diseñada y Desarrollada por:
+nv | diseño gráfico
+
+Website: http://www.nvdg.com.ar/
+Email: nv.clientes@gmail.com
+Facebook: https://www.facebook.com/nv.dg.face/
+Twitter: https://twitter.com/nvgrafico/
+Instagram: https://www.instagram.com/nv.dg/
+Linkedin: https://www.linkedin.com/company/nv-dg/
+Pinterest: www.pinterest.com/nvgrafico/
+Google+: https://www.google.com/+NvdgArNv/
+............................*/
+
+// ====  MAIN  ====
+@import "partes/style/body";
+@import "partes/style/home";
+@import "partes/inventario/menues";
+@import "partes/inventario/scanner";
+@import "partes/style/inventario";
+@import "partes/style/articulo";
+@import "partes/style/administranet";
+@import "partes/style/cards";
+@import "partes/style/contacto";
+@import "partes/style/clientes";
+@import "partes/style/faq";
+@import "partes/style/formulario";
+@import "partes/style/precios-caracteristicas";
+@import "partes/style/tabs";

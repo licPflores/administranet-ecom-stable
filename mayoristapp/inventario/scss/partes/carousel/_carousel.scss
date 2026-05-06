@@ -1,0 +1,400 @@
+.slide-funcionalidades-home {
+    background-color: nth($color-web, 3);
+    color: nth($color-web, 1);
+    text-align: center;
+    .slide-funcionalidades {
+        .slide-item {
+            background-color: nth($color-web, 1);
+            color: nth($color-web, 3);
+            border-radius: 12px;
+            margin: nth($height, 3) nth($width, 3);
+            height: 286px;
+            hr {
+                display: block;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+                margin-left: auto;
+                margin-right: auto;
+                border-style: inset;
+                border-width: 1px;
+                border-color: nth($color-web, 4);
+              }
+            img {
+                margin: auto;
+            }
+            p {
+                margin: 0 8px;
+            }
+        }
+    }
+    .slick-dots {
+        @media (max-width: 576px) {
+            display: none !important;
+        }
+    }
+}
+
+.grilla-funcionalidades-home {
+    background-color: nth($color-web, 3);
+    color: nth($color-web, 1);
+    text-align: center;
+    .grilla-funcionalidades {
+        .grilla-item {
+            background-color: nth($color-web, 1);
+            color: nth($color-web, 3);
+            border-radius: 12px;
+            margin: nth($height, 3) nth($width, 3);
+            height: 286px;
+            hr {
+                display: block;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+                margin-left: auto;
+                margin-right: auto;
+                border-style: inset;
+                border-width: 1px;
+                border-color: nth($color-web, 4);
+              }
+            img {
+                margin: auto;
+            }
+            p {
+                margin: 0 8px;
+            }
+        }
+    }
+}
+
+.slide-clientes-home {
+    color: nth($color-web, 3);
+    text-align: center;
+    .slide-clientes {
+        .slide-item {
+            background-color: nth($color-web, 1);
+            color: nth($color-web, 3);
+            border-radius: 12px;
+            margin: nth($height, 3) nth($width, 3);
+            hr {
+                display: block;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+                margin-left: auto;
+                margin-right: auto;
+                border-style: inset;
+                border-width: 1px;
+                border-color: nth($color-web, 4);
+              }
+            img {
+                margin: 16px auto 0 auto;
+                width: 100%;
+                max-width: 160px;
+            }
+            h5 {
+                text-align: left;
+            }
+            p {
+                text-align: left;
+            }
+        }
+    }
+    .slick-dots {
+        @media (max-width: 576px) {
+            display: none !important;
+        }
+    }
+}
+
+.slide-paquetes-ecommerces  {
+    color: nth($color-web, 3);
+    text-align: center;
+    .slide-item {
+        background-color: nth($color-web, 1);
+        color: nth($color-web, 3);
+        border-radius: 12px;
+        margin: nth($height, 3) nth($width, 3);
+        hr {
+            display: block;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: inset;
+            border-width: 1px;
+            border-color: nth($color-web, 4);
+            }
+        .image {
+            &:after {
+                content: '';
+                border-right: 2px solid nth($color-web, 4);
+                height: calc(100% - 24px);
+                margin: 8px auto 0 auto;
+                display: block;
+                position: relative;
+                top: -158px;
+            }
+            img {
+                margin: 0 auto 0 auto;
+                width: 100%;
+                max-width: 160px;
+            }
+        }
+        .btn-comprar,
+        .btn-Consultar {
+            @include font(1, normal, normal, 12px);
+            line-height: 22px;
+            
+            background-color: nth($color-web, 4);
+            border-color: nth($color-web, 4);
+            height: 48px;
+            border-radius: 12px;
+            margin-top: 12px;
+            i {
+                font-size: 24px;
+                position: relative;
+                top: 0px;
+            }
+        }
+        .btn-ver-mas,
+        .card-link-modal {
+            background-color: transparent;
+            border-color: transparent;
+            color: nth($color-web, 4);
+            text-align: left;
+            padding: 0;
+        }
+        .card-licencia {
+            @include font(1, normal, normal, 12px);
+            line-height: 30px;
+            color: nth($color-web, 5);
+            height: 32px;
+            border: 1px solid nth($color-web, 5);
+            border-radius: 16px;
+            margin-bottom: 24px
+        }
+        .card-title {
+            @include font(1, normal, normal, 20px);
+            color: nth($color-web, 5);
+            text-align: left
+        }
+        .card-subtitle {
+            @include font(3, normal, normal, 24px);
+            text-align: left
+        }
+        .card-text {
+            @include font(1, normal, normal, 16px);
+            color: nth($color-web, 6);
+            margin: 34px 0 0 0;
+            text-align: left
+        }
+        .precio {
+            .valor {
+                @include font(1, normal, normal, 16px);
+                color: nth($color-web, 6);
+                text-decoration: line-through;
+            }
+            .descuento {
+                @include font(3, normal, normal, 10px);
+                text-decoration: none !important;
+                color: nth($color-web, 7);
+                position: relative;
+                top: -4px;
+            }
+        }
+        .total {
+            @include font(3, normal, normal, 16px);
+            color: nth($color-web, 5);
+        }
+    }
+    .slick-dots {
+        @media (max-width: 576px) {
+            display: none !important;
+        }
+    }
+}
+
+.slide-testimonios  {
+    color: nth($color-web, 3);
+    text-align: center;
+    .slick-track {
+        display: flex;
+    }
+    .container:nth-child(2) .row {
+        @media (max-width: 768px) {
+            margin-top: 56px
+        }
+    }
+    .slide-item {
+        display: flex;
+        background-color: nth($color-web, 1);
+        color: nth($color-web, 3);
+        border-radius: 12px;
+        margin: 0 nth($width, 3);
+        padding: nth($height, 3) 0;
+        border: 2px solid rgba(70,90,158,0.15);
+        height: unset;
+        hr {
+            display: block;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: inset;
+            border-width: 1px;
+            border-color: nth($color-web, 4);
+            }
+        .image {
+            img {
+                margin: 0 auto 0 auto;
+                width: 100%;
+                max-width: 150px;
+            }
+        }
+        .btn-ver-mas,
+        .card-link-modal {
+            background-color: transparent;
+            border-color: transparent;
+            color: nth($color-web, 4);
+            text-align: left;
+            padding: 0;
+        }
+        .card-licencia {
+            @include font(1, normal, normal, 12px);
+            line-height: 30px;
+            color: nth($color-web, 5);
+            height: 32px;
+            border: 1px solid nth($color-web, 5);
+            border-radius: 16px;
+            margin-bottom: 24px
+        }
+        .card-title {
+            @include font(1, normal, normal, 20px);
+            color: nth($color-web, 5);
+            text-align: left
+        }
+        .card-subtitle {
+            @include font(3, normal, normal, 24px);
+            text-align: left
+        }
+        .card-text {
+            @include font(1, normal, normal, 16px);
+            color: nth($color-web, 6);
+            margin: 34px 0 0 0;
+            text-align: left
+        }
+    }
+    .slick-dots {
+        @media (max-width: 576px) {
+            display: none !important;
+        }
+    }
+}
+
+.slide-soporte-basico,
+.slide-soporte-intermedio,
+.slide-soporte-backup  {
+    color: nth($color-web, 3);
+    text-align: center;
+    .slide-item {
+        background-color: nth($color-web, 1);
+        color: nth($color-web, 3);
+        border-radius: 12px;
+        margin: nth($height, 3) nth($width, 3);
+        hr {
+            display: block;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: inset;
+            border-width: 1px;
+            border-color: nth($color-web, 4);
+            }
+        .image {
+            &:after {
+                content: '';
+                border-right: 2px solid nth($color-web, 4);
+                height: calc(100% - 24px);
+                margin: 8px auto 0 auto;
+                display: block;
+                position: relative;
+                top: -158px;
+            }
+            img {
+                margin: 0 auto 0 auto;
+                width: 100%;
+                max-width: 160px;
+            }
+        }
+        .btn-comprar,
+        .btn-Consultar {
+            @include font(1, normal, normal, 12px);
+            line-height: 22px;
+            
+            background-color: nth($color-web, 4);
+            border-color: nth($color-web, 4);
+            height: 48px;
+            border-radius: 12px;
+            margin-top: 12px;
+            i {
+                font-size: 24px;
+                position: relative;
+                top: 0px;
+            }
+        }
+        .btn-ver-mas,
+        .card-link-modal {
+            background-color: transparent;
+            border-color: transparent;
+            color: nth($color-web, 4);
+            text-align: left;
+            padding: 0;
+        }
+        .card-licencia {
+            @include font(1, normal, normal, 12px);
+            line-height: 30px;
+            color: nth($color-web, 5);
+            height: 32px;
+            border: 1px solid nth($color-web, 5);
+            border-radius: 16px;
+            margin-bottom: 24px
+        }
+        .card-title {
+            @include font(1, normal, normal, 20px);
+            color: nth($color-web, 5);
+            text-align: left
+        }
+        .card-subtitle {
+            @include font(3, normal, normal, 24px);
+            text-align: left
+        }
+        .card-text {
+            @include font(1, normal, normal, 16px);
+            color: nth($color-web, 6);
+            margin: 34px 0 0 0;
+            text-align: left
+        }
+        .precio {
+            .valor {
+                @include font(1, normal, normal, 16px);
+                color: nth($color-web, 6);
+                text-decoration: line-through;
+            }
+            .descuento {
+                @include font(3, normal, normal, 10px);
+                text-decoration: none !important;
+                color: nth($color-web, 7);
+                position: relative;
+                top: -4px;
+            }
+        }
+        .total {
+            @include font(3, normal, normal, 16px);
+            color: nth($color-web, 5);
+        }
+    }
+    .slick-dots {
+        @media (max-width: 576px) {
+            display: none !important;
+        }
+    }
+}

@@ -1,0 +1,158 @@
+.footer {
+    background-color: nth($color-web, 3);
+    color: nth($color-web, 1);
+    padding: 24px 12px 12px 12px;
+    a {
+        color: nth($color-web, 1) !important;
+        &:hover {
+            text-decoration: none;
+            color: nth($color-web, 1) !important;
+            font-weight: bold !important;
+        }
+        i {
+            font-size: 24px;
+            top: 4px;
+            position: relative;
+        }
+    }
+    h6 {
+        color: nth($color-web, 1);
+        @include font(5, normal, normal, 16px);
+        text-align: center;
+    }
+    .menu-footer {
+        width: fit-content;
+        margin: 0px auto 38px auto;
+        padding: 0;
+        background-color: transparent !important;
+    }
+    .navbar-nav {
+        position: relative;
+        right: 0px;
+        display: contents;
+        .nav-item {
+            a {
+                color: nth($color-web, 1);
+                @include font(1, normal, normal, 16px);
+                
+                text-align: center;
+                padding: 12px;
+                transition: unset;
+                i {
+                    font-size: 32px;
+                    color: nth($color-web, 1);
+                }
+                &:hover,
+                &:focus,
+                &:focus-visible {
+                    border: 1px solid transparent;
+                    i {
+                        font-size: 32px;
+                        color: nth($color-web, 8);
+                    }
+                }
+            }
+        }
+    }
+    .dropdown {
+        .dropdown-toggle {
+            &:hover,
+            &:focus,
+            &:focus-visible {
+                border: none !important;
+            }
+        }
+        .dropdown-menu {
+            background-color: nth($color-web, 3);
+            margin: 0;
+            padding: 24px 0 0 0;
+            a {
+                text-align: left;
+                padding: 0 24px 24px 24px;
+                &:hover,
+                &:focus,
+                &:focus-visible {
+                    background-color: nth($color-web, 3);
+                    border: none;
+                }
+            }
+        }
+    }
+    .logo-footer {
+        width: 220px;
+        margin: 0px auto 40px auto;
+        img {
+            width: 100%;
+        }
+    }
+    .menu-redes {
+        width: fit-content;
+        margin: 0 auto 38px auto;
+        padding: 0;
+        background-color: transparent !important;
+    }
+    .contactos {
+        @include font(1, normal, normal, 12px);
+        text-align: center;
+        color: nth($color-web, 1);
+        line-height: 22px;
+        span {
+            @include font(5, normal, normal, 12px);
+        }
+    }
+    .legales {
+        @include font(1, normal, normal, 12px);
+        margin: 30px 0 0 0;
+        text-align: center;
+    }
+    .firma {
+        background-color: nth($color-web, 4);
+        min-height: nth($height, 6);
+        text-align: center;
+        color: nth($color-web, 1);
+        padding: nth($height, 1) 0 nth($height, 1) 0;
+        margin: 0 -15px;
+        a {
+            @include font(1, normal, normal, 14px);
+            color: nth($color-web, 1);
+            margin: 0;
+            text-decoration: none;
+            &:hover {
+                @include font(5, normal, normal, 14px);
+                text-decoration: none;
+                color: nth($color-web, 1) !important;
+            }
+        }
+        .nv {
+            width: nth($width, 8);
+            margin: 0 nth($width, 4);
+            vertical-align: middle;
+        }
+    }
+}
+
+.footer-soporte {
+    
+    @media screen and (max-width: 992px) {
+        .navbar-nav {
+            display: flex !important;
+        }
+        .nav-item {
+            width: 100% !important;
+            margin-bottom: 12px;
+        }
+    }
+    
+}
+
+.footer {
+    @media screen and (max-width: 768px) {
+        .navbar-nav {
+            display: flex;
+        }
+
+        .nav-item a {
+            width: 100%;
+        }
+    }
+}

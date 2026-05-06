@@ -1,0 +1,322 @@
+
+/* datos del producto en desktop.*/
+@media only screen and (min-width: 768px) {
+  /* Estilo para el contenedor principal */
+  .contenedor {
+    
+    display: grid;
+    grid-template-columns: 83% 12%;
+    grid-gap: 25px;
+    align-items: flex-start;
+    
+    justify-content: start;
+    min-width: 360px;
+    border-top: 2px solid #2a3e72;
+    
+  }
+  
+  /* Estilo para cada producto */
+  .producto {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr min-content;
+    /* background-color: #fff; */
+    /* box-shadow: 0 0 5px rgba(0,0,0,0.3); */
+    /* border-radius: 10px; */
+    overflow: hidden;
+    padding-right: 1px;
+  }
+
+  /* Estilo para el nombre del producto */
+  .producto-nombre {
+    color: #2a3e72;
+    font-weight: 700;
+    padding: 5px 0px 7px 0px;
+    text-align: left;
+    font-size: 0.755rem;
+  }
+
+  
+
+  .producto-detalle {
+    font-size: 0.675rem;
+    /* line-height: 14px; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    color: #67686c;
+    padding: 0px 0px 10px 0px;
+    /* margin-bottom: 10px; */
+  }
+  
+  .producto-detalle > span > strong{
+    font-weight: bolder;
+    font-size: 0.875rem;
+    /* color:#333436; */
+  }
+  .producto-imagen{
+    float: left;
+    
+    /* width: 60px; */
+    max-width: 100px;
+    height: auto;
+    margin-right: 15px;
+    background-image: url('../_img/preloader.gif'); 
+    /* //background-image: url('../_img/ajax-spinning.gif'); */
+  background-size:cover ;
+  background-position: center;
+}
+.producto-imagen img{
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.producto-imagen img.loaded {
+  opacity: 1;
+}
+
+  .ver-mas {
+    /* font-size: 10px; */
+    text-decoration: none;
+    cursor: pointer;
+    /* color: #434343; */
+    /* margin: 3px; */
+  }
+  .descuento-verde {
+    
+    background-color: #b9e8b9;
+    color: #008000;
+    padding: 3px;
+    float: left;
+    width: 79%;
+    margin-top:10px;
+    border: 2px solid;
+    border-radius: 6px;
+    font-weight: lighter;
+    font-size: 0.775rem;
+  
+}
+  /* Estilo para la columna de precios */
+  .precios {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    align-items: flex-start;
+    text-align: right;
+
+    border-top: 1px solid #67686C;
+
+  }
+  .precios p {
+    font-size: 0.875rem;
+    margin: 0px;
+    border: none;
+  }
+
+  /* Estilo para los nombres de los precios */
+  .precio-nombre {
+    font-size: 0.675rem;
+    color: #67686c;
+  }
+
+  /* Estilo para resaltar el precio neto */
+  .precio-neto {
+    /* color: #092211; */
+    color: #67686c;
+    font-weight: bold;
+  }
+
+  /* Estilo para el impuesto interno */
+  .impuesto-interno {
+    color: #67686c;
+    font-weight: bold;
+  }
+
+  /* Estilo para el precio final */
+  .precio-final {
+    /* color: #000; */
+    color: #092211;
+    font-weight: bold;
+  }
+
+  .precio-descuento {
+    /* color: #008000; */
+    color: #02a502;
+
+    font-weight: bold;
+  }
+  .cantidad-stock {
+    color: #642C8A;    
+  }
+  /* Estilo para la columna de inputs */
+  .inputs {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 10px; */
+    /* background-color: #f5f5f5; */
+  }
+  .inputs label {
+    font-size: 0.575rem;
+    text-align: center;
+    margin: 0px 0px 2px 0px;
+    padding: 1px;
+    /* font-weight: bold; */
+  }
+
+  /* Estilo para los inputs de cantidad y descuento */
+  .inputs input {
+    padding: 5px;
+    /* border: none; */
+    border-radius: 5px;
+    /* margin-right: 10px; */
+    flex-grow: 1;
+    text-align: center;
+    font-size: 0.675rem;
+  }
+
+  /* Estilo para el input de cantidad */
+  .input-cantidad {
+    width: 100%;
+    border: 1px solid #434343;
+    font-weight: bold;
+  }
+
+  /* Estilo para el input de descuento */
+  .input-descuento {
+    width: 100%;
+    /* background-color: #b9e8b9; */
+    color: #008000;
+    font-weight: bold;
+    border: 1px solid #b9e8b9;
+  }
+
+  /* div cantida unidad display bulto  */
+  #divUnidadDisplayBulto {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin-bottom: 2px;
+    
+  }
+  /* $color-app: (#E36673, #642C8A, #2A3E72, #2C8A7B, #318029); */
+  #divUnidadDisplayBulto > label {
+    font-size: 0.755rem;
+    font-weight: normal;
+    padding: 1px 5px 1px 5px;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    margin-right: 5px;
+    color: #67686c;
+    transition: background-color 0.8s ease;
+    cursor:pointer;
+  }
+  #divUnidadDisplayBulto > label strong {
+    font-weight: bolder;
+    margin-left: 3px;
+    /* letter-spacing: 1px; */
+  }
+
+  #divUnidadDisplayBulto input[type="radio"] {
+    /* font-size: 0.9em; */
+    /* font-weight: lighter; */
+    display: none;
+  }
+
+  #divUnidadDisplayBulto > label.cantidad-unidad.elegida {
+    /* border: 1px solid #642C8A;
+    background-color:#642C8A; */
+    border: 1px solid #67686c;
+    background-color: #67686c;
+    color: white;
+    font-weight: normal;
+    /* text-decoration: underline; */
+  }
+  #divUnidadDisplayBulto > label.cantidad-display.elegida {
+    /* border: 1px solid #2A3E72;
+    background-color: #2A3E72; */
+    border: 1px solid #67686c;
+    background-color: #67686c;
+
+    color: white;
+    font-weight: normal;
+    /* text-decoration: underline; */
+  }
+  #divUnidadDisplayBulto > label.cantidad-bulto.elegida {
+    /* border: 1px solid #2C8A7B;
+    background-color: #2C8A7B; */
+    border: 1px solid #67686c;
+    background-color: #67686c;
+    color: white;
+    font-weight: normal;
+    /* text-decoration: underline; */
+  }
+
+  /* Estilo para el botón de comprar */
+  .comprar {
+    /* 
+  padding: 5px 15px;
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; */
+
+    border-radius: 6px;
+    /* height: 34px; */
+    font-size: 0.675rem;
+    border: 1px solid #465a9e;
+    background-color: #465a9e;
+    color: white;
+    padding: 5px 15px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+  }
+
+  /* Estilo para el efecto hover del botón de comprar */
+  .comprar:hover {
+    background-color: #005ea8;
+  }
+
+  table.dataTable.compact tbody th,
+  table.dataTable.compact tbody td {
+    padding: 5px 0px 5px 0px;
+  }
+
+  .tituloComprobante {
+    font-size: 1rem;
+    border-bottom: 2px solid #e36673;
+    background-color: white;
+    /* display:flex; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3px;
+    align-items: center;
+  }
+  .botonAccionPrimario {
+    border-radius: 6px;
+    height: 34px;
+    line-height: 26px;
+    font-size: 0.7rem;
+    border: 1px solid #2a3e72;
+    background-color: #2a3e72;
+    color: white;
+    padding: 3px;
+    cursor:pointer;
+  }
+  .textoTituloComprobante {
+    width: 50%;
+    font-weight: bold;
+    color: #2a3e72;
+  }
+}

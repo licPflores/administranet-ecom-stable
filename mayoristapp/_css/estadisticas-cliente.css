@@ -1,0 +1,191 @@
+@media screen and (max-width: 768px) {
+    #dashboard-container {
+        /* padding: 10px; */
+    }
+
+    .estadisticas-section p {
+        font-size: 14px;
+    }
+
+    .clientes-list li {
+        font-size: 14px;
+    }
+    .graficoClientesMas {
+        width: 100%; /* Hacer que el gráfico ocupe el 100% del ancho disponible */
+        height: auto; /* Mantener la proporción del gráfico */
+    }
+}
+
+
+
+/* #header {
+    height: 100px;
+} */
+
+/* #statusBar {
+    width: 78%;
+} */
+
+/* h1, h2 {
+    color: #2A3E72;
+} */
+
+p {
+    margin: 10px 0;
+}
+
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ol li {
+    margin-bottom: 10px;
+}
+
+/* span {
+    font-weight: bold;
+    color: #2A3E72;
+} */
+
+/* Puedes agregar más estilos según tus necesidades */
+
+/* spinner */
+.spinnerAdm {
+    position: relative;
+    background-color: unset;
+    border: unset;
+    margin: 48px 0;
+    .spinner-border {
+        img {
+            width: auto;
+            height: auto;
+            margin: auto;
+        }
+    }
+}
+/* fin spinner */
+
+#dashboard-container {
+    /*max-width: 1200px;*/
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    @media screen and (max-width: 1300px) {
+        margin: 20px;
+    }
+    @media screen and (max-width: 768px) {
+        margin: 0;
+        border-radius: 0;
+        padding-top: 30px;
+    }
+    @media screen and (max-width: 576px) {
+        padding-top: 60px;
+    }
+}
+
+#informacion {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.estadisticas-section, .clientes-section {
+    margin-bottom: 48px;
+}
+
+.estadisticas-section p {
+    margin: 10px 0;
+}
+
+.div-contenedor {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    justify-content: space-evenly;
+    align-items: stretch;
+    span {
+        font-size: 22px;
+    }
+    .div-contenedor-interno{
+        padding: 0 10px;
+        margin-left: 12px;
+        background-color: #E3E3E3;
+        border: 0.5px solid #00000014;
+        border-radius: 5px;
+    }
+}
+
+.clientes-section {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #cccccc;
+    background-color: #f9f9f9;
+    .panel {
+        display: flex;
+        flex-flow: row-reverse;
+        column-gap: 12px;
+        @media screen and (max-width: 768px) {
+            display: block;
+        }
+        .info {
+            width: 50%;
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
+        }
+        .graphic {
+            padding: 12px;
+            width: 50%;
+            border-radius: 8px;
+            border: 0.5px solid #00000014;
+            background-color: #ffffff;
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.clientes-list {
+    list-style: none;
+    padding: 0;
+}
+
+.clientes-list li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #e3e3e3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cliente-item {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.cliente-codigo {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #666;
+}
+
+.cliente-saldo {
+    font-weight: bold;
+    color: #2A3E72 /* o el color que prefieras */
+}

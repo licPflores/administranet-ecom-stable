@@ -1,0 +1,106 @@
+//convertidor de px a rem
+@function rem($pixels, $content: 16px) {
+    @return ($pixels / $content) * 1rem;
+}
+
+// -- tamaños en base 8 para web -> 8 16  24 32 40 48 
+// -- tipografias -> 12, (16), 18, 24, 32
+
+// -- colores
+$color-web: (#ffffff, #092211, #2A3E72, #E36673, #465A9E, #67686C, #00A830, #E9A88F, #FF0000, #393939);
+$color-app: (#E36673, #642C8A, #2A3E72, #2C8A7B, #318029);
+
+/* header */
+#header {
+    @media screen and (min-width: 768px) { // solo aplica css en escritorio
+        height: auto;
+        width: 100%;
+        display: inline-block;
+        #headerLogo img {
+            margin: 5px 0 0 24px;
+            @media screen and (max-width: 768px) {
+                margin: 5px 0 0 5px;
+            }
+        }
+        #statusBar {
+            width: 78%;
+            padding: 0 !important;
+            margin: 15px 0 !important;
+            @media screen and (max-width: 768px) {
+                padding: 0 !important;
+                margin: 12px 0 !important;
+            }
+            .vendedor {
+                margin-right: 20px;
+                @media screen and (max-width: 768px) {
+                    margin-right: 0 !important;
+                    margin-right: 10px;
+                }
+            }
+        }
+        ul#nav {
+            @media screen and (max-width: 576px) {
+                display: flex;
+            }
+            li {
+                a {
+                    @media screen and (max-width: 576px) {
+                        padding: 5px 5px;
+                        text-align: center;
+                    }
+                }
+            }
+            li:hover > ul {
+                a {
+                    padding: 5px 5px;
+                    text-align: left;
+                }
+                @media screen and (max-width: 576px) {
+                    display: block;
+                    position: fixed;
+                    width: 100%;
+                }
+            }
+
+        }
+        .headerCliente {
+            width: calc(100% - 8px);
+            background-color: #2a3e7217;
+            margin: 4px;
+            padding: 4px 12px 4px 22px;
+            border-radius: 8px;
+            .nombrecliente {
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+                grid-template-rows: 1fr;
+                grid-column-gap: 0px;
+                grid-row-gap: 0px;
+                .cliente { 
+                    grid-area: 1 / 1 / 2 / 2;
+                    a {
+                        background-color: nth($color-web, 3);
+                        font-weight: normal;
+                        color: #ffffff;
+                        padding: 2px 8px 4px 8px;
+                        border-radius: 8px;
+                        text-decoration: none;
+                    }
+                    .cambiar-cliente {
+                        padding: 4px 8px;
+                        border-radius: 8px;
+                        text-decoration: none;
+                        border: 1px solid #67686C;
+                        position: relative;
+                        top: -2px;
+                        margin-left: 4px;
+                    }
+                }
+                .barra { 
+                    grid-area: 1 / 2 / 2 / 3;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+/* fin header */

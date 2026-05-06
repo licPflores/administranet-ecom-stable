@@ -1,0 +1,44 @@
+.nav-tabs {
+    padding-bottom: 1px;
+    border-bottom: 2px solid nth($color-web, 5);
+    @media (max-width: 576px) {
+        display: block;
+    }
+    .nav-link {
+        color: nth($color-web, 5);
+        @include font(1, normal, normal, 16px);
+        border: none;
+        @media (max-width: 576px) {
+            width: 100%;
+        }
+        &.active {
+            color: nth($color-web, 1);
+            background-color: nth($color-web, 5);
+        }
+        &:hover {
+            background-color: #e2e4f0;
+            color: nth($color-web, 5);
+            //border-bottom: 1px solid nth($color-web, 5);
+        }
+    }
+}
+.tab-content {
+    h2 {
+        font-size: 2rem;
+    }
+    background-image: url('../img/logo-fondo.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100%;
+    .ticket.btn {
+        background-color: nth($color-web, 1);
+        border: 1px solid nth($color-web, 3);
+        color: nth($color-web, 3);
+        border-radius: 8px;
+        width: 100%;
+        @include font(1, bold, normal, 14px);
+        img { 
+            width: 29px; 
+        }
+    }
+}

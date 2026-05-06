@@ -1,0 +1,30 @@
+.clientes {
+    .card {
+        .card-img {
+            height: 192px;
+        }
+        .card-body {
+            display: block !important;
+            grid-template-rows: none !important;
+        }
+        .card-link-modal {
+            @include font(1, 700, normal, 16px);
+            color: nth($color-web, 3);
+            margin-bottom: 12px;
+        }
+        a {
+            @include font(1, 700, normal, 20px);
+            color: nth($color-web, 4);
+            text-decoration: none;
+        }
+    }
+    .modal {
+        .card-text {
+            margin-bottom: 24px;
+        }
+        .card-link {
+            margin-top: 36px;
+            display: block;
+        }
+    }
+}

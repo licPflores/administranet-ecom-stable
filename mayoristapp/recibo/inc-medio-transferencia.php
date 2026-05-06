@@ -1,0 +1,92 @@
+<div class="easyui-navpanel titulo-recibo-gradiante" id="panelCuerpoTransferenciaBancaria">
+        <header class="titulo-recibo sin-borde">
+            <div class="m-toolbar ">
+                <div class="m-title" style=" padding-left: 30px;"> <i class="fa fa-landmark fa-lg fa-fw"></i> Transferencia Bancaria</div>
+                <div class="m-left">
+                    <a href="javascript:void(0)" class="easyui-linkbutton titulo-recibo" data-options="plain:true"  onclick="$.mobile.go('#panelMediosCobro','fade','left');"><i class="fas fa-arrow-left fa-lg fa-fw"></i> Volver</a>
+                </div>
+            </div>
+        </header>
+        <div class="contenedor-medios-cobro">
+            <div class="bloque-estado">
+                <div class="hijo-estado linea">
+                    <p class="texto-estado total-recibo"><i class="titulo-recibo-alt">$</i><span id="totalReciboPanelTransferencia" class=".titulo-recibo-alt">0.00</span>
+                        <br>
+                        Total recibo
+                    </p>
+                </div>
+                <div class="hijo-estado linea">
+                    <p class="texto-estado total-saldo"> <i>$</i><span id="aCubrirPanelTransferencias">0.00</span>
+                        <br>
+                        A cubrir
+                    </p>
+                </div>
+                <div class="hijo-estado">
+                    <p class="texto-estado total-transferencia"><i class="transferencia-alt">$</i><span id="totalPanelTransferencia" class="transferencia-alt">0.00</span>
+                        <br>
+                        Transferencia
+                    </p>
+                </div>
+            </div>
+            <div style="height:70%;">
+                <h3 class="titulo-medios-cobro transferencia-alt">Listado de transferencias</h3>
+                <div>
+                    <a href="javascript:void(0)" class="easyui-linkbutton primario" onclick="mostrar_panel_alta_transferencia();"><i class="fas fa-plus fa-lg fa-fw"></i> Nueva </a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton secundario" onclick="borrar_transferencia();"><i class="fas fa-trash fa-lg fa-fw"></i>Borrar </a>
+                </div>
+                <table id="tblTransferencias"></table>
+            </div>
+        </div>
+    </div>
+    <!--PANEL ALTA DE TRANSFERENCIA-->
+    <div class="easyui-navpanel titulo-recibo" id="panelAltaTransferencia">
+        <header class="titulo-recibo sin-borde">
+            <div class="m-toolbar">
+                <div class="m-title" style=" padding-left: 20px;">Nueva transferencia bancaria</div>
+                <div class="m-left">
+                    <a href="javascript:void(0)" class="easyui-linkbutton titulo-recibo" data-options="plain:true"  onclick="$.mobile.back();"><i class="fas fa-arrow-left fa-lg fa-fw"></i> Volver</a>
+                </div>
+            </div>
+        </header>
+        <div class="contenedor-medios-cobro">
+            <div class="bloque-estado">
+                <div class="hijo-estado linea">
+                    <p class="texto-estado total-recibo"> <i class="titulo-recibo-alt">$</i><span id="totalReciboTransferenciaAlta" class="titulo-recibo-alt">0.00</span>
+                        <br>
+                        Total recibo
+                </div>
+                <div class="hijo-estado linea">
+                    <p class="texto-estado total-saldo"> <i>$</i><span id="totalAcubrirTransferenciaAlta">0.00</span>
+                        <br>
+                        A cubrir
+                    </p>
+                </div>
+                <div class="hijo-estado">
+                    <p class="texto-estado total-transferencia"><i class="transferencia-alt">$</i><span id="totalTransferenciaAlta" class="transferencia-alt">0.00</span>
+                        <br>
+                        Transferencias
+                    </p>
+                </div>
+            </div>
+            <div>
+                <!-- <select class="easyui-combobox" name="listaCuentaBancaria" id="listaCuentaBancariaAlta" data-options=" valueField: 'id', textField: 'text',panelMaxHeight:'70px',limitToList:'true',prompt:'seleccionar cuenta bancaria',label:'Cuenta bancaria:'" style="width:100%;"></select> -->
+                <div id="grupoCuentasBancarias" style="margin-bottom:10px;"></div>
+            </div>
+            <div>
+                <input class="easyui-datebox" id="transfFechaAlta" required="true" data-options="editable:false,panelWidth:220,panelHeight:240,iconWidth:30,label:'Fecha:',labelPosition:'left'" style="width:80%">
+            </div>
+            <div>
+                <input class="easyui-numberbox" type="text" inputmode="numeric" pattern="[0-9]*" id="transfNumeroAlta" min="0" required="true" missingMessage="Debe completar numero de transferencia" prompt="nro transferencia" style="width:80%" label="Nro Transf: ">
+            </div>
+            <div>
+                <input class="easyui-textbox" type="text" inputmode="text"  id="transfDetalleAlta" required="true" missingMessage="Debe completar detalle" prompt="titular o detalle de transferencia" style="width:80%" label="Titular Transf: ">
+            </div>
+            <div>
+                <input class="easyui-numberbox" id="transfImporteAlta" inputmode="decimal" type="text" pattern="[-+]?[0-9]*[.,]?[0-9]+" min="0" decimalSeparator="," precision="2" groupSeparator="." required="true" missingMessage="importe transferencia" prefix='$' prompt="0.00" style="text-align:right;width:80%" label="Importe:">
+            </div>
+            <div style="text-align: center">
+                <a href="javascript:void(0)" class="easyui-linkbutton primario" onclick="alta_transferencia_bancaria();" style="width:45%" id="botonGuardarTransferencia"><i class="fas fa-check fa-fw fa-lg"></i> Crear</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton secundario" onclick="mostrar_panel_transferencias();" style="width:45%"><i class="fas fa-times fa-fw fa-lg"></i> Cancelar</a>
+            </div>
+        </div>
+    </div>

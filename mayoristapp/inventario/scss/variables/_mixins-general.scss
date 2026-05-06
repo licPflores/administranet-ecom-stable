@@ -1,0 +1,13 @@
+@mixin font($family, $weight, $style, $size) {
+    font-family: nth($font-web, $family);
+    font-weight: $weight;
+    font-style: $style;
+    font-size: rem($size);
+}
+
+@mixin text_cut($weight) {
+    width: $weight;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

@@ -1,0 +1,469 @@
+
+/* estilo para ver los COMPROBANTES*/
+
+/*
+    * impresion de datos
+*/
+
+/** fuente awesome iconos en pdf.*/
+.fa { font-family: fontawesome; }     .fas { font-family: fontawesome-solid; }     .fab { font-family: fontawesome-brands; }
+*{
+font-family: 'roboto', sans-serif;
+}
+body {
+    /* font-family: Arial, Helvetica, sans-serif;  */
+    /* font-family: 'Roboto', sans-serif; */
+    background-color: #ffffff;
+    margin:0px;
+    
+}
+
+
+
+/** titulo comprobante */
+#tituloComprobante{
+    float:left;
+    
+    background-color: #FFFFFF;
+/*    padding: 10px;*/
+    border: 1px solid #DDDDDD;
+    margin: 3px;
+    
+    
+    
+}
+#comprobante{
+    width:1300px;
+    
+    /*width:1000px;*/
+    /*minC-height: 800px;*/
+    background-color: #ffffff;
+}
+
+
+#cabeceraComprobante{
+    float:left;
+    width:1300px;
+    /*height:130px;*/
+    border: 1px solid #000000;
+    -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+    background-color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left:3px;
+    margin:3px;
+}
+
+#cabeceraComprobante #tipoComp{
+    background-color: #d7d7d7;
+    border: 1px solid #000000;
+    -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+    width: 98px;
+    /*height: 44px;*/
+    color: black;
+    float:left;
+    
+    text-align: center;
+    padding-top: 10px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    float:left;
+    
+}
+#cabeceraComprobante #tipoComp strong{
+    font-size: 30px;
+}
+#cabeceraComprobante #tipoComp #leyenda{
+    font-size: 10px;
+    margin-top: 5px;
+    background-color: white;
+}
+
+#cabeceraComprobante label{
+    font-size: 11px;
+    color: #666666;
+    float:  left;
+    width:  80px;
+    font-weight: bold;
+}
+
+#cabeceraComprobante .area{
+    color:#666666;
+    
+    height: 50px;
+    width: 200px;
+    
+}
+
+#cabeceraComprobante #izquierda{
+    float:left;
+    
+    /*border: 1px solid red;*/
+    width: 330px;
+    margin-right: 20px;
+    /*border: 1px solid #000000;*/
+/*    height: 150px;*/
+}
+#cabeceraComprobante #izquierda #logo{
+    margin-right: 5px;
+    margin-left: 5px;
+    float:left;
+    /*border: 1px solid #000000;*/
+    height: 100px;
+    width: 185px;
+}
+#cabeceraComprobante #izquierda #logo img{
+    
+    /*float:  left;*/
+/*    height: 90px;*/
+    width: 180px;
+    height: auto;
+    
+    /*height: 30px;*/
+}
+#cabeceraComprobante #izquierda #leyenda{
+    float: left;
+    width: 100px;
+    text-align: center;
+    margin-top: 10px;
+    /*border: 1px solid #000000;*/
+    margin-left:5px;
+}
+#cabeceraComprobante #derecha{
+    float:right;
+    width:200px;
+    margin-left: 10px;
+    /*border: 1px solid #000000;*/
+/*    height:150px;*/
+}
+
+/* membrete empresa*/
+#membrete {
+    float:left;
+    width:100%;
+    border: 1px solid #000000;
+    -webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+    
+/*    padding-top: 10px;
+    padding-bottom: 10px;*/
+    padding-left:3px;
+    margin:3px;
+    
+}
+/* datos cliente*/
+#datosCliente{
+    float:left;
+    width:100%;
+    border: 1px solid #000000;
+    -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+    background-color: #ffffff;
+/*    padding-top: 10px;
+    padding-bottom: 10px;*/
+    padding-left:3px;
+    margin:3px;
+}
+.columna{
+    float:left;
+    width:300px;
+    /*border: 1px solid red;*/
+}
+ul{
+    list-style:none;
+}
+ul.datoComprobante{
+    
+  max-width: 220px;
+  text-align: left;
+  font-size: 10px;
+  color:#000000;
+  margin:0;
+  padding: 5px;
+  
+  
+}
+ul.datoComprobante li.destacado{
+    font-size: 12px;
+    font-weight: bold;
+}
+ul.datoComprobante li.destacadoF{
+    font-size: 16px;
+    font-weight: bold;
+}
+ul.datoComprobante li.destacadoComp{
+    font-size: 16px;
+    font-weight: bold;
+}
+/*ul.derecha{
+   margin-left: 5px; 
+}*/
+
+/*CUERPO DEL COMPROBANTE*/
+
+#cuerpoComprobante{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 3px;
+    float:left;
+    width:100%;
+    overflow: auto;
+    height: 520px; 
+    /* max-height: 580px; */
+    
+    
+    border-bottom: 2px solid #000000;
+    /*height: 200px;*/
+    margin: 3px;
+}
+
+
+/*
+* TABLA COMPROBANTES CON DETALLES
+*/
+
+
+#cuerpoComprobante #tablaComp{
+    width:100%;
+}
+#cuerpoComprobante #tablaComp th{
+    border: 1px solid #d7d7d7;
+    color: #000000;
+    background-color: #d7d7d7;
+    font-size: 10px;    
+    padding: 1px;
+}
+#cuerpoComprobante #tablaComp th.liso{
+    border-bottom: 1px solid #000000;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: #000000;
+    background-color: #FFFFFF;
+    font-size: 11px;    
+    text-align: left;
+}
+#cuerpoComprobante #tablaComp td{
+    border: none;
+    color: #000000;
+    /* background-color: #FFFFFF; */
+    font-size: 10px; 
+    padding: 3px;
+}
+#cuerpoComprobante #tablaComp td.subtotal{
+    border-top: 1px solid black;
+    font-weight: bolder;
+    font-size: 12px; 
+}
+#cuerpoComprobante #tablaComp tr:nth-child(even) {
+    background-color: #ebf6ff;
+  }
+
+#cuerpoComprobante #tablaComp td.derecha{
+    text-align: right;
+}
+#cuerpoComprobante #tablaComp td.izquierda{
+    text-align: left;
+}
+#cuerpoComprobante #tablaComp td.centro{
+    text-align: center;
+}
+#cuerpoComprobante #tablaComp th.derecha{
+    text-align: right;
+}
+#cuerpoComprobante #tablaComp th.izquierda{
+    text-align: left;
+}
+#cuerpoComprobante #tablaComp th.centro{
+    text-align: center;
+}
+
+
+
+
+
+
+
+/* PIE DE COMPROBANTES */
+#pieComprobante{
+    /* padding-top: 10px; */
+    /* padding-bottom: 10px; */
+    /* padding-left: 3px; */
+    float:  left;
+    bottom:0;
+    position: absolute;
+    width:  100%;
+
+    margin: 3px;
+    
+}
+
+#pieComprobante #detalle{
+    width:800px;
+    border: 1px solid #000000;
+    -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+    float:left;
+    color: #000000;
+    font-size: 10px;
+    height: 105px;
+    padding-left: 5px;
+    
+}
+#pieComprobante #importeLetra{
+    font-size: 14px;
+}
+#pieComprobante #importe{
+    margin-left: 10px;
+    width:290px;
+    border: 1px solid #000000;
+    -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+    float:left;
+    height: 205px;
+    padding-left: 10px;
+   
+}
+
+#pieComprobante #importe td{
+    border: 1px solid #000000;
+    color: #000000;
+    background-color: #d7d7d7;
+    font-size: 12px;
+    font-weight: bolder;
+    padding: 2px;
+}
+
+#pieComprobante #importe table{
+    width: 280px;
+}
+#pieComprobante #importe td.derecha{
+    text-align: right;
+}
+#pieComprobante #importe td.izquierda{
+    text-align: left;
+}
+#pieComprobante #importe td.separador{
+    height: 24px;
+    background-color: #ffffff;
+    border-bottom: 2px solid #000000;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+#pieComprobante #importe td.total{
+    font-size: 18px;
+    height: 24px;
+}
+
+/* tabla plana de los subtotales comprobante */
+
+#pieComprobante #subtotales {
+    width: 100%;
+    
+}
+#pieComprobante #subtotales th{
+    text-align: right;
+    border: 1px solid #d7d7d7;
+    color: #000000;
+    background-color: #d7d7d7;
+    padding:2px;
+    font-size: 14px;
+    
+}
+#pieComprobante #subtotales td{
+    font-size: 14px;
+    padding: 3px;
+}
+
+#pieComprobante #subtotales td.derecha{
+    text-align: right;
+}
+#pieComprobante #subtotales td.izquierda{
+    text-align: left;
+}
+#pieComprobante #subtotales td.separador{
+    height: 24px;
+    background-color: #ffffff;
+    border-bottom: 2px solid #000000;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+
+/* Tabla final de comprobante */
+#pieComprobante #final{
+    width:100%;
+    border-top: 1px solid #000000;
+    border-bottom:none;
+    border-right: none;
+    border-left: none;
+    text-align: right;
+    float:left;
+    margin-top: 10px;
+    font-size: 9px;
+    padding: 3px;
+    
+}
+#pieComprobante #final #bloque{
+    width: 50%;
+    float: left;
+}
+
+#pieComprobante #final img{
+    float:right;
+    margin-left: 5px;
+    width: auto;
+    height: auto;
+}
+/* fact electronica*/
+#pieComprobante #final #final-izq{
+    width:60%;
+    float:left;
+    text-align: left;
+}
+#pieComprobante #final #final-der{
+    width:40%;
+    float:left;
+}
+    
+ #pieComprobante #final #final-der p{
+    font-size: 12px;
+}
+
+p.administranet{
+    color:#395aa2;
+    text-align:left;
+    font-size: 9px;
+    padding: 3px;
+}
+a{
+    color:#395aa2;
+    text-decoration: none;
+}
+a.whatsapp{
+    
+    /* color: #ffffff; */
+    
+    
+    
+    /* background: #43D854; */
+    color:#43D854;
+    
+    
+    
+
+
+}
+
+/*# estilo para Catalogo de productos */

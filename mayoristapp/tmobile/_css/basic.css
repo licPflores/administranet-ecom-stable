@@ -1,0 +1,369 @@
+/*
+ * SimpleModal Basic Modal Dialog
+ * http://www.ericmmartin.com/projects/simplemodal/
+ * http://code.google.com/p/simplemodal/
+ *
+ * Copyright (c) 2010 Eric Martin - http://ericmmartin.com
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+ * Revision: $Id: basic.css 257 2010-07-27 23:06:56Z emartin24 $
+ */
+
+#basic-modal-content {display:none;}
+
+/* Overlay */
+#simplemodal-overlay {background-color:#000; cursor:wait;}
+
+/* Container */
+#simplemodal-container { color: #67686C; background-color:#ffffff; border:4px solid #2A3E72; font-size: 12px;}
+/*#simplemodal-container .cartelito{  height: 300px}*/
+/* #simplemodal-container .simplemodal-data {padding:8px;} */
+#simplemodal-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
+#simplemodal-container a {color:#ddd;}
+#simplemodal-container a.modalCloseImg { background:url(../_img/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#simplemodal-container h3 {color:#84b8d9;font-size: 20px;}
+#simplemodal-container ul li .alto{   color:    #33CC00;}
+#simplemodal-container ul li .medio{  color:    #ECBD00;}
+#simplemodal-container ul li .bajo{   color:    #CC3300;}
+#simplemodal-container .cartelCliente h1 {color:#FF9933;font-size: 20px;text-align: center;}
+/* estilos para la tabla de descripciones*/
+
+#simplemodal-container #contenedor{
+    width:100%;
+    height:auto;
+    float:left;
+    padding:0px;
+}
+/* tabla */
+#simplemodal-container #tablaArticulo{
+    width:600px;    
+}
+
+#simplemodal-container #tablaArticulo th{
+    color: #84b8d9;
+    font-size: 14px;    
+}
+#simplemodal-container #tablaArticulo td{    
+    border: 0px;
+    font-size: 14px;
+    margin:0px;
+}
+#simplemodal-container #tablaArticulo td.titulo{
+    background-color: #333;
+    color: #ddd;
+    padding:3px; 
+}
+#simplemodal-container #tablaArticulo td.dato{
+    background-color: #cccccc;
+    color: #333;
+    padding:3px; 
+}
+#simplemodal-container #tablaArticulo td .bloque{
+    width: 140px;
+    float: left;
+    margin-left: 5px;
+    font-size: 14px;
+}
+/*divs*/
+
+#simplemodal-container .container{
+    width:100%;
+    height: auto;
+    padding:0px;
+}
+#simplemodal-container .product-info{
+margin-bottom: 4px;
+background-color: #ffffff;
+padding: 5px;
+
+width: 100%;
+
+}
+
+
+
+
+
+
+.product-images img{
+width: 100%;
+   
+     -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+
+}
+.product-images img:hover{
+    /*width:250px;*/
+    /*height:380px;*/
+    -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+
+}
+
+
+/*detalle del producto*/
+.product-info .titulo-primero{
+    margin: 3px;
+    font-size: 0.875rem;
+    color: #2A3E72;
+    /* line-height: 16px; */
+    border-bottom: 2px solid #465A9E;
+    padding:5px;
+    float:left;
+    width:100%;
+}
+.product-info .titulo-primero .cerrar{
+    /* width:20px; */
+    float: right;
+    /* height: 20px; */
+    /* background-color: #2A3E72; */
+}
+.product-info .titulo-primero .texto{
+    width: 80%;
+    font-weight: 700;
+    float:left;
+    padding-bottom: 10px;
+}
+.product-info .titulo-segundo{
+    font-size: 0.775rem;
+    color:#092211;
+    margin: 5px 3px;
+    font-weight: 700;
+}
+.product-info .detalle-datos{
+    width: 100%;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: 40% 55%;
+    grid-gap: 5px;
+    align-items: flex-start;
+    justify-content: start;
+    min-width: 360px
+
+}
+
+.product-info .detalle{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    align-content: center;
+}
+
+.product-info .listaopciones{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+   
+}
+.product-info .opcion{
+    color: #67686C;
+    font-size: 0.675rem;
+    /* line-height: 0.875rem; */
+    text-decoration: none;
+    
+    /* margin-left: 5px; */
+    padding: 3px;
+}
+.product-info .renglon{
+    color: #67686C;
+    font-size: 0.775rem;
+    /* line-height: 14px; */
+    text-decoration: none;
+    /* zoom: 1; */
+    /* margin-left: 5px; */
+    
+    padding: 2px;
+}
+.promocion-i{
+    color: #ECBD00; 
+}
+.destacado{
+    color: #465A9E;
+}
+
+
+.descuento{
+    color:#65B43D;
+}
+.bajo{
+    color:#FF0000;
+}
+.medio{
+    color:#ffa600;
+}
+.alto{
+    color:#488f31;
+}
+ /* display bulto unidad */
+
+
+ #divUnidadDisplayBultoPopUp{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin-bottom: 2px;
+}
+
+#divUnidadDisplayBultoPopUp input[type="radio"]{
+    /* font-size: 0.9em; */
+    /* font-weight: lighter; */
+    display:none;
+    
+
+}
+/* $color-app: (#E36673, #642C8A, #2A3E72, #2C8A7B, #318029); */
+#divUnidadDisplayBultoPopUp > label{
+    font-size:0.555rem;
+    font-weight: normal;
+    padding:1px 5px 1px 5px;
+    border:1px solid #ced4da;
+    border-radius: 3px;
+    margin-right: 5px;
+    color:#67686C;
+    transition: background-color 0.8s ease; 
+    
+
+}
+#divUnidadDisplayBultoPopUp > label strong{
+    font-weight: bolder;
+    margin-left: 3px;
+    /* letter-spacing: 1px; */
+}
+
+ #divUnidadDisplayBultoPopUp > label.cantidad-unidad.elegida{
+    border: 1px solid #642C8A;
+    background-color:#642C8A;
+    color: white;
+    font-weight: normal;
+    /* text-decoration: underline; */
+    
+}
+#divUnidadDisplayBultoPopUp > label.cantidad-display.elegida{
+    border: 1px solid #2A3E72;
+    background-color: #2A3E72;
+    
+    
+    color:white;
+    font-weight: normal;
+    /* text-decoration: underline; */
+
+
+}
+#divUnidadDisplayBultoPopUp > label.cantidad-bulto.elegida{
+    border: 1px solid #2C8A7B;
+    background-color: #2C8A7B;
+    color:white;
+    font-weight: normal;
+    /* text-decoration: underline; */
+               
+}
+
+/*
+*   CSS formularios.
+*===============================================================================
+*/
+
+#simplemodal-container .divFormularios{
+    
+    
+    width: 100%;
+    /*margin: 10px 30% 10px 25%;*/
+    /*padding:10px 0;*/
+    
+    border-top: 3px solid #2472a4;
+    border-bottom: 1px solid #fafafa;
+    
+    float:  left;
+    
+    /*margin-top: 0.5%;*/
+    background-color: #ffffff;
+    /*padding: 0.5%;*/
+    -webkit-box-shadow: 0 1px 2px rgba(71, 73, 72, 0.19999999999999996);
+    -moz-box-shadow: 0 1px 2px rgba(71, 73, 72, 0.19999999999999996);
+    box-shadow: 0 1px 2px rgba(71, 73, 72, 0.19999999999999996);
+    color: 0 1px 2px rgba(71, 73, 72, 0.19999999999999996);
+    
+    
+}
+/* titulo cabecera*/
+#simplemodal-container #titulo.formulario{
+    font-size: 24px;
+    line-height: 30px;
+    /*color: #474948;*/
+    background-color: #2472a4;
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0%;
+    padding: 5%;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+    min-height:30px;
+}
+/*
+* botones de acciones
+*/
+#simplemodal-containert #titulo.formulario i{
+    cursor:pointer;
+}
+#simplemodal-container #titulo.formulario i:hover{
+   color: #B0D6EE;
+}
+/* formulario */
+#simplemodal-container .divFormularios form{
+    margin:0.5%;
+}
+#simplemodal-container .renglonForm{
+    float:left;
+    width: 98%;
+    margin:1%;
+    height:100px;
+    
+}
+/* labels */
+#simplemodal-container .renglonForm label{
+    font-size: 18px;
+    font-weight: 700;
+    padding:0px;
+    margin:1%;
+}
+/* input text*/
+#simplemodal-container .renglonForm input{
+margin-bottom: 20px;
+margin-top: 10px;
+width:93%;
+padding: 15px;
+border-radius:5px;
+border:1px solid #ACACAC;
+}
+/* select*/
+#simplemodal-container .renglonForm select{
+margin-bottom: 20px;
+margin-top: 10px;
+width:95%;
+padding: 15px;
+border-radius:5px;
+border:1px solid #ACACAC;
+}
+
+#simplemodal-container .tituloVentana{
+    width:97%;
+    padding:1%;
+    font-size: 14px;
+    font-weight: bolder;
+    text-align: center;
+}
+#simplemodal-container .tituloVentana button{
+    float:right;
+}

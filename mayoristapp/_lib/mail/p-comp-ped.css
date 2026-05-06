@@ -1,0 +1,145 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21/12/2018, 10:28:07
+    Author     : Pablo Flores
+ css del pedido nexo visual
+*/
+
+.encabezado td {
+	background-color: #e51e1f;
+	border-bottom: 4px solid #9B1E5A;
+}
+.encabezado td img {
+	width: 130px;
+	margin: 11px;
+}
+.encabezado td h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.1rem;
+	color: #ffffff;
+	margin-top: 0.7rem;
+	text-align: center;
+}
+.estado-pedido td img {
+	width: 100px;
+	margin: 44px 11px 11px 11px;
+}
+.estado-pedido td h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.5rem;
+	color: #9B1E5A;
+	margin-top: 1rem;
+	font-weight: normal;
+	text-align: center;
+}
+
+.datos-pedido td {
+	width: 100%;
+}
+.datos-pedido td table {
+	margin: 44px 66px;
+}
+.datos-pedido td table tr {
+	vertical-align: top;
+	background-color: #ffdfee;
+}
+.datos-pedido td table tr td.titulo-tabla-pedido {
+	background-color: #9B1E5A;
+	border-bottom: 2px solid #fff;
+}
+.datos-pedido td table tr td:first-child {
+	width: 30%;
+}
+.datos-pedido td table tr td h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.2rem;
+	color: #fff;
+	margin-top: 1rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+.datos-pedido td table tr td h5 {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 11px;
+	font-size: 0.9rem;
+	color: #000000;
+	font-weight: bold;
+	text-align: left;
+}
+.datos-pedido td table tr td p {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 11px;
+	font-size: 0.9rem;
+	color: #000000;
+	font-weight: normal;
+	text-align: left;
+}
+.datos-pedido td table tr td a {
+	display: block; font-family: Arial, Helvetica, sans-serif;
+	margin: 11px;
+	font-size: 0.9rem;
+	color: #000000;
+	font-weight: normal;
+	text-align: left;
+}
+
+.descarga td a {
+	background-color: #9B1E5A;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 11px;
+	text-decoration: none;
+	display: table;
+	border-radius: 50px;
+	margin: 0 0 44px 0;
+	font-size: 0.9rem;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+}
+
+.footer {
+	margin-top: 120px;
+	background-color: #e51e1f;
+}
+.footer td img {
+	width: 150px;
+	padding: 11px;
+}
+.footer td h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1rem;
+	color: #fff;
+	font-weight: normal;
+	margin-bottom: 0;
+	text-align: left;
+}
+.footer td p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.8rem;
+	color: #fff;
+	font-weight: normal;
+	margin-bottom: 22px;
+	padding-top: 22px;
+	text-align: center;
+}
+
+.administranet {
+	background-color: #9b1e5a;
+}
+.administranet td p {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.8rem;
+	color: #fff;
+	font-weight: normal;
+	margin-top: 11px;
+}
+.administranet td img {
+	width: 110px;
+	margin-bottom: 11px;
+}

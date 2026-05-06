@@ -1,0 +1,37 @@
+#tablaDiv {
+    width: 100%;
+}
+
+#myTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#myTable th,
+#myTable td {
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 8px;
+    font-family: 'Lato', sans-serif;
+    text-align: center; /* Alinea el texto al centro */
+}
+
+#myTable th {
+    font-weight: bold;
+}
+
+#myTable tr:nth-child(even) {
+    background-color: rgba(230, 230, 158, 0.2);
+}
+ /* Estilos personalizados para el widget de autocompletado */
+ .ui-autocomplete {
+    position: absolute; /* Ajusta la posición del contenedor */
+    top: 100%; /* Muestra el contenedor debajo del elemento de entrada */
+    left: 0; /* Alinea el contenedor a la izquierda del elemento de entrada */
+    z-index: 1000; /* Asegura que el contenedor aparezca por encima de otros elementos */
+    background-color: white; /* Cambia el color de fondo del contenedor si es necesario */
+    border: 1px solid #ccc; /* Agrega un borde al contenedor */
+    padding: 5px; /* Ajusta el relleno interno del contenedor */
+    max-height: 200px; /* Limita la altura máxima del contenedor para permitir el desplazamiento */
+    overflow-y: auto; /* Agrega desplazamiento vertical si el contenido excede la altura máxima */
+}

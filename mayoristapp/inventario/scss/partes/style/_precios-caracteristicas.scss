@@ -1,0 +1,83 @@
+.precios {
+    .table {
+        thead {
+            .images {
+                img {
+                    display: block;
+                    margin: auto;
+                }
+            }
+            .titulos {
+                color: nth($color-web, 1);
+                background-color: nth($color-web, 5);
+                &:last-child th:first-child {
+                    border-top-left-radius: 16px;
+                    border-bottom-left-radius: 16px;
+                }
+                &:last-child th:last-child {
+                    border-top-right-radius: 16px;
+                    border-bottom-right-radius: 16px;
+                }
+            }
+        }
+        tbody {
+            border-radius: 16px;
+            box-shadow: 0 0 0 2px rgba(nth($color-web, 5), .15);
+            tr {
+                td {
+                    background-color: nth($color-web, 1);
+                    border-bottom-width: 0px;
+                }
+                &:last-child td:first-child {
+                    border-top-left-radius: 16px;
+                    border-bottom-left-radius: 16px;
+                }
+                &:last-child td:last-child {
+                    border-top-right-radius: 16px;
+                    border-bottom-right-radius: 16px;
+                }
+            }
+            td {
+                @include font(1, normal, normal, 16px);
+                color: nth($color-web, 5);
+            }
+            .icon {
+                text-align: center;
+                .bi-check-lg {
+                    color: nth($color-web, 7);
+                    font-size: 22px;
+                }
+                .bi-x-lg {
+                    color: nth($color-web, 9);
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+}
+
+.descarga {
+    margin: 48px 0;
+    h4 {
+        @include font(1, normal, normal, 24px);
+        color: nth($color-web, 3);
+        
+        text-align: center;
+        margin-top: 24px;
+    }
+    .btn-descarga {
+        @include font(1, normal, normal, 12px);
+        line-height: 22px;
+        
+        background-color: nth($color-web, 4);
+        border-color: nth($color-web, 4);
+        height: 48px;
+        border-radius: 12px;
+        margin-top: 12px;
+        i {
+            font-size: 24px;
+            position: relative;
+            top: 0px;
+        }
+    }
+}

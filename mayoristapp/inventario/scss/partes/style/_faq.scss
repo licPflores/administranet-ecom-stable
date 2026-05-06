@@ -1,0 +1,28 @@
+.faq {
+    .accordion {
+        .accordion-item {
+            border: none;
+            margin-bottom: 3px;
+        }
+        .accordion-button {
+            @include font(1, normal, normal, 20px);
+            text-align: center;
+            border-radius: 12px;
+            //background-color: nth($color-web, 12);
+            color: nth($color-web, 2);
+            &:hover {
+                color: nth($color-web, 1);
+            }
+        }
+        .accordion-body {
+            h6 {
+                @include font(4, normal, normal, 20px);
+                color: nth($color-web, 6);
+            }
+            p {
+                @include font(2, normal, normal, 20px);
+                color: nth($color-web, 6);
+            }
+        }
+    }
+}

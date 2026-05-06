@@ -1,0 +1,19 @@
+2020-09-24-06-35-02|alta||cliente:alta|error: sql:INSERT INTO sp_movimiento_premio
+                    SET    
+                    id_cliente=alta,
+                    fecha='2020/09/24',
+                    tipo_comp='AJ',
+                    nro_comp='',
+                    monto_neto=0,
+                    monto_final=0,
+                    puntos_acumulados='alta',
+                    valor_calculo_puntaje=1,
+                    valor_cada_puntaje=1,
+                    codigo_movimiento=NULL,
+                    codigo_movimiento_anul=NULL;
+ sql:UPDATE sp_saldo_cliente_premio 
+                            SET 
+                            saldo_premios=alta 
+                            WHERE 
+                            sp_saldo_cliente_premio.id_sp_saldo=alta
+||

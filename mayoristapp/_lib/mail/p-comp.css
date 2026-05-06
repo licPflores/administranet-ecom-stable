@@ -1,0 +1,91 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15/03/2018, 07:14:22
+    Author     : Pablo Flores
+*/
+body{
+    background-color: white;
+    font-family:arial;
+}
+h1{
+    
+}
+h2{
+    
+}
+p{
+    
+}
+label{
+    font-weight: bold;
+}
+#contenedor{
+    width:100%;    
+}
+#cabecera{
+    float:left;
+    font-size: 26px;
+    color: #2472a4;
+    width:100%;
+    margin-bottom: 2%;
+    height: 60px;
+    text-align: center;
+}
+#logoFirma{
+    float:left;
+    width:100%;
+    /*height:120px;*/
+	margin-bottom:1%;
+}
+#textoFirma{
+    margin-top: 1%;
+    font-size: 14px;
+    float:left;
+    width:100%;
+    line-height: 25px;
+    
+}
+#cuerpo{
+    float:left;
+    font-size: 20px;
+    color:#4D4F4E;
+    width:100%;
+    margin-bottom: 5%;
+}
+#cuerpo a{
+    color:#4D4F4E;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+a{
+     color:#4D4F4E;
+    
+}
+a:hover{
+    font-weight: bolder;
+}
+#firma{
+    float:left;
+    color:#4D4F4E;
+    font-size:10px;
+    width:100%;
+    margin-bottom: 5%;
+    
+}
+#pie{
+    float:left;
+    color:#4D4F4E;
+    font-size:12px;
+    width:100%;
+    vertical-align: text-top;
+    
+}
+#pie img{
+    vertical-align: text-top;
+    width:100px;
+}

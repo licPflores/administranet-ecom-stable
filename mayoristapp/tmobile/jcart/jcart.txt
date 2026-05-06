@@ -1,0 +1,70 @@
+
+
+login de chapini
+
+
+http://chapinidorrego.dyndns.org:8090/administraweb/sistema/relay-ventas-gerenciales.php?ajax=true&fechaDesde=2017-06-01&fechaHasta=2018-07-01&fechaDesdeDos=&fechaHastaDos=&tipoResumen=mes&tipo=monto&listarPor=cliente&filtrarPor=categoria%7C1%7CDescartables+(cod%3A1)%7C1%7C%7C&puntoVenta=6%7C11%7C1%7C%7C10%7C6%7C2%7C%7C11%7C7%7C3%7C%7C&grafico=0&rangoDoble=0&opRango=suma&queInforme=vt&queSalida=html
+
+
+VTAS:=><pre>SELECT
+            cli.Codigo AS cod,CONCAT(cli.nombre_cliente,' (Cod: ',cli.Codigo,')')  As nom,cat.id_categoria AS cod2, cat.nombre_categoria AS nom2,
+            
+            
+            
+            DAY(stock.Fecha)as dia,
+            WEEKOFYEAR(stock.Fecha) as semana,
+            MONTH(stock.Fecha) as mes2,
+            DATE_FORMAT(stock.Fecha,'%m') as mes,
+            YEAR(stock.Fecha) AS aa,
+  
+            DATE_FORMAT(
+            STR_TO_DATE(CONCAT(YEARWEEK(stock.Fecha),
+            'Monday'),'%X%V %W'),'%d/%m') AS PrimerDiaSemana,  
+            DATE_FORMAT(
+            STR_TO_DATE(CONCAT(YEARWEEK(stock.Fecha),
+            'Saturday'),'%X%V %W'),'%d/%m') AS UltimoDiaSemana,   
+            SUM(IF(ppv.cont='No',
+              IF(
+                stock.TipoComp ='Venta' OR
+                stock.TipoComp ='Venta TPV' OR 
+                stock.TipoComp = 'Anul NC Devol' OR 
+                stock.TipoComp ='ND Anul NC'
+            	,stock.PrecioBrutoxR,
+            	stock.PrecioBrutoxR * -1), 
+              IF(
+                stock.TipoComp ='Venta' OR
+                stock.TipoComp ='Venta TPV' OR 
+                stock.TipoComp = 'Anul NC Devol' OR 
+                stock.TipoComp ='ND Anul NC'
+            	,stock.PrecioNetoxR,
+            	stock.PrecioNetoxR * -1) 
+            
+           )) AS total  
+            FROM stock
+                LEFT JOIN cuentacliente AS cc ON (cc.CodigoMovimiento= stock.CodigoMovimiento) 
+                LEFT JOIN articulo AS arti ON arti.IDArt = stock.IDArt
+                LEFT JOIN articulo_val_ce AS kg ON (kg.id_articulo = arti.IDArt AND kg.id_articulo_ce=1)
+                LEFT JOIN rubro AS ru ON ru.CodigoRubro = arti.CodigoRubro
+                LEFT JOIN rubro_categoria AS cat ON cat.id_categoria=ru.id_categoria
+                LEFT JOIN subrubro AS srub ON srub.IDSubRubro = arti.IDSubRubro
+                LEFT JOIN proveedor AS prov ON prov.Codigo = arti.CodigoProveedor
+                LEFT JOIN cliente AS cli ON (cli.Codigo= stock.CodigoCP)
+                LEFT JOIN viajantes AS vend ON (vend.CodViajante= cc.CodViajante)
+                LEFT JOIN erp_zona AS zonas ON (zonas.id_zona=cli.id_zona)
+                LEFT JOIN punto_venta AS ppv ON ( ppv.id_punto_venta=cc.id_pv)
+                LEFT JOIN tipo_cliente AS tpcli ON(tpcli.IDTipoCliente=cli.TipoCliente)
+           WHERE
+                ( (stock.Fecha BETWEEN '2017-01-01' AND '2018-07-01') )
+               AND cc.Anulado='No' 
+               AND stock.Anulado='No'
+               
+                AND (stock.TipoComp = 'Venta' 
+                    OR stock.TipoComp = 'Venta TPV' 
+                    OR stock.TipoComp = 'Devol - Cliente' 
+                    OR stock.TipoComp = 'ND Anul NC'
+                    )
+                  AND cat.id_categoria IN (1)    
+
+            GROUP BY mes,aa,cli.Codigo ORDER BY cli.nombre_cliente ASC,  stock.Fecha ASC</pre><br><br>NCValor:=><pre><br />
+<b>Notice</b>:  Undefined variable: sqlTotalNc in <b>C:\administraNET\htdocs\administraweb\sistema\relay-ventas-netas-gerencia.php</b> on line <b>440</b><br />
+</pre><br>{"titulos":{"0":{"titulo":"Cliente","span":2,"rowspan":1},"1":{"titulo":"VENTAS NETAS x mes  \/   - Categor\u00eda:

@@ -1,0 +1,33 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 01/11/2014, 12:45:35
+    Author     : Administrador - Excel
+*/
+
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+
+    
+    /*border: 1px solid #DDDDDD;*/
+    font-size:  12px;
+    font-weight: bold;
+    padding:    5px;
+    text-align: left;
+    height: 30px;
+    text-transform: uppercase;
+    border-bottom: 1px solid black;
+    
+
+}
+table.tablesorter .left{
+    text-align: left;
+}
+table.tablesorter .right{
+    text-align: right;
+}
+table.tablesorter .center{
+    text-align: center;
+}

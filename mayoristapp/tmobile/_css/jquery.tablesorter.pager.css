@@ -1,0 +1,60 @@
+div.tablesorterPager {
+	padding: 10px 0 10px 0;
+	background-color: #FFFFFF;
+	text-align: center;
+/*    float:left;*/
+    margin-top: 2px;
+}
+div.tablesorterPager span {
+	padding: 0 5px 0 5px;
+}
+div.tablesorterPager input.prev {
+	width: auto;
+	margin-right: 10px;
+}
+div.tablesorterPager input.next {
+	width: auto;
+	margin-left: 10px;
+}
+div.tablesorterPager input[type=button]{
+    
+  border: 1px solid #CCCCCC;  
+  background-color: #304675;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#DEDEDE)); 
+  background-image: -webkit-linear-gradient(top, #FFFFFF, #DEDEDE); 
+  background-image:    -moz-linear-gradient(top, #FFFFFF, #DEDEDE); 
+  background-image:     -ms-linear-gradient(top, #FFFFFF, #DEDEDE); 
+  background-image:      -o-linear-gradient(top, #FFFFFF, #DEDEDE); 
+  background-image:         linear-gradient(top, #FFFFFF, #DEDEDE);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFFFFF', EndColorStr='#DEDEDE'); 
+     -moz-border-radius: 1px; 
+  -webkit-border-radius: 1px; 
+          border-radius: 1px;         
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
+  cursor:pointer;
+  line-height: 15px;
+  padding: 1px;
+  font-weight: bold;
+  color: #999999;
+}
+div.tablesorterPager input[type=button]:hover{
+    color: #333333;
+/*  background-color: #FFFFFF;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#304675)); 
+  background-image: -webkit-linear-gradient(top, #FFFFFF, #304675); 
+  background-image:    -moz-linear-gradient(top, #FFFFFF, #304675); 
+  background-image:     -ms-linear-gradient(top, #FFFFFF, #304675); 
+  background-image:      -o-linear-gradient(top, #FFFFFF, #304675); 
+  background-image:         linear-gradient(top, #FFFFFF, #304675);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFFFFF', EndColorStr='#304675'); */
+}
+div.tablesorterPager input {
+	font-size: 15px;
+	width: 50px;
+	border: 1px solid #CCCCCC;
+	text-align: center;
+        line-height: 16px;
+}
+
+
+  

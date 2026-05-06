@@ -1,0 +1,8 @@
+@charset "iso-8859-1";
+/* IE6 Only */
+
+.buscador .control p {
+	font-size: 1.1em;
+	margin-top: 3px;
+}
+

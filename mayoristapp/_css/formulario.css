@@ -1,0 +1,157 @@
+
+
+
+.divFormulario {
+  width: 100%;
+  margin: 0.2rem;
+  padding: 0.01rem;
+  border-top: 3px #2472a4;
+  border-bottom: 1px solid #fafafa;
+  float: left;
+  background-color: #ffffff;
+}
+
+.headerFormulario {
+  font-size: 16px;
+  line-height: 21px;
+  background-color: #2A3E72;
+  color: #ffffff;
+  font-weight: 700;
+  margin: 0%;
+  padding: 0.1%;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: center;
+  min-height: 30px;
+}
+.titulo {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 700;
+  height: 30px;
+  padding-left: 10px;
+}
+
+
+.botones {
+  border-top: 1px solid #2a3e72;
+  width: 100%;
+  text-align: center;
+  float: left;
+  padding-top: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+    justify-content: space-around;
+}
+
+
+.botonConfirmar {
+  /* height: 34px; */
+  font-size: 1rem;
+  padding: 6px;
+  border-radius: 6px;
+  /* height: 34px; */
+  /* font-size: 1rem; */
+  border: 1px solid #2A3E72;
+  background-color: #2A3E72;
+  color: white;
+}
+#volver {
+  margin-left: 10px; /* Espacio entre los botones */
+}
+
+
+
+.renglonFormularioCliente {
+  display: grid;
+  grid-template-rows: auto auto; /* Define dos filas, una para el label y otra para el input */
+  gap: 5px; /* Espacio entre el label y el input */
+  float: left;
+  width: 98%;
+  margin: 1%;
+  /* height: 100px; */
+}
+
+
+.labels {
+  margin-right: 10px;
+  font-weight: bold; /* Añade negrita */
+  line-height: 24px;
+  color: #474948;
+  font-size: 14px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 3px;
+}
+
+.inputs {
+  width: 100%;
+  padding: 15px;
+  /* border-radius: 5px; */
+  /* border: 1px solid #ACACAC; */
+  background-color: #ffffff;
+  color: #092211;
+  /* padding: 4px 10px; */
+  /* margin-left: 4px; */
+  /* width: 82%; */
+  /* height: 32px; */
+  border: 2px solid #2A3E72;
+  font-size: 0.75rem;
+  text-align: left;
+  border-radius: 4px;
+  float: left;
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+
+
+.selectCustomizado {
+  width: 98%;
+  padding: 15px;
+  background-color: #ffffff;
+  color: #092211;
+  border: 2px solid #2A3E72;
+  font-size: 0.75rem;
+  text-align: left;
+  border-radius: 4px;
+  float: left;
+  -webkit-appearance: none; /* Quita el estilo predeterminado de la flecha del select */
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Estilo al pasar el mouse */
+.selectCustomizado:hover {
+  border-color: #2472a4;
+}
+
+/* Estilo al enfocar */
+.selectCustomizado:focus {
+  outline: none; /* Quita el contorno predeterminado */
+  border-color: #2472a4;
+}
+
+/* Estilo para la flecha desplegable */
+.selectCustomizado::after {
+  content: '\25BC'; /* Código Unicode de una flecha hacia abajo */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none; /* La flecha no es interactiva */
+  color: #2A3E72;
+}
+
+/* Estilo para el contenedor del select */
+.divSelect {
+
+  display: grid;
+  grid-template-rows: auto auto; /* Define dos filas, una para el label y otra para el select */
+  gap: 5px; /* Espacio entre el label y el select */
+  width: 100%;
+  margin: 0.3rem;
+  padding: 0.01rem;
+  float: left;
+  background-color: #ffffff;
+}
+

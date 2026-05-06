@@ -1,0 +1,6 @@
+
+
+lamico
+Leon1357
+
+LEFT JOIN tipo_cliente AS tpcli ON tpcli.IDTipoCliente = cli.TipoCliente

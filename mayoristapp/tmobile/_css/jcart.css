@@ -1,0 +1,476 @@
+/*
+jCart v1.3
+http://conceptlogic.com/jcart/
+*/
+
+/*#jcart * {font-family:arial, tahoma, verdana, sans-serif; }*/
+/*#jcart, #jcart input, #jcart-tooltip { font-size:13px;border: none; }*/
+/* #jcart {border: 1px solid #2a3e72; */
+
+#jcart fieldset { border:0; }
+
+#jcart-error { text-align:center; padding:1px; color: #b94a48; font-size:12px; }
+/*aca voy a meter los divs que me van a hacer falta
+@jcart-cabeza = div que contiene la cabecera con el titulo, la cantidad de items y un logo
+@jcart-cuerpo = el contenido de lo que se va comprando mas ,cantidad, articulo, precio unitario, precio cantidad y subtotal y eliminar
+@jcart-pie= el subtotal general y alguna que otra cosa mas.*/
+
+#jcart #cabeza{
+    /*height:             100px;*/
+    color:              #474948;
+    font-size:          12px;
+    /* padding-left:       5px; */
+    text-align:         center;
+    /* border-bottom: 1px solid #f0f0f0; */
+    margin:             1px 3px 30px 3px;
+    
+}
+#jcart #cabeza #subTitulo{
+    font-size: 16px;
+    line-height: 20px;
+    color: #474948;
+    font-weight: 700;
+    /*margin: 0*/
+    text-align: center;
+    height: 30px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-left: 10px;
+    margin-bottom: 5px;    
+        
+}
+#cabeza img{
+    float:          left;
+}
+
+#cabeza #jcart-fecha-rem{
+    background-color: #FFFFFF;
+    border:1px solid #d7d7d7;
+    width: 90px;
+    margin-left: 5px;
+    color: #474948;
+    font-weight: 700;
+    line-height: 20px;
+    font-size: 16px;
+  
+    padding-left: 1px; 
+   
+    
+    
+}
+#fechaRem{float:left;margin-right: 10px;}
+#cabeza label{
+    /*color:#474948;*/
+    color: #939694;
+    font-weight: 400;
+    font-size:16px;
+}
+#cabeza i{
+    color:#474948;
+}
+#nroRem{float:left;margin-left: 0px;}
+#cabeza #jcart-suc{
+    background-color: #FFFFFF;
+    border:1px solid #d7d7d7;
+    width: 50px;
+    margin-left: 5px;
+     color: #474948;
+    line-height: 20px;
+    font-size: 16px;
+    /*font-weight: bold;*/
+    padding-left: 1px; 
+}
+#cabeza #RemComprobante{
+    text-align: right;
+    height: 25px;
+    /*border-bottom: 1px solid #f0f0f0;*/
+    padding-left: 5px;
+    margin-bottom: 5px;
+    padding-top:5px;
+}
+#cabeza #jcart-nro-rem{
+    border:1px solid #d7d7d7;
+    width: 60px;
+    margin-left: 3px;
+    background-color: #ffffff;
+    color: #474948;
+    line-height: 20px;
+    font-size: 16px;
+    
+    /*margin-right: 10px;*/
+    padding-left: 1px;
+}
+
+
+#jcart #cuerpo{
+    min-height:     80px;
+    overflow:   auto;
+    margin:     4px;
+    background-color:   white;
+    /* border-bottom: 1px solid #f0f0f0; */
+    /* width: 100%; */
+}
+
+#jcart #pie{
+    color:              #092211;
+    border-bottom: 1px solid #f0f0f0;
+    /*margin:             0px 3px 5px 3px;*/
+    /* height:         100%; */
+    /* background-color:   #f9f9f9; */
+    background-color:   #fff;
+
+    
+    /* font-size:          12px; */
+    /* padding: 0.5%; */
+    /*border:             1px solid #DDDDDD;*/
+    float:              left;
+    /*margin:             3px;*/
+    width: 100%;
+}
+    
+    #jcart #pie select{
+        font-size: 0.655rem;
+        
+        width: 100%;
+        color: #737373;
+        border: 1px solid #2A3E72;
+        padding: 5px;
+        border-radius: 3px;
+    }
+
+    #jcart #pie select option:checked {
+        color: #2A3E72;
+        background-color: #b5ddff;
+        overflow-wrap: break-word;
+        border-bottom: 1px solid #2A3E72;
+        padding: 5px;
+        font-weight: bold;
+        
+    }
+
+    #jcart #pie select option{
+        padding:5px;
+    }
+    #jcart #pie textarea{
+        font-size: 12px;
+        width: 200px;
+    }
+
+#cuerpo table { 
+    border-spacing: 0px;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0; 
+    width:100%;
+    overflow: scroll;
+}
+#cuerpo thead {  }
+
+#cuerpo tbody {  }
+#cuerpo tfoot {  }
+/* #cuerpo tr:hover,#cuerpo tr.par:hover,#cuerpo tr.impar:hover {
+    background: #feffc3;
+    color: #474948;
+} */
+
+#cuerpo th { 
+    
+    color:#474948;
+    /* text-transform: uppercase;  */
+    border-bottom: 1px solid #d7d7d7; 
+    height: 32px;
+    
+    font-size: 10px;
+    
+}
+.aLeft{
+    text-align: left;
+}
+.aRight{
+    text-align: right;
+}
+.aCenter{
+    text-align: center;
+}
+
+#cuerpo td { 
+    padding: 5px 3px 5px 3px;
+    /*color:      #474948;*/
+    color:      #092211;
+    vertical-align: top;
+    font-size: 10px;
+    font-weight: normal;
+    border-bottom:  1px solid #2a3e72;
+    line-height: 12px;
+}
+#cuerpo td.vacio{
+    color:  #0084B4;
+    background-color: #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+}
+#cuerpo tbody tr.impar  {
+	/*background-color:#F1F1F1;*/
+    background-color: #f9f9f9;
+/*        color: #3D3D3D;*/
+}
+#cuerpo tbody tr.par {
+        background-color: #FFF;
+/*        color: #3D3D3D;*/
+}
+#jcart-title { 
+    float:left;
+    margin-left:5px;
+    color: #939694;
+    font-weight: 400;
+    font-size: 16px; 
+    width: 40%;
+    text-align: left;
+}
+/*#jcart table { width:100%; border:0; background:#fff; border-collapse:collapse; }
+#jcart thead {  }
+#jcart-title {  }
+#jcart tbody {  }
+#jcart tfoot {  }
+#jcart tr {  }
+#jcart th { background:#ccffcc }
+#jcart th, #jcart td { padding:5px; border:0; border:solid 1px #ccc; vertical-align:middle; text-align:left; font-weight:normal; }*/
+#jcart #jcart-empty { text-align:center; }
+
+.jcart-item-qty input {     font-size: 0.675rem;
+    text-align: center; }
+
+#jcart .jcart-item-name .tdNombreArticuloResumen{ 
+    /* width:140px; */
+    
+    font-weight:normal;  /* o el tamaño que quiere que corte la cadena. */
+    cursor:pointer;
+    /* color: #2A3E72; */
+    color:#092211;
+
+    /* color: #642C8A; */
+    font-size: 10px;
+    line-height: 12px;
+    margin-bottom: 5px;
+
+}
+#jcart .jcart-item-name span{
+    font-weight: bolder;
+    padding:2px 8px 2px 8px;
+    cursor: pointer;
+}
+#jcart .jcart-item-name .spanVerProductoInfo{
+    /* font-weight: bold; */
+    font-size:9px;
+}
+#jcart .jcart-item-name .tdDetalleProducto{ 
+    width: 100%;
+    display:none;
+    font-size: 10px;
+    line-height: 12px;
+    color:#67686C;
+    box-shadow: 0 8px 32px 0 rgba(51,51,51,0.2);
+    border: 1px solid #2a3e72;
+    padding: 5px;
+    margin-top: 5px;
+}
+.tdDetalleProducto span{ 
+    font-size: 10px;
+    color:#092211;
+
+}
+/* #jcart .jcart-item-name:hover{
+     color: #2472a4;
+      color:#67686C;
+} */
+
+#jcart .jcart-item-price { /*width:50px;*/ font-weight:normal; text-align:right; }
+#jcart .jcart-item-price .unidad{
+    color:#642C8A;
+    font-size: 10px;
+    padding: 1px;
+}
+#jcart .jcart-item-price .display{
+    color:#2A3E72;
+    font-size: 10px;
+    padding: 1px;
+}
+#jcart .jcart-item-price .bulto{
+    color:#2C8A7B;
+    font-size: 10px;
+    padding: 1px;
+}
+
+
+#jcart .jcart-item-price-tot { /*width:50px;*/ font-weight:bold; text-align:right; }
+.jcart-item-price span { display:block; }
+
+.jcart-remove { font-size:9px; color: red; text-decoration: none;}
+
+#jcart-subtotal { /*display:block;*/ 
+    /*width: 250px;*/
+    width:50%;
+    float:right;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    text-align: right;
+}
+#jcart-subtotal i{
+    color: #465A9E;
+}
+#jcart-subtotal-iva { display:block; }
+#jcart-subtotal strong { 
+    /*color: #2472a4;
+    font-size: 20px; 
+    color:#939694;*/
+    color: #465A9E;
+ 
+}
+
+.jcart-panel-uno{width: 50%;float:left; border: none;}
+/*  voy a colocar aca el codigo para separar texto alineado a la izquierda del 
+    importe que tendra que estar alineado a la derecha
+*/
+.textoPie{
+    text-align: left;
+    width:29%;
+    color: #67686C;
+    float:left;
+    font-size: 10px;
+    /* border-bottom: 1px dotted #f0f0f0; */
+    height: 25px;
+    line-height: 25px;
+    /* padding: 0.5%; */
+
+} 
+.importePie {
+    text-align: right;
+    font-weight: 700;
+    width:65%;
+    float:left;
+    color: #67686C;
+    font-size: 12px;
+    /* border-bottom: 1px dotted #f0f0f0; */
+    height: 25px;
+    line-height: 25px;
+    /* padding: 0.5%; */
+}
+.jcart-checkout{
+    width:99% ;
+    float:right;
+    margin-right: 1%;
+    margin-bottom: 14px;
+}
+.verde{
+     color:  #468847;
+}
+.azulImp{
+    color: #465A9E;
+    /* font-size: 14px; */
+    font-weight: bolder;
+    
+   
+}
+.azulImp strong{
+    font-weight: bold;
+}
+.jcart-panel-dos{width: 50%;float:left; border: none;}
+
+#jcart-por-desc-pie{
+    text-align: right;
+    font-weight: 700;
+    width:30px;
+    color: #474948;
+    font-size: 12px;
+    
+    line-height: 14px;   
+}
+.jcart-panel-tres{
+    width: 100%;
+    padding-top:5px;
+    float:left; 
+    display:flex;
+    border-top:  3px solid #2a3e72;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
+}
+.jcart-panel-tres label{
+    padding:2px;
+    font-size: 0.855rem;
+    color:#2A3E72;
+    font-weight: bold;
+}
+.jcart-panel-tres .opcionesPie{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.jcart-panel-tres .texto{
+/*    width: 12px;*/
+    /*font-size: px;*/
+    float:left;
+/*    margin-left: 5px;
+    margin-right: 5px;*/
+    /*line-height: 25px;*/
+    width:8%;
+}
+
+.jcart-panel-tres .domiciliosPie{
+    /* margin-left: 1%; */
+    float:left;
+    width:100%;
+    margin-top: 1%;
+}
+
+.jcart-panel-tres .opcionesPie input{
+    width: 100%;
+    border:1px solid #2a3e72;    
+    color: #2a3e72;
+    padding:5px;
+    border-radius: 3px;
+    
+}
+.jcart-panel-tres  input.detallePedido{
+    font-size: 0.755rem;
+    
+}
+
+
+
+#jcart-buttons input { padding:2px; margin:2px;/*margin-top:140px;*/border: 1px solid #FF0000; }
+
+
+
+
+.finCarrito {
+    /* border-top:  1px solid #2a3e72; */
+    width: 100%;
+    text-align: center;
+    float:left;
+    padding-top: 5px;
+    margin-top: 10px;;
+
+}
+
+.botonCheckout{
+    /* height: 34px; */
+    font-size: 1rem;
+    padding: 6px;
+    border-radius: 6px;
+    /* height: 34px; */
+    /* font-size: 1rem; */
+    border: 1px solid #2A3E72;
+    background-color: #2A3E72;
+    color:white;
+}
+#jcart-checkout.jcart-buttons-ok{background-color: #009933;}
+#jcart-checkout.jcart-buttons-ok:hover{
+    -moz-box-shadow: 0 0 3px 3px #8BDD31;
+    -webkit-box-shadow: 0 0 3px 3px #8BDD31;
+    box-shadow: 0 0 3px 3px #8BDD31;
+    
+}
+#jcart-paypal-checkout { display:block; width:14em; padding:10px; margin:20px auto; }
+
+#jcart-tooltip { display:none; position:absolute; padding:3px 7px 3px 25px; background: 3px center no-repeat #fdfdfd; border:1px solid #a6c9e2; z-index:9999; }

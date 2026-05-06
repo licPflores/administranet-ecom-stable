@@ -1,0 +1,102 @@
+#menuGeneral {
+    a {
+        display:  inline-flex;
+        color: nth($color-web, 5);
+        padding: 8px 0 8px 16px;
+        @media (max-width: 768px) {
+            padding: 8px 0 8px 8px;
+        }
+        i {
+            margin-right: 6px;
+            padding-top: 3px;
+            @media (max-width: 768px) {
+                font-size: 1.5rem;
+            }
+            @media (max-width: 576px) {
+                font-size: 1.75rem;
+            }
+        }
+        &::after {
+            margin-top: 9px;
+        }
+    }
+    .dropdown-menu {
+        margin: 0 12px 12px 12px;
+        padding: 0;
+        li {
+            margin: 0 12px 12px 24px;
+            color: nth($color-web, 5)
+        }
+    }
+    .fa-image-portrait {
+        z-index: 100;
+    }
+    .sm-mode {
+        background-color: nth($color-web, 5);
+        color: #ffffff;
+        font-size: 1.15rem;
+        line-height: 1.8rem;
+        border-radius: 14px;
+        height: 28px;
+        width: 28px;
+        text-align: center;
+        position: relative;
+        @media (max-width: 576px) {
+            line-height: 2rem;
+        }
+    }
+}
+#menuHeader {
+    @media (min-width: 992px) {
+        .dropdown-menu {
+            font-size: 0.95rem;
+            padding: 0;
+            border: none;
+            box-shadow: 0px 9px 8px -4px #000000;
+            li {
+                margin: 0 12px 12px 12px;
+                color: nth($color-web, 5)
+            }
+        }
+    }
+    @media (max-width: 992px) {
+        padding-top: 24px;
+        background-color: #ffffff;
+        position: relative;
+        top: -12px;
+        margin: auto -12px;
+        border-bottom: 4px solid nth($color-web, 5);
+        box-shadow: 0px 9px 8px -4px #000000;
+        .nav-link {
+            padding: 0 0 0 24px;
+        }
+        .dropdown-menu {
+            display: block !important;
+            margin: 0 12px 12px 12px;
+            padding: 0;
+            border: none;
+            li {
+                margin: 0 12px 12px 24px;
+                color: nth($color-web, 5)
+            }
+        }
+    }
+}
+
+#content-buscador {
+    @media (max-width: 576px) {
+        margin-bottom: -12px;
+    }
+    .navbar {
+        border-bottom: 4px solid nth($color-web, 4);
+        margin-bottom: 24px;
+        background-color: nth($color-web, 1) !important;
+        @media (max-width: 576px) {
+            margin-bottom: 16px;
+            padding: 0;
+        }
+        .container-fluid {
+            padding: 0px;
+        }
+    }
+}

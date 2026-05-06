@@ -1,0 +1,6 @@
+2020-09-28-11-02-03|5|javier|cliente:23022|error:Unknown column 'sp_saldo_cliente_premio.id_sp_saldo' in 'where clause' sql:UPDATE sp_saldo_cliente_premios 
+                                    SET 
+                                    saldo_premios=0 
+                                    WHERE 
+                                    sp_saldo_cliente_premio.id_sp_saldo=1807
+||

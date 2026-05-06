@@ -1,0 +1,116 @@
+/* header */
+@media screen and (min-width: 768px) {
+  #header {
+    height: auto;
+    width: 100%;
+    display: inline-block;
+  }
+  #header #headerLogo img {
+    margin: 5px 0 0 24px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 768px) {
+  #header #headerLogo img {
+    margin: 5px 0 0 5px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #header #statusBar {
+    width: 78%;
+    padding: 0 !important;
+    margin: 15px 0 !important;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 768px) {
+  #header #statusBar {
+    padding: 0 !important;
+    margin: 12px 0 !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #header #statusBar .vendedor {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 768px) {
+  #header #statusBar .vendedor {
+    margin-right: 0 !important;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 576px) {
+  #header ul#nav {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 576px) {
+  #header ul#nav li a {
+    padding: 5px 5px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #header ul#nav li:hover > ul a {
+    padding: 5px 5px;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 576px) {
+  #header ul#nav li:hover > ul {
+    display: block;
+    position: fixed;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #header .headerCliente {
+    width: calc(100% - 8px);
+    background-color: #2a3e7217;
+    margin: 4px;
+    padding: 4px 12px 4px 22px;
+    border-radius: 8px;
+  }
+  #header .headerCliente .nombrecliente {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  #header .headerCliente .nombrecliente .cliente {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  #header .headerCliente .nombrecliente .cliente a {
+    background-color: #2A3E72;
+    font-weight: normal;
+    color: #ffffff;
+    padding: 2px 8px 4px 8px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  #header .headerCliente .nombrecliente .cliente .cambiar-cliente {
+    padding: 4px 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: 1px solid #67686C;
+    position: relative;
+    top: -2px;
+    margin-left: 4px;
+  }
+  #header .headerCliente .nombrecliente .barra {
+    grid-area: 1 / 2 / 2 / 3;
+    text-align: right;
+  }
+}
+
+/* fin header */

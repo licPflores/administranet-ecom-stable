@@ -1,0 +1,204 @@
+@charset "UTF-8";
+/* ====  AUTOR  ====
+
+ nnnnnn  vvv  vvv 
+nnn  nnn vvv  vvv 
+nnn  nnn vvv  vvv 
+888  nnn  vvvvvv  
+nnn  nnn   vvvv 
+
+Pagina web Diseñada y Desarrollada por:
+nv | diseño gráfico
+
+Website: http://www.nvdg.com.ar/
+Email: nv.clientes@gmail.com
+Facebook: https://www.facebook.com/nv.dg.face/
+Twitter: https://twitter.com/nvgrafico/
+Instagram: https://www.instagram.com/nv.dg/
+Linkedin: https://www.linkedin.com/company/nv-dg/
+Pinterest: www.pinterest.com/nvgrafico/
+Google+: https://www.google.com/+NvdgArNv/
+............................*/
+.footer {
+  background-color: #2A3E72;
+  color: #ffffff;
+  padding: 24px 12px 12px 12px;
+}
+
+.footer a {
+  color: #ffffff !important;
+}
+
+.footer a:hover {
+  text-decoration: none;
+  color: #ffffff !important;
+  font-weight: bold !important;
+}
+
+.footer a i {
+  font-size: 24px;
+  top: 4px;
+  position: relative;
+}
+
+.footer h6 {
+  color: #ffffff;
+  font-family: "Lato-Italic";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.footer .menu-footer {
+  width: fit-content;
+  margin: 0px auto 38px auto;
+  padding: 0;
+  background-color: transparent !important;
+}
+
+.footer .navbar-nav {
+  position: relative;
+  right: 0px;
+  display: contents;
+}
+
+.footer .navbar-nav .nav-item a {
+  color: #ffffff;
+  font-family: "Lato";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  text-align: center;
+  padding: 12px;
+  transition: unset;
+}
+
+.footer .navbar-nav .nav-item a i {
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.footer .navbar-nav .nav-item a:hover, .footer .navbar-nav .nav-item a:focus, .footer .navbar-nav .nav-item a:focus-visible {
+  border: 1px solid transparent;
+}
+
+.footer .navbar-nav .nav-item a:hover i, .footer .navbar-nav .nav-item a:focus i, .footer .navbar-nav .nav-item a:focus-visible i {
+  font-size: 32px;
+  color: #E9A88F;
+}
+
+.footer .dropdown .dropdown-toggle:hover, .footer .dropdown .dropdown-toggle:focus, .footer .dropdown .dropdown-toggle:focus-visible {
+  border: none !important;
+}
+
+.footer .dropdown .dropdown-menu {
+  background-color: #2A3E72;
+  margin: 0;
+  padding: 24px 0 0 0;
+}
+
+.footer .dropdown .dropdown-menu a {
+  text-align: left;
+  padding: 0 24px 24px 24px;
+}
+
+.footer .dropdown .dropdown-menu a:hover, .footer .dropdown .dropdown-menu a:focus, .footer .dropdown .dropdown-menu a:focus-visible {
+  background-color: #2A3E72;
+  border: none;
+}
+
+.footer .logo-footer {
+  width: 220px;
+  margin: 0px auto 40px auto;
+}
+
+.footer .logo-footer img {
+  width: 100%;
+}
+
+.footer .menu-redes {
+  width: fit-content;
+  margin: 0 auto 38px auto;
+  padding: 0;
+  background-color: transparent !important;
+}
+
+.footer .contactos {
+  font-family: "Lato";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 0.75rem;
+  text-align: center;
+  color: #ffffff;
+  line-height: 22px;
+}
+
+.footer .contactos span {
+  font-family: "Lato-Italic";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 0.75rem;
+}
+
+.footer .legales {
+  font-family: "Lato";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 0.75rem;
+  margin: 30px 0 0 0;
+  text-align: center;
+}
+
+.footer .firma {
+  background-color: #E36673;
+  min-height: 48px;
+  text-align: center;
+  color: #ffffff;
+  padding: 8px 0 8px 0;
+  margin: 0 -15px;
+}
+
+.footer .firma a {
+  font-family: "Lato";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 0.875rem;
+  color: #ffffff;
+  margin: 0;
+  text-decoration: none;
+}
+
+.footer .firma a:hover {
+  font-family: "Lato-Italic";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: #ffffff !important;
+}
+
+.footer .firma .nv {
+  width: 28px;
+  margin: 0 14px;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 992px) {
+  .footer-soporte .navbar-nav {
+    display: flex !important;
+  }
+  .footer-soporte .nav-item {
+    width: 100% !important;
+    margin-bottom: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer .navbar-nav {
+    display: flex;
+  }
+  .footer .nav-item a {
+    width: 100%;
+  }
+}

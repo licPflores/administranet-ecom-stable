@@ -1,0 +1,76 @@
+.contacto {
+    background-image: url('../img/img__patternGris--PassoSuperior.jpg');
+    .container {
+        background-color: nth($color-web, 1);
+    }
+    iframe {
+        width: 100%;
+        height: 440px;
+    }
+    .contactos {
+        .text {
+            color: nth($color-web, 6);
+            @include font(1, normal, normal, 16px);
+            span {
+                @include font(1, normal, normal, 24px);
+            }
+        }
+    }
+    form {
+        .contact_campo_lbl,
+        .contact_pie {
+            color: nth($color-web, 11);
+            @include font(1, normal, normal, 16px);
+        }
+        input {
+            border: 1px solid nth($color-web, 10);
+        }
+    }
+}
+.medios-contacto {
+    .container {
+        min-height: 120px;
+        nav {
+            background-color: transparent !important;
+        }
+        h4 {
+            @include font(1, normal, normal, 24px);
+            color: nth($color-web, 3);
+            
+            text-align: center;
+            margin-top: 24px;
+        }
+        .navbar-nav {
+            display: contents;
+        }
+        .menu-soporte {
+            ul {
+                width: 100%;
+            }
+            .nav-item {
+                width: 33.3%;
+                padding: 0 6px;
+                a {
+                    background-color: nth($color-web, 1);
+                    border: 1px solid nth($color-web, 3);
+                    border-radius: 8px;
+                    height: 34px;
+                    width: 100%;
+                    @include font(1, normal, normal, 12px);
+                    img { width: 20px; }
+                    i {
+                        color: nth($color-web, 5);
+                        font-size: 18px;
+                        padding: 0 2px;
+                        vertical-align: middle;
+                        line-height: 12px;
+                    }
+                }
+            }
+        }
+        .card .card-body {
+            display: block;        
+            grid-template-rows: none;
+        }
+    }
+}
