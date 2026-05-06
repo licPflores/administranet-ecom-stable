@@ -1,0 +1,8 @@
+.vscode
+#mayoristapp/conexion-general.inc.php
+mayoristapp/recibo/log/
+mayoristapp/*.json
+mayoristapp/log/
+mayoristapp/_tmp/
+mayoristapp/inventario/log/
+mayoristapp/_img/productos/
