@@ -68,6 +68,7 @@ $usoBultoPromedio = $_SESSION["uso_bulto_promedio"];
                         </select>
 
                     </div>
+
                     <div class="control">
                         <label for="verInforme" class="parametros">Valores en: </label>
                         <select name="verInforme" id="verInforme" required="required">
@@ -79,6 +80,7 @@ $usoBultoPromedio = $_SESSION["uso_bulto_promedio"];
                         </select>
 
                     </div>
+
                     <div class="control">
                         <label for="verInformeDisplayBulto" class="parametros">Pesentación: </label>
 
@@ -142,24 +144,22 @@ $usoBultoPromedio = $_SESSION["uso_bulto_promedio"];
 
                     </div>
                 </div>
-                <div class='panelesBloqueInforme'>
+                <div class='panelesBloqueInforme panel-fechas'>
                     <div class="titulo">Fechas </div>
-
 
                     <div class="control w100p">
                         <label class="parametros">Primario:</label>
-                        <span><input type="date" name="fechaDesde" id="fechaDesde" required="required" value=""><label for="fechaDesde" class="parametros">al</label></span>
-                        <span><input type="date" name="fechaHasta" id="fechaHasta" required="required" value=""></span>
+                        <input type="date" name="fechaDesde" id="fechaDesde" required="required" value="">
+						<label for="fechaDesde" class="parametros">al</label>
+                        <input type="date" name="fechaHasta" id="fechaHasta" required="required" value="">
                     </div>
-
-
 
                     <div class="control w100p">
                         <label class="parametros">Secundario:</label>
-                        <span><input type="date" name="fechaDesdeDos" id="fechaDesdeDos"><label for="fechaDesdeDos" class="parametros">al</label></span>
-                        <span><input type="date" name="fechaHastaDos" id="fechaHastaDos"></span>
+                        <input type="date" name="fechaDesdeDos" id="fechaDesdeDos">
+						<label for="fechaDesdeDos" class="parametros">al</label>
+                        <input type="date" name="fechaHastaDos" id="fechaHastaDos">
                     </div>
-
 
                 </div>
 
@@ -167,40 +167,38 @@ $usoBultoPromedio = $_SESSION["uso_bulto_promedio"];
 
 
 
-                <div class='panelesBloqueInforme'>
-                    <div class="titulo">
-                        Punto de Venta
-                    </div>
+                <div class="panelesBloqueInforme panel-filtro-simple">
+                    <div class="titulo">Punto de Venta</div>
+
                     <div class="control">
                         <label class="parametros">Punto:</label>
+
                         <select name="puntoVenta" id="puntoVenta">
                             <option value="|Todos" selected="selected"> - todos - </option>
                             <?php echo $_SESSION["lista_pv_opc"]; ?>
                         </select>
 
-                        <label class="parametros">
-                            <button name="addPv" id="addPv" type="button" class="botonNuevo"><i class="fas fa-plus fa-lg fa-fw"></i></button>
-                        </label>
-                    </div>
-                    <div class="control">
+						<button name="addPv" id="addPv" type="button" class="botonNuevo">
+							<i class="fas fa-plus fa-lg fa-fw"></i>
+						</button>
 
+                    </div>
+
+                    <div class="control">
+						<label class="parametros">Aplicados: </label>
                         <ul name="listaPv" id="listaPv" class="listaSeleccionado">
                             <li id="1"><i class="fas fa-check-square fa-lg fa-fw"></i>Punto venta: Todos <a class="borrarLi" rel="listaPv|1" href="#" title="Eliminar de la lista"><i class="fa fa-trash fa-lg"></i></a></li>
                         </ul>
 
                         <input type="hidden" name="pvSelec" id="pvSelec" value="|Todos|1||" required="required">
-
                     </div>
+
                 </div>
 
-                <div class="panelesBloqueInforme">
-
+                <div class="panelesBloqueInforme panel-filtro-compuesto">
                     <div class="titulo"> Filtros </div>
-                    
-                    
 
                     <div class="control">
-
                         <label for="filtrarPor" class="parametros">Tipo:</label>
                         <select name="filtrarPor" id="filtrarPor">
                             <option value=""> - seleccionar -</option>
@@ -216,26 +214,19 @@ $usoBultoPromedio = $_SESSION["uso_bulto_promedio"];
                             <option value="marca">Marca</option>
                             <option value="usuario">Usuario</option>
                             <option value="sucursal">Sucursal</option>
-
                         </select>
-
                     </div>
 
-                    <div class="control w80p">
+                    <div class="control-con-boton">
                         <!-- <label for="seleccionFiltro" class="parametros">Seleccionar: </label> -->
                         <input id="seleccionFiltro" alt="" autocomplete="off" type="search" placeholder="nombre o codigo..." disabled="disabled">
-                        <label class="parametros">
-                            <button name="addFiltro" id="addFiltro" class="botonNuevo" type="button"> <i class="fas fa-plus fa-lg fa-fw"></i> </button>
-                        </label>
+                        <button name="addFiltro" id="addFiltro" class="botonNuevo" type="button"> <i class="fas fa-plus fa-lg fa-fw"></i> </button>
                     </div>
 
                     <div class="control w100p">
-                        <label  class="parametros">Aplicados: </label>
+                        <label class="parametros">Aplicados: </label>
                         <ul name="listaFiltro" id="listaFiltro" class="listaSeleccionado"></ul>
-
                         <input type="hidden" name="filtroSelec" id="filtroSelec" value="" required="required">
-
-
                     </div>
                 </div>
 

@@ -1,6 +1,94 @@
 @charset "utf-8";
 /* CSS Document */
 
+:root {
+    --body-bg: #efefef;
+    --neutro-100: #0d1214;
+    --neutro-80: #393939;
+    --neutro-60: #67686C;
+    --neutro-40: #808080;
+    --neutro-20: #bfbfbf;
+    --neutro-10: #ebebeb;
+    --neutro-0: #ffffff;
+    --neutro-100-rgb: 13, 18, 20;
+    --neutro-80-rgb: 57, 57, 57;
+    --neutro-60-rgb: 103, 104, 108;
+    --neutro-40-rgb: 128, 128, 128;
+    --neutro-20-rgb: 191, 191, 191;
+    --neutro-10-rgb: 235, 235, 235;
+    --neutro-0-rgb: 255, 255, 255;
+    --primario-web-120: #1b2b53;
+    --primario-web-100: #2A3E72;
+    --primario-web-80: #465A9E;
+    --primario-web-opcion-clara: #1DCAFF;
+    --primario-web-120-rgb: 27, 43, 83;
+    --primario-web-100-rgb: 42, 62, 114;
+    --primario-web-80-rgb: 70, 90, 158;
+    --primario-web-opcion-clara-rgb: 29, 202, 255;
+    --secundario-web-100: #E36673;
+    --secundario-web-80: #E9A88F;
+    --secundario-web-100-rgb: 227, 102, 115;
+    --primario-app: #2A3E72;
+    --secundario-app: #2C8A7B;
+    --terciario-app: #642C8A;
+    --display: #2A3E72;
+    --bulto: #2C8A7B;
+    --unidad: #642C8A;
+    --pallet: #FE6C01;
+    --exito-100: #00A830;
+    --exito-80: #468847;
+    --advertencia-120: #940b0b;
+    --advertencia-100: #FF0000;
+    --advertencia-80: #b94a48;
+    --en-preparacion-color-border: #f97316;
+    --en-preparacion-color-bg: #fff7ed;
+    --preparado-color-border: #618edb;
+    --preparado-color-bg: #eef3fc;
+    --en-remito-color-border: #22c55e;
+    --en-remito-color-bg: #f0fdf4;
+    --facturado: #02bd02;
+    --pendiente: #E36673;
+    --parcial: #3473c3;
+    --cerrado: #186d51;
+    --preparado: #642C8A;
+    --pendiente-remito: #FE6C01;
+	--producto-promocion: #20b689;
+    --bootstrap-primary: #0d6efd;
+    --error-cancel: #b22222;
+    --descuento-success: #b9e8b9;
+    --gradiente-login: #252237;
+    --neutro-100-transparent: rgba(13, 18, 20, 0.18);
+    --neutro-5: #feffc3;
+    --color-contraste-textos: #005b1a;
+    --text-xs: 0.625rem;
+    --text-sm: 0.75rem;
+    --text-base: 0.875rem;
+    --text-md: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 2rem;
+    --text-4xl: 2.5rem;
+    --text-price: 1.5625rem;
+    --text-comprobante: 2.1875rem;
+    --leading-none: 1;
+    --leading-tight: 1.25;
+    --leading-snug: 1.375;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.875;
+    --leading-loose: 2;
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    --font-black: 900;
+    --tracking-tight: -0.03125rem;
+    --tracking-normal: 0;
+    --tracking-wide: 0.025em;
+}
+
 /* ---------------------------------------------
 	Mommy feet
 ----------------------------------------------*/
@@ -1189,10 +1277,10 @@ label.ventana{
     }
     .paneles .control {
 		display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        margin: 0.5%;
-        
+		justify-content: flex-start;
+		align-items: flex-start;
+		margin: 0.5%;
+		flex-direction: column; 
 	}
     .paneles .control input[type="radio"] {
         display:none;
@@ -1207,18 +1295,21 @@ label.ventana{
     .panelesBloqueInforme{
         width:100%;
         
-        margin-bottom: 5px;        
-        display:flex;
+        margin-bottom: 12px;        
+        /*display:flex;*/
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-start;
-        width: 99%;
+        width: 100%;
         border: 2px solid #2A3E72;
-        margin: 2px;
+        /*margin: 2px;*/
         border-radius: 5px;
-        padding: 5px;
+        padding: 6px;
 
-
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: 10px;
+		align-items: start;
     }
 
     .panelesBloqueInformeAccion{
@@ -1233,6 +1324,8 @@ label.ventana{
     }
 
     .panelesBloqueInforme .titulo{
+		grid-column: 1 / -1;
+
         width:100%;
         color:#2A3E72;
         font-size: 0.775rem;
@@ -1247,8 +1340,10 @@ label.ventana{
         color: #2A3E72;
         font-size: 12px;
         font-weight: bold;
+		padding-left: 2px;
     }
     .panelesBloqueInforme .control select{
+		width: 100%;
         color: #2A3E72;
         background-color: #b5ddff;
         font-size: 12px;
@@ -1257,6 +1352,7 @@ label.ventana{
         border-radius: 3px;
     }
     .panelesBloqueInforme .control input{
+		width: 100%;
         color: #2A3E72;
         background-color: #b5ddff;
         font-size: 12px;
@@ -1264,10 +1360,66 @@ label.ventana{
         padding: 2px;
         border-radius: 3px;
     }
+	.panelesBloqueInforme.panel-fechas {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(306px, 1fr));
+		gap: 10px;
+		align-items: start;
+	}
+	.panelesBloqueInforme.panel-fechas .control {
+		flex-direction: row;
+		gap: 6px;
+	}
+	.panelesBloqueInforme.panel-fechas .control label {
+		padding: 0;
+		margin: 0;
+	}
 
 
+	.panelesBloqueInforme.panel-filtro-simple {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(306px, 1fr));
+		gap: 6px;
+		align-items: start;
+	}
+	.panelesBloqueInforme.panel-filtro-simple .control {
+		display: grid;
+		grid-template-columns: 1fr 50px;
+		gap: 6px;
+		align-items: start;
+	}
+	.panelesBloqueInforme.panel-filtro-simple .control .titulo,
+	.panelesBloqueInforme.panel-filtro-simple .control .parametros {
+		grid-column: 1 / -1;
+	}
 
-    .paneles select{
+
+	.panelesBloqueInforme.panel-filtro-compuesto {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(306px, 1fr));
+		gap: 6px;
+		align-items: start;
+	}
+	.panelesBloqueInforme.panel-filtro-compuesto .control-con-boton {
+		display: grid;
+		grid-template-columns: 1fr 50px;
+		gap: 6px;
+		align-items: end;
+		height: 60px;
+	}
+	.panelesBloqueInforme.panel-filtro-compuesto .control-con-boton .titulo,
+	.panelesBloqueInforme.panel-filtro-compuesto .control-con-boton .parametros {
+		grid-column: 1 / -1;
+	}
+
+	.panelesBloqueInforme.panel-filtro-compuesto .control-con-boton input,
+	.panelesBloqueInforme.panel-filtro-compuesto .control-con-boton button {
+		width: 100% !important;
+		margin: 0 !important;
+	}
+
+
+    .paneles select {
 		
 		color: #2A3E72;
 
@@ -1279,8 +1431,13 @@ label.ventana{
         font-size: 0.775rem;
        
         font-weight: 800;
-
+		height: 32px;
         max-width: 100%;       
+	}
+
+	.paneles input,
+	.paneles button {
+		height: 32px;
 	}
     
 	.paneles select.param {
@@ -3900,4 +4057,58 @@ table.dataTable tbody td div.estado-entregado-no   {
     white-space: nowrap;
 
     border-radius: 10px;
+}
+
+#dashboard-container, .dashboard-container {
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+#dashboard-container .dashboard-title, .dashboard-container .dashboard-title {
+    font-size: var(--text-3xl);
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--primario-web-100);
+}
+
+#dashboard-container .cards-grid, .dashboard-container .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+#dashboard-container a, .dashboard-container a {
+    text-decoration: none;
+}
+
+#dashboard-container .card-modulo, .dashboard-container .card-modulo {
+    background: var(--neutro-0);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(42, 62, 114, 0.08);
+    padding: 28px 22px 18px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s;
+    border: 1px solid var(--neutro-20);
+}
+
+#dashboard-container .card-modulo:hover, .dashboard-container .card-modulo:hover {
+    box-shadow: 0 4px 16px rgba(42, 62, 114, 0.14);
+    border-color: var(--primario-web-opcion-clara);
+}
+
+#dashboard-container .card-icon, .dashboard-container .card-icon {
+    font-size: var(--text-4xl);
+    margin-bottom: 12px;
+    color: var(--primario-web-80);
+}
+
+#dashboard-container .card-title, .dashboard-container .card-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--neutro-60);
 }
