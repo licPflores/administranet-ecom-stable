@@ -593,238 +593,245 @@ $lista_iva = completa_select(devuelve_array($sqlIva, $connV), $cli["IDIva"]);
         <?php require_once $barra;
         ?>
         <div id="content">
-            <div class="divFormularios">
-                <!-- <div id="titulo" class="formulario">
-                    <?php if ($vuelta == "") : ?>
-                        <i class="fa fa-chevron-circle-left fa-2x fa-lg floatLeft" id="botonVolver" title="volver a listado de clientes"> </i>
-                    <?php else : ?>
-                        <i class="fa fa-envelope fa-2x fa-lg floatLeft" id="botonMail" title="Enviar Mail"> </i>
-                    <?php endif; ?>
-                    Editar Cliente
+			<div class="paneles bg-white">
+				<div class="divFormularios">
+					<!-- <div id="titulo" class="formulario">
+						<?php if ($vuelta == "") : ?>
+							<i class="fa fa-chevron-circle-left fa-2x fa-lg floatLeft" id="botonVolver" title="volver a listado de clientes"> </i>
+						<?php else : ?>
+							<i class="fa fa-envelope fa-2x fa-lg floatLeft" id="botonMail" title="Enviar Mail"> </i>
+						<?php endif; ?>
+						Editar Cliente
 
-                    <i id="editarClienteR" class="fa fa-check-circle fa-2x fa-lg floatRight"></i>
-                </div> -->
+						<i id="editarClienteR" class="fa fa-check-circle fa-2x fa-lg floatRight"></i>
+					</div> -->
 
-                
-                <div class="cartelCliente" id="cartelNuevo"></div>
-                <form method="post" action="" id="formCliente" name="formCliente" class="cuerpo-formulario">
-                <div id="titulo" class="formulario">
-                                <h1> Editar Cliente </h1>                
-                            </div>    
-                
-                
-                <?php if ($permisoAltaCliente == "No") : ?>
-                        <!-- FORMULARIO CLIENTE CORTO-->
-                       
-                        <div class="renglonForm">
-                            <label for="telefonoCliente">Telefono<em>*</em>
-                                <input type="tel" id="telefonoCliente" name="telefonoCliente" value="<?php echo $cli["telefono"] ?>" placeholder="telefono - movil...">
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="emailCliente">E-mail<em>*</em>
-                                <input type="email" id="emailCliente" name="emailCliente" value="<?php echo $cli["Email"] ?>" placeholder="E-mail...">
-                            </label>
-                            <div id="hint"></div>
-                        </div>
+					
+					<div class="cartelCliente" id="cartelNuevo"></div>
+					<form method="post" action="" id="formCliente" name="formCliente" class="cuerpo-formulario">
+					<div id="titulo" class="formulario">
+									<h1> Editar Cliente </h1>                
+								</div>    
+					
+					
+					<?php if ($permisoAltaCliente == "No") : ?>
+							<!-- FORMULARIO CLIENTE CORTO-->
+						
+							<div class="renglonForm">
+								<div class="bloque-renglon">
+									<label for="telefonoCliente">Telefono<em>*</em>
+										<input type="tel" id="telefonoCliente" name="telefonoCliente" value="<?php echo $cli["telefono"] ?>" placeholder="telefono - movil...">
+									</label>
+								</div>
+								<div class="bloque-renglon">
+									<label for="emailCliente">E-mail<em>*</em>
+										<input type="email" id="emailCliente" name="emailCliente" value="<?php echo $cli["Email"] ?>" placeholder="E-mail...">
+									</label>
+									<div id="hint"></div>
+								</div>
+								<div class="bloque-renglon">
+									<label for="calleCliente">Calle<em>*</em>
+										<input type="text" id="calleCliente" name="calleCliente" value="<?php echo $cli["Calle"] ?>" placeholder="Calle...">
+									</label>
+								</div>
+							</div>
 
-                        <div class="renglonForm">
-                            <label for="calleCliente">Calle<em>*</em>
-                                <input type="text" id="calleCliente" name="calleCliente" value="<?php echo $cli["Calle"] ?>" placeholder="Calle...">
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="numeroCliente">Nro<em>*</em>
-                                <input type="text" id="numeroCliente" name="numeroCliente" value="<?php echo $cli["NroCalle"] ?>" placeholder="Numero de calle...">
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="deptoCliente">Depto<em>*</em>
-                                <input type="text" id="deptoCliente" name="deptoCliente" value="<?php echo $cli["Dpto"] ?>" placeholder="Numero o letra departamento...">
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="provinciaCliente">Provincia<em>*</em>
-                                <select name="provinciaCliente" id="provinciaCliente">
-                                    <?php echo $lista_prov; ?>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="departamentoCliente">Depto/Localidad<em>*</em>
-                                <select name="departamentoCliente" id="departamentoCliente">
-                                    <?php echo $lista_depto;   ?>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="distrito">Distrito/Partido<em>*</em>
-                                <select name="distritoCliente" id="distritoCliente">
-                                    <?php echo $lista_dist; ?>
-                                </select>
-                            </label>
-                        </div>
+							<div class="renglonForm">
+								<div class="bloque-renglon">
+									<label for="numeroCliente">Nro<em>*</em>
+										<input type="text" id="numeroCliente" name="numeroCliente" value="<?php echo $cli["NroCalle"] ?>" placeholder="Numero de calle...">
+									</label>
+								</div>
+								<div class="bloque-renglon">
+									<label for="deptoCliente">Depto<em>*</em>
+										<input type="text" id="deptoCliente" name="deptoCliente" value="<?php echo $cli["Dpto"] ?>" placeholder="Numero o letra departamento...">
+									</label>
+								</div>
+							</div>
 
+							<div class="renglonForm">
+								<div class="bloque-renglon">
+									<label for="provinciaCliente">Provincia<em>*</em>
+										<select name="provinciaCliente" id="provinciaCliente">
+											<?php echo $lista_prov; ?>
+										</select>
+									</label>
+								</div>
 
+								<div class="bloque-renglon">
+									<label for="departamentoCliente">Depto/Localidad<em>*</em>
+										<select name="departamentoCliente" id="departamentoCliente">
+											<?php echo $lista_depto;   ?>
+										</select>
+									</label>
+								</div>
 
-                    <?php else : ?>
-                        <!-- FORMULARIO CLIENTE COMPLETO-->
-                        <div class="renglonForm">
-                            <label for="tipoCliente">
-                                Tipo<em>*</em>
-                                <select name="tipoCliente" id="tipoCliente">
-                                    <option value="">- tipo de cliente -</option>
-                                    <?php echo $lista_tcliente; ?>
-                                </select>
-
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="nombreCliente">Nombre<em>*</em>
-                                <input type="text" id="nombreCliente" name="nombreCliente" <?php if ($permisoAltaCliente == "No") {
-                                                                                                echo 'readonly="readonly"';
-                                                                                            } ?> value="<?php echo $cli["nombre_cliente"] ?>" placeholder="Nombre de Cliente">
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="calleCliente">Calle<em>*</em>
-                                <input type="text" id="calleCliente" name="calleCliente" value="<?php echo $cli["Calle"] ?>" placeholder="Calle...">
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="numeroCliente">Nro<em>*</em>
-                                <input type="text" id="numeroCliente" name="numeroCliente" value="<?php echo $cli["NroCalle"] ?>" placeholder="Numero de calle...">
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="deptoCliente">Depto<em>*</em>
-                                <input type="text" id="deptoCliente" name="deptoCliente" value="<?php echo $cli["Dpto"] ?>" placeholder="Numero o letra departamento...">
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="provinciaCliente">Provincia<em>*</em>
-                                <select name="provinciaCliente" id="provinciaCliente">
-                                    <?php echo $lista_prov; ?>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="departamentoCliente">Depto/Localidad<em>*</em>
-                                <select name="departamentoCliente" id="departamentoCliente">
-                                    <?php echo $lista_depto;   ?>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="distrito">Distrito/Partido<em>*</em>
-                                <select name="distritoCliente" id="distritoCliente">
-                                    <?php echo $lista_dist; ?>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="telefonoCliente">Telefono<em>*</em>
-                                <input type="tel" id="telefonoCliente" name="telefonoCliente" value="<?php echo $cli["telefono"] ?>" placeholder="telefono - movil...">
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="emailCliente">E-mail<em>*</em>
-                                <input type="email" id="emailCliente" name="emailCliente" value="<?php echo $cli["Email"] ?>" placeholder="E-mail...">
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="faxCliente">Fax
-                                <input type="text" id="faxCliente" name="faxCliente" value="<?php echo $cli["Fax"] ?>" placeholder="Fax...">
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="ivaCliente">IVA<em>*</em>
-                                <select name="ivaCliente" id="ivaCliente">
-                                    <option value="">- tipo de IVA -</option>
-                                    <?php echo $lista_iva; ?>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="tipoDocCliente">Tipo Doc<em>*</em>
-                                <select name="tipoDocCliente" id="tipoDocCliente">
-                                    <option value="">- tipo documento -</option>
-
-                                    <option <?php if ($cli["tipo_doc"] == "CUIT") {
-                                                echo 'selected="selected"';
-                                            } ?> value="CUIT">CUIT</option>
-                                    <option <?php if ($cli["tipo_doc"] == "DNI") {
-                                                echo 'selected="selected"';
-                                            } ?> value="DNI">DNI</option>
-                                    <option <?php if ($cli["tipo_doc"] == "LE") {
-                                                echo 'selected="selected"';
-                                            } ?>value="LE">LE</option>
-                                    <option <?php if ($cli["tipo_doc"] == "LC") {
-                                                echo 'selected="selected"';
-                                            } ?>value="LC">LC</option>
-                                    <option <?php if ($cli["tipo_doc"] == "CIE") {
-                                                echo 'selected="selected"';
-                                            } ?>value="CIE">CIE</option>
-                                    <option <?php if ($cli["tipo_doc"] == "PAS") {
-                                                echo 'selected="selected"';
-                                            } ?>value="PAS">PAS</option>
-                                    <option <?php if ($cli["tipo_doc"] == "NOID") {
-                                                echo 'selected="selected"';
-                                            } ?>value="NOID">NOID</option>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="nroDocCliente">Nro<em>*</em>
-                                <?php if ($cli["tipo_doc"] != "CUIT") : ?>
-                                    <input type="number" id="nroDocCliente" <?php if ($permisoAltaCliente == "No") {
-                                                                                echo 'readonly="readonly"';
-                                                                            } ?> name="nroDocCliente" value="<?php echo $cli["CUIT"]; ?>" placeholder="documento...">
-                                    <input type="text" id="nroCuitCliente" <?php if ($permisoAltaCliente == "No") {
-                                                                                echo 'readonly="readonly"';
-                                                                            } ?> name="nroCuitCliente" placeholder="00-0000000-0" size="13" style="display:none">
-
-                                <?php else : ?>
-                                    <input type="number" id="nroDocCliente" <?php if ($permisoAltaCliente == "No") {
-                                                                                echo 'readonly="readonly"';
-                                                                            } ?> name="nroDocCliente" placeholder="documento..." style="display:none">
-                                    <input type="text" id="nroCuitCliente" <?php if ($permisoAltaCliente == "No") {
-                                                                                echo 'readonly="readonly"';
-                                                                            } ?> name="nroCuitCliente" value="<?php echo $cli["CUIT"]; ?>" placeholder="00-0000000-0" size="13">
-
-                                <?php endif; ?>
-                            </label>
-                        </div>
-                    <?php endif; ?>
-
-                    <input type="hidden" id="codCliente" name="codCliente" value="<?php echo $idCliente; ?>">
-                    <input type="hidden" id="vuelta" name="vuelta" value="<?php echo $vuelta; ?>">
-                    <input type="hidden" id="completo" name="completo" value="<?php echo $permisoAltaCliente ?>">
+								<div class="bloque-renglon">
+									<label for="distrito">Distrito/Partido<em>*</em>
+										<select name="distritoCliente" id="distritoCliente">
+											<?php echo $lista_dist; ?>
+										</select>
+									</label>
+								</div>
+							</div>
 
 
 
-                    <div class="renglonForm renglonBotones" style="text-align: center; width: 97%; padding:1%;">
-                    <button id="botonVolver" class="botonNuevo grande botonVolver" type="button">
-                        <i class="fas fa-arrow-left fa-fw fa-lg"></i> Volver
-                    </button>
+						<?php else : ?>
+							<!-- FORMULARIO CLIENTE COMPLETO-->
+							<div class="renglonForm">
+								<div class="bloque-renglon">
+									<label for="tipoCliente">Tipo<em>*</em></label>
+									<select name="tipoCliente" id="tipoCliente">
+										<option value="">- tipo de cliente -</option>
+										<?php echo $lista_tcliente; ?>
+									</select>
+								</div>
+								<div class="bloque-renglon">
+									<label for="nombreCliente">Nombre<em>*</em></label>
+									<input type="text" id="nombreCliente" name="nombreCliente" <?php if ($permisoAltaCliente == "No") { echo 'readonly="readonly"'; } ?> value="<?php echo $cli["nombre_cliente"] ?>" placeholder="Nombre de Cliente">
+								</div>
+							</div>
+							<div class="renglonForm">
+								<div class="bloque-renglon">
+									<label for="calleCliente">Calle<em>*</em></label>
+									<input type="text" id="calleCliente" name="calleCliente" value="<?php echo $cli["Calle"] ?>" placeholder="Calle...">
+								</div>
+								<div class="bloque-renglon">
+									<label for="numeroCliente">Nro<em>*</em></label>
+									<input type="text" id="numeroCliente" name="numeroCliente" value="<?php echo $cli["NroCalle"] ?>" placeholder="Numero de calle...">
+								</div>
+								<div class="bloque-renglon">
+									<label for="deptoCliente">Depto</label>
+									<input type="text" id="deptoCliente" name="deptoCliente" value="<?php echo $cli["Dpto"] ?>" placeholder="Numero o letra departamento...">
+								</div>
+							</div>
+							<div class="renglonForm">
+								<div class="bloque-renglon">
+									<label for="provinciaCliente">Provincia<em>*</em></label>
+									<select name="provinciaCliente" id="provinciaCliente">
+										<?php echo $lista_prov; ?>
+									</select>
+								</div>
+							</div>
+							<div class="renglonForm">
+								<div class="bloque-renglon">
+									<label for="departamentoCliente">Depto/Localidad<em>*</em></label>
+									<select name="departamentoCliente" id="departamentoCliente">
+										<?php echo $lista_depto;   ?>
+									</select>
+								</div>
+								<div class="bloque-renglon">
+									<label for="distritoCliente">Distrito/Partido<em>*</em></label>
+									<select name="distritoCliente" id="distritoCliente">
+										<?php echo $lista_dist; ?>
+									</select>
+								</div>
+							</div>
+							<div class="renglonForm">
+								<div class="bloque-renglon">
+									<label for="telefonoCliente">Telefono<em>*</em></label>
+									<input type="tel" id="telefonoCliente" name="telefonoCliente" value="<?php echo $cli["telefono"] ?>" placeholder="telefono - movil...">
+								</div>
+								<div class="bloque-renglon">
+									<label for="emailCliente">E-mail</label>
+									<input type="email" id="emailCliente" name="emailCliente" value="<?php echo $cli["Email"] ?>" placeholder="E-mail...">
+								</div>
+							</div>
+							<div class="renglonForm">
+								<div class="bloque-renglon">
+									<label for="faxCliente">Fax</label>
+									<input type="text" id="faxCliente" name="faxCliente" value="<?php echo $cli["Fax"] ?>" placeholder="Fax...">
+								</div>
+								<div class="bloque-renglon">
+									<label for="ivaCliente">IVA<em>*</em></label>
+									<select name="ivaCliente" id="ivaCliente">
+										<option value="">- tipo de IVA -</option>
+										<?php echo $lista_iva; ?>
+									</select>
+								</div>
+							</div>
+							<div class="renglonForm">
+								<div class="bloque-renglon">
+									<label for="tipoDocCliente">Tipo Doc<em>*</em></label>
+									<select name="tipoDocCliente" id="tipoDocCliente">
+										<option value="">- tipo documento -</option>
+
+										<option <?php if ($cli["tipo_doc"] == "CUIT") {
+													echo 'selected="selected"';
+												} ?> value="CUIT">CUIT</option>
+										<option <?php if ($cli["tipo_doc"] == "DNI") {
+													echo 'selected="selected"';
+												} ?> value="DNI">DNI</option>
+										<option <?php if ($cli["tipo_doc"] == "LE") {
+													echo 'selected="selected"';
+												} ?>value="LE">LE</option>
+										<option <?php if ($cli["tipo_doc"] == "LC") {
+													echo 'selected="selected"';
+												} ?>value="LC">LC</option>
+										<option <?php if ($cli["tipo_doc"] == "CIE") {
+													echo 'selected="selected"';
+												} ?>value="CIE">CIE</option>
+										<option <?php if ($cli["tipo_doc"] == "PAS") {
+													echo 'selected="selected"';
+												} ?>value="PAS">PAS</option>
+										<option <?php if ($cli["tipo_doc"] == "NOID") {
+													echo 'selected="selected"';
+												} ?>value="NOID">NOID</option>
+									</select>
+								</div>
+								<div class="bloque-renglon">
+									<label for="nroDocCliente">Nro<em>*</em></label>
+									<?php if ($cli["tipo_doc"] != "CUIT") : ?>
+										<input type="number" id="nroDocCliente" <?php if ($permisoAltaCliente == "No") {
+																					echo 'readonly="readonly"';
+																				} ?> name="nroDocCliente" value="<?php echo $cli["CUIT"]; ?>" placeholder="documento...">
+										<input type="text" id="nroCuitCliente" <?php if ($permisoAltaCliente == "No") {
+																					echo 'readonly="readonly"';
+																				} ?> name="nroCuitCliente" placeholder="00-0000000-0" size="13" style="display:none">
+
+									<?php else : ?>
+										<input type="number" id="nroDocCliente" <?php if ($permisoAltaCliente == "No") {
+																					echo 'readonly="readonly"';
+																				} ?> name="nroDocCliente" placeholder="documento..." style="display:none">
+										<input type="text" id="nroCuitCliente" <?php if ($permisoAltaCliente == "No") {
+																					echo 'readonly="readonly"';
+																				} ?> name="nroCuitCliente" value="<?php echo $cli["CUIT"]; ?>" placeholder="00-0000000-0" size="13">
+
+									<?php endif; ?>
+								</div>
+							</div>
+						<?php endif; ?>
+
+						<input type="hidden" id="codCliente" name="codCliente" value="<?php echo $idCliente; ?>">
+						<input type="hidden" id="vuelta" name="vuelta" value="<?php echo $vuelta; ?>">
+						<input type="hidden" id="completo" name="completo" value="<?php echo $permisoAltaCliente ?>">
 
 
-                    <button id="botonCancelar" class="botonNuevo grande botonCancelar" type="button" tabindex="16">
-                        <i class="fas fa-times-circle fa-fw fa-lg"></i> Cancelar
-                    </button>
 
-                        <button class="botonNuevo azul grande" type="button" id="editarClienteR"  tabindex="17"><i class="fas fa-check fa-fw fa-lg"></i> Guardar</button> 
-                    </div>
-
-
-                </form>
-
-            </div>
+						<div class="renglonForm renglonBotones">
+						<button id="botonVolver" class="botonNuevo grande botonVolver" type="button">
+							<i class="fas fa-arrow-left fa-fw fa-lg"></i> Volver
+						</button>
 
 
-            <div id="spinner" class="spinner" style="display:none;">
-                <img src="_img/logo-administranet-ecommerce.png" />
-            </div>
+						<button id="botonCancelar" class="botonNuevo grande botonCancelar" type="button" tabindex="16">
+							<i class="fas fa-times-circle fa-fw fa-lg"></i> Cancelar
+						</button>
+
+							<button class="botonNuevo azul grande" type="button" id="editarClienteR"  tabindex="17"><i class="fas fa-check fa-fw fa-lg"></i> Guardar</button> 
+						</div>
+
+
+					</form>
+
+				</div>
+			</div>
+
+
+				<div id="spinner" class="spinner" style="display:none;">
+					<img src="_img/logo-administranet-ecommerce.png" />
+				</div>
 
 
         </div>

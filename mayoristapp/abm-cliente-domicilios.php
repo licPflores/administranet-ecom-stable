@@ -858,296 +858,295 @@ $tabla_domicilios = completa_tabla($cli);
 <body>
     <div id="wrapper">
         <?php require_once $barra;?>
-        <div id="content" >       
-             <div class="divFormularios" id="cabeceraFormulario">    
-                <div id="titulo" class="formulario">
+        <div id="content" > 
+			<div class="paneles bg-white">   
 
-                    <h1>Domicilios adicionales</h1> 
+				<div class="divFormularios" id="cabeceraFormulario">    
+					<div id="titulo" class="formulario">
+						<h1>Domicilios adicionales</h1> 
+					</div>
+				</div>
 
-                </div>
+				<div id="spinner" class="spinner" style="display:none;">
+					<img src="_img/logo-administranet-ecommerce.png"/>  
+				</div>
 
+				<div id="contiene-tabla">
+					<table class="display compact" cellspacing="1" id="myTable">
+						<?php echo $tabla_domicilios;?>
+					</table>
+				</div>
 
-            </div>
+				<div class="renglonBotones" id="renglonBotones" style="text-align: center; width: 97%; padding:1%;">
+						<button id="botonVolver" class="botonNuevo grande botonVolver" type="button">
+							<i class="fas fa-arrow-left fa-fw fa-lg"></i> Volver
+						</button>
 
-            <div id="spinner" class="spinner" style="display:none;">
-                <img src="_img/logo-administranet-ecommerce.png"/>  
-            </div>
-            <div id="contiene-tabla">
-                <table class="display compact" cellspacing="1" id="myTable">
-                    <?php echo $tabla_domicilios;?>
-                </table>
-            </div>
-            <div class="renglonBotones" id="renglonBotones" style="text-align: center; width: 97%; padding:1%;">
-                    <button id="botonVolver" class="botonNuevo grande botonVolver" type="button">
-                        <i class="fas fa-arrow-left fa-fw fa-lg"></i> Volver
-                    </button>
+						<button class="botonNuevo azul grande"  title="Nuevo" name="altaDomicilio" type="button" id="altaDomicilio" ><i class="fas fa-plus  fa-fw fa-lg"></i> Nuevo</button> 
+				</div>
 
-                        <button class="botonNuevo azul grande"  title="Nuevo" name="altaDomicilio" type="button" id="altaDomicilio" ><i class="fas fa-plus  fa-fw fa-lg"></i> Nuevo</button> 
-                    </div>
-            <div id="modal-alta-domicilio" style="display:none;">
-                  <div class="divFormularios">    
-                    <div id="titulo" class="formulario">
-                       
-                        <h1>Nuevo Domicilio</h1> 
-                        
-                       
-                    </div>
-                    </div>  
-                      <div class="cartelCliente" id="cartelNuevo"></div>  
-                    <form id="frmAlta" name="frmAlta" method="post" >
-                    
-                        <div class="renglonForm">
-                            <label for="calleCliente">Calle<em>*</em>
-                                <input type="text" id="calleCliente" name="calleCliente"  placeholder="Calle..." required="required">
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="numeroCliente">Nro<em>*</em>
-                                <input type="text" id="numeroCliente" name="numeroCliente"  placeholder="Numero de calle..." required="required">
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label >Horario Entrega <em>*</em></label><br>
-                            
-                            <select name="horaDesde" id="horaDesde" style="width:20%">
-                            <?php for($i="0";$i<24;$i++):?>
-                                <option value="<?php echo str_pad($i, 2, "0", STR_PAD_LEFT); ?>"><?php echo str_pad($i, 2, "0", STR_PAD_LEFT);?></option>
-                            <?php endfor;?>    
-                            </select> 
-                                :
-                            <select name="minutoDesde" id="minutoDesde" style="width:20%">
-                                <option value="00">00</option>
-                                <option value="15">15</option>
-                                <option value="30">30</option>
-                                <option value="45">45</option>
-                                
-                            </select>
-                            A
-                            <select name="horaHasta" id="horaHasta" style="width:20%">
-                            <?php for($i="0";$i<24;$i++):?>
-                                <option value="<?php echo str_pad($i, 2, "0", STR_PAD_LEFT); ?>"><?php echo str_pad($i, 2, "0", STR_PAD_LEFT);?></option>
-                            <?php endfor;?>    
-                            </select>
-                                :
-                            <select name="minutoHasta" id="minutoHasta" style="width:20%">
-                                <option value="00">00</option>
-                                <option value="15">15</option>
-                                <option value="30">30</option>
-                                <option value="45">45</option>
-                                
-                            </select>
-                            hs
-                           
-                            
-                        </div>
-                        <div class="renglonForm">
-                            <label for="visitaVendedor">Visitar:<em>*</em>
-                                
-                                <select name="visitaVendedor" id="visitaVendedor">
-                                    <option value="No" selected>No</option>
-                                    <option value="Semanal">Semanal</option>
-                                    <option value="Quincenal">Quincenal</option>
-                                    <option value="Mensual">Mensual</option>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="intervaloVisita" id="labelIntervaloVisita">Cuando:<em>*</em>                        
-                            </label> 
-                            <select name="intervaloVisita" id="intervaloVisita">
-                                    <option value="No" selected>No</option>                                    
-                                </select>
-                        </div>
-                        
-                        
-                        <div class="renglonForm">    
-                            <label for="deptoCliente">Depto
-                                <input type="text" id="deptoCliente" name="deptoCliente"  placeholder="Numero o letra departamento..." >
-                            </label>
-                        </div>
-                        <div class="renglonForm">                
-                            <label for="provinciaCliente">Provincia<em>*</em>
-                                <select name="provinciaCliente" id="provinciaCliente" required="required" depto="departamentoCliente" zona="zonaCliente">
-                                    <option value="">- Provincia -</option>
-                                 <?php echo $lista_prov;?>   
-                                </select>
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="departamentoCliente">Depto/Localidad<em>*</em>
-                                <select name="departamentoCliente" id="departamentoCliente" required="required" distrito="distritoCliente">
-                                    <option value="">- Departamento -</option>
-                                <?php echo $lista_depto;   ?>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="distrito">Distrito/Partido<em>*</em>
-                                <select name="distritoCliente" id="distritoCliente" required="required">
-                                    <option value=""> - Distrito - </option>
-                                <?php echo $lista_dist;?>    
-                                </select>
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="zonaCliente">Zona<em>*</em>
-                                <select name="zonaCliente" id="zonaCliente" required="required">
-                                    <option value=""> - Zona - </option>
-                                <?php echo $lista_zona;   ?>
-                                </select>
-                            </label>
-                        </div>
-                        <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $idCliente;?>">
+				<div id="modal-alta-domicilio" style="display:none;">
+					<div class="divFormularios">    
+						<div id="titulo" class="formulario">
+							<h1>Nuevo Domicilio</h1> 
+						</div>
+						
+						<div class="cartelCliente" id="cartelNuevo"></div>  
 
+						<form id="frmAlta" name="frmAlta" method="post" >
+						
+							<div class="renglonForm">
+								<label for="calleCliente">Calle<em>*</em>
+									<input type="text" id="calleCliente" name="calleCliente"  placeholder="Calle..." required="required">
+								</label>
+							</div>
+							<div class="renglonForm">
+								<label for="numeroCliente">Nro<em>*</em>
+									<input type="text" id="numeroCliente" name="numeroCliente"  placeholder="Numero de calle..." required="required">
+								</label>
+							</div>
+							<div class="renglonForm">
+								<label >Horario Entrega <em>*</em></label><br>
+								
+								<select name="horaDesde" id="horaDesde" style="width:20%">
+								<?php for($i="0";$i<24;$i++):?>
+									<option value="<?php echo str_pad($i, 2, "0", STR_PAD_LEFT); ?>"><?php echo str_pad($i, 2, "0", STR_PAD_LEFT);?></option>
+								<?php endfor;?>    
+								</select> 
+									:
+								<select name="minutoDesde" id="minutoDesde" style="width:20%">
+									<option value="00">00</option>
+									<option value="15">15</option>
+									<option value="30">30</option>
+									<option value="45">45</option>
+									
+								</select>
+								A
+								<select name="horaHasta" id="horaHasta" style="width:20%">
+								<?php for($i="0";$i<24;$i++):?>
+									<option value="<?php echo str_pad($i, 2, "0", STR_PAD_LEFT); ?>"><?php echo str_pad($i, 2, "0", STR_PAD_LEFT);?></option>
+								<?php endfor;?>    
+								</select>
+									:
+								<select name="minutoHasta" id="minutoHasta" style="width:20%">
+									<option value="00">00</option>
+									<option value="15">15</option>
+									<option value="30">30</option>
+									<option value="45">45</option>
+									
+								</select>
+								hs
+							</div>
+							<div class="renglonForm">
+								<label for="visitaVendedor">Visitar:<em>*</em>
+									
+									<select name="visitaVendedor" id="visitaVendedor">
+										<option value="No" selected>No</option>
+										<option value="Semanal">Semanal</option>
+										<option value="Quincenal">Quincenal</option>
+										<option value="Mensual">Mensual</option>
+									</select>
+								</label>
+							</div>
+							<div class="renglonForm">
+								<label for="intervaloVisita" id="labelIntervaloVisita">Cuando:<em>*</em>                        
+								</label> 
+								<select name="intervaloVisita" id="intervaloVisita">
+										<option value="No" selected>No</option>                                    
+									</select>
+							</div>
+							
+							
+							<div class="renglonForm">    
+								<label for="deptoCliente">Depto
+									<input type="text" id="deptoCliente" name="deptoCliente"  placeholder="Numero o letra departamento..." >
+								</label>
+							</div>
+							<div class="renglonForm">                
+								<label for="provinciaCliente">Provincia<em>*</em>
+									<select name="provinciaCliente" id="provinciaCliente" required="required" depto="departamentoCliente" zona="zonaCliente">
+										<option value="">- Provincia -</option>
+									<?php echo $lista_prov;?>   
+									</select>
+								</label>
+							</div>
+							<div class="renglonForm">
+								<label for="departamentoCliente">Depto/Localidad<em>*</em>
+									<select name="departamentoCliente" id="departamentoCliente" required="required" distrito="distritoCliente">
+										<option value="">- Departamento -</option>
+									<?php echo $lista_depto;   ?>
+									</select>
+								</label>
+							</div>
+							<div class="renglonForm">
+								<label for="distrito">Distrito/Partido<em>*</em>
+									<select name="distritoCliente" id="distritoCliente" required="required">
+										<option value=""> - Distrito - </option>
+									<?php echo $lista_dist;?>    
+									</select>
+								</label>
+							</div>
+							<div class="renglonForm">
+								<label for="zonaCliente">Zona<em>*</em>
+									<select name="zonaCliente" id="zonaCliente" required="required">
+										<option value=""> - Zona - </option>
+									<?php echo $lista_zona;   ?>
+									</select>
+								</label>
+							</div>
 
-                          
-                    <div class="renglonForm renglonBotones" style="text-align: center; width: 97%; padding:1%;">
-                    <button id="botonVolver" class="botonCerrar botonNuevo grande botonVolver" type="button">
-                        <i class="fas fa-arrow-left fa-fw fa-lg"></i> Volver
-                    </button>
-                        <button id="botonVolver" class="botonCerrar botonNuevo grande botonCancelar" type="button" tabindex="16">
-                            <i class="fas fa-times-circle fa-fw fa-lg"></i> Cancelar
-                        </button>
+							<input type="hidden" name="idCliente" id="idCliente" value="<?php echo $idCliente;?>">
+							
+							<div class="renglonForm renglonBotones" style="text-align: center; width: 97%; padding:1%;">
+								<button id="botonVolver" class="botonCerrar botonNuevo grande botonVolver" type="button">
+									<i class="fas fa-arrow-left fa-fw fa-lg"></i> Volver
+								</button>
+								<button id="botonVolver" class="botonCerrar botonNuevo grande botonCancelar" type="button" tabindex="16">
+									<i class="fas fa-times-circle fa-fw fa-lg"></i> Cancelar
+								</button>
 
-                        <button class="botonNuevo azul grande" type="button" id="guardaNuevo" ><i class="fas fa-check fa-fw fa-lg"></i> Guardar</button> 
-                    </div>
-                    </form>
+								<button class="botonNuevo azul grande" type="button" id="guardaNuevo" ><i class="fas fa-check fa-fw fa-lg"></i> Guardar</button> 
+							</div>
 
-                </div>
-            
-                <div id="modal-mod-domicilio" style="display:none;position:relative">
+						</form>
 
-                    <div class="divFormularios">    
-                    <div id="titulo" class="formulario">
-                         
-                          <h1>Editar Domicilio</h1> 
-                       
-                    </div>   
-                    <div class="cartelCliente" id="cartelEdicion"></div>    
-                        <form id="frmEdita" name="frmEdita" method="post">
-                    <div class="renglonForm">
-                        <label for="calleCliente">Calle<em>*</em>
-                            <input type="text" id="calleClienteEd" name="calleClienteEd"  placeholder="Calle..." required="required">
-                        </label>
-                    </div>
-                        <div class="renglonForm">
-                            <label for="numeroCliente">Nro<em>*</em>
-                                <input type="text" id="numeroClienteEd" name="numeroClienteEd"  placeholder="Numero de calle..." required="required">
-                            </label>
-                            </div>
-                     <div class="renglonForm">        
-                        <label >Horario entrega <em>*</em></label><br>
-                           
-                            <select name="horaDesdeEd" id="horaDesdeEd" style="width:20%">
-                            <?php for($i="0";$i<24;$i++):?>
-                                <option value="<?php echo str_pad($i, 2, "0", STR_PAD_LEFT); ?>"><?php echo str_pad($i, 2, "0", STR_PAD_LEFT);?></option>
-                            <?php endfor;?>    
-                            </select> 
-                                :
-                            <select name="minutoDesdeEd" id="minutoDesdeEd" style="width:20%">
-                                <option value="00">00</option>
-                                <option value="15">15</option>
-                                <option value="30">30</option>
-                                <option value="45">45</option>
-                                
-                            </select> 
-                           
-                        A 
-                            <select name="horaHastaEd" id="horaHastaEd" style="width:20%">
-                            <?php for($i="0";$i<24;$i++):?>
-                                <option value="<?php echo str_pad($i, 2, "0", STR_PAD_LEFT); ?>"><?php echo str_pad($i, 2, "0", STR_PAD_LEFT);?></option>
-                            <?php endfor;?>    
-                            </select>
-                                :
-                            <select name="minutoHastaEd" id="minutoHastaEd" style="width:20%">
-                                <option value="00">00</option>
-                                <option value="15">15</option>
-                                <option value="30">30</option>
-                                <option value="45">45</option>
-                                
-                            </select>
-                            hs
-                        
-                            
-                        </div>
-                        <div class="renglonForm">
-                            <label for="visitaVendedorEd">Visitar:<em>*</em>
-                                
-                                <select name="visitaVendedorEd" id="visitaVendedorEd">
-                                    <option value="No" selected>No</option>
-                                    <option value="Semanal">Semanal</option>
-                                    <option value="Quincenal">Quincenal</option>
-                                    <option value="Mensual">Mensual</option>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="intervaloVisitaEd" id="labelIntervaloVisitaEd">Cuando:<em>*</em>                        
-                            </label> 
-                            <select name="intervaloVisitaEd" id="intervaloVisitaEd">
-                                    <option value="No" selected>No</option>                                    
-                                </select>
-                        </div>        
-                            
-                        <div class="renglonForm">    
-                            <label for="deptoClienteEd">Depto
-                                <input type="text" id="deptoClienteEd" name="deptoClienteEd"  placeholder="Numero o letra departamento...">
-                            </label>
-                        </div>
-                        <div class="renglonForm">                  
-                            <label for="provinciaClienteEd">Provincia<em>*</em>
-                                <select name="provinciaClienteEd" id="provinciaClienteEd" required="required" depto="departamentoClienteEd" zona="zonaClienteEd">
-                                </select>
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="departamentoClienteEd">Depto/Localidad<em>*</em>
-                                <select name="departamentoClienteEd" id="departamentoClienteEd" required="required" distrito="distritoClienteEd">
-                                </select>
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="distritoClienteEd">Distrito/Partido<em>*</em>
-                                <select name="distritoClienteEd" id="distritoClienteEd" required="required">
-                                </select>
-                            </label>
-                        </div>
-                        <div class="renglonForm">
-                            <label for="zonaClienteEd">Zona<em>*</em>
-                                <select name="zonaClienteEd" id="zonaClienteEd" required="required"> 
-                                </select>
-                            </label>
-                        </div>
-                    <input type="hidden" name="idClienteDom" id="idClienteDom">
-                    </div>
+					</div>
+				</div>
+				
+				<div id="modal-mod-domicilio" style="display:none;position:relative">
+
+					<div class="divFormularios">    
+						<div id="titulo" class="formulario">
+							<h1>Editar Domicilio</h1> 
+						</div>   
+
+						<div class="cartelCliente" id="cartelEdicion"></div>   
+
+						<form id="frmEdita" name="frmEdita" method="post">
+							<div class="renglonForm">
+								<label for="calleCliente">Calle<em>*</em>
+									<input type="text" id="calleClienteEd" name="calleClienteEd"  placeholder="Calle..." required="required">
+								</label>
+							</div>
+							<div class="renglonForm">
+								<label for="numeroCliente">Nro<em>*</em>
+									<input type="text" id="numeroClienteEd" name="numeroClienteEd"  placeholder="Numero de calle..." required="required">
+								</label>
+							</div>
+							<div class="renglonForm">        
+								<label >Horario entrega <em>*</em></label><br>
+								
+									<select name="horaDesdeEd" id="horaDesdeEd" style="width:20%">
+									<?php for($i="0";$i<24;$i++):?>
+										<option value="<?php echo str_pad($i, 2, "0", STR_PAD_LEFT); ?>"><?php echo str_pad($i, 2, "0", STR_PAD_LEFT);?></option>
+									<?php endfor;?>    
+									</select> 
+										:
+									<select name="minutoDesdeEd" id="minutoDesdeEd" style="width:20%">
+										<option value="00">00</option>
+										<option value="15">15</option>
+										<option value="30">30</option>
+										<option value="45">45</option>
+										
+									</select> 
+								
+								A 
+									<select name="horaHastaEd" id="horaHastaEd" style="width:20%">
+									<?php for($i="0";$i<24;$i++):?>
+										<option value="<?php echo str_pad($i, 2, "0", STR_PAD_LEFT); ?>"><?php echo str_pad($i, 2, "0", STR_PAD_LEFT);?></option>
+									<?php endfor;?>    
+									</select>
+										:
+									<select name="minutoHastaEd" id="minutoHastaEd" style="width:20%">
+										<option value="00">00</option>
+										<option value="15">15</option>
+										<option value="30">30</option>
+										<option value="45">45</option>
+										
+									</select>
+									hs
+								
+									
+								</div>
+								<div class="renglonForm">
+									<label for="visitaVendedorEd">Visitar:<em>*</em>
+										
+										<select name="visitaVendedorEd" id="visitaVendedorEd">
+											<option value="No" selected>No</option>
+											<option value="Semanal">Semanal</option>
+											<option value="Quincenal">Quincenal</option>
+											<option value="Mensual">Mensual</option>
+										</select>
+									</label>
+								</div>
+								<div class="renglonForm">
+									<label for="intervaloVisitaEd" id="labelIntervaloVisitaEd">Cuando:<em>*</em>                        
+									</label> 
+									<select name="intervaloVisitaEd" id="intervaloVisitaEd">
+											<option value="No" selected>No</option>                                    
+										</select>
+								</div>        
+									
+								<div class="renglonForm">    
+									<label for="deptoClienteEd">Depto
+										<input type="text" id="deptoClienteEd" name="deptoClienteEd"  placeholder="Numero o letra departamento...">
+									</label>
+								</div>
+								<div class="renglonForm">                  
+									<label for="provinciaClienteEd">Provincia<em>*</em>
+										<select name="provinciaClienteEd" id="provinciaClienteEd" required="required" depto="departamentoClienteEd" zona="zonaClienteEd">
+										</select>
+									</label>
+								</div>
+								<div class="renglonForm">
+									<label for="departamentoClienteEd">Depto/Localidad<em>*</em>
+										<select name="departamentoClienteEd" id="departamentoClienteEd" required="required" distrito="distritoClienteEd">
+										</select>
+									</label>
+								</div>
+								<div class="renglonForm">
+									<label for="distritoClienteEd">Distrito/Partido<em>*</em>
+										<select name="distritoClienteEd" id="distritoClienteEd" required="required">
+										</select>
+									</label>
+								</div>
+								<div class="renglonForm">
+									<label for="zonaClienteEd">Zona<em>*</em>
+										<select name="zonaClienteEd" id="zonaClienteEd" required="required"> 
+										</select>
+									</label>
+								</div>
+								<input type="hidden" name="idClienteDom" id="idClienteDom">
+							</div>
 
 
-<!--                     
-                    <div class="renglonForm renglonBotones" style="text-align: center; width: 97%; padding:1%;">
-                        <button id="botonVolver" class="botonNuevo grande botonCancelar" type="button" tabindex="16">
-                            <i class="fas fa-times-circle fa-fw fa-lg"></i> Cancelar
-                        </button>
+		<!--                     
+							<div class="renglonForm renglonBotones" style="text-align: center; width: 97%; padding:1%;">
+								<button id="botonVolver" class="botonNuevo grande botonCancelar" type="button" tabindex="16">
+									<i class="fas fa-times-circle fa-fw fa-lg"></i> Cancelar
+								</button>
 
-                        <button class="botonNuevo azul grande" type="button" id="guardaEdita"  tabindex="17"><i class="fas fa-check fa-fw fa-lg"></i> Guardar</button> 
-                    </div> -->
+								<button class="botonNuevo azul grande" type="button" id="guardaEdita"  tabindex="17"><i class="fas fa-check fa-fw fa-lg"></i> Guardar</button> 
+							</div> -->
 
 
 
 
-                    <div class="renglonForm renglonBotones" style="text-align: center; width: 97%; padding:1%;">
-                    <button id="botonVolver" class="botonCerrar botonNuevo grande botonVolver" type="button">
-                        <i class="fas fa-arrow-left fa-fw fa-lg"></i> Volver
-                    </button>
-                        <button id="botonVolver" class="botonCerrar botonNuevo grande botonCancelar" type="button">
-                            <i class="fas fa-times-circle fa-fw fa-lg"></i> Cancelar
-                        </button>
+							<div class="renglonForm renglonBotones" style="text-align: center; width: 97%; padding:1%;">
+								<button id="botonVolver" class="botonCerrar botonNuevo grande botonVolver" type="button">
+									<i class="fas fa-arrow-left fa-fw fa-lg"></i> Volver
+								</button>
+								<button id="botonVolver" class="botonCerrar botonNuevo grande botonCancelar" type="button">
+									<i class="fas fa-times-circle fa-fw fa-lg"></i> Cancelar
+								</button>
 
-                        <button class="botonNuevo azul grande" type="button" id="guardaEdita" ><i class="fas fa-check fa-fw fa-lg"></i> Guardar</button> 
-                    </div>
-                    
-                </form>
-                   
-            </div> 
+								<button class="botonNuevo azul grande" type="button" id="guardaEdita" ><i class="fas fa-check fa-fw fa-lg"></i> Guardar</button> 
+							</div>
+						
+						</form>
+					</div>	
+				</div>
+			</div>
             
         </div>
          <?php if($caminoDispo==""){ require_once 'footer.php';}?>   
