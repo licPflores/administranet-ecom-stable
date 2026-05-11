@@ -598,11 +598,11 @@ if(isset($objCliente)&&is_object($objCliente)){
            
                 <form id="formBusca" name="formBusca" method="POST" action="">
                     
-                    <div class='panelesBloqueInforme' style="justify-content: flex-start;">
+                    <div class='panelesBloqueInforme'>
                         <div class="titulo">Parámetros</div>
                         
 
-                        <div class="controlContainer">
+                        <div class="panelesBloqueInforme-interno">
                             <?php if($_SESSION['tipousuario']=='vendedor'):?>
                                 <div class="control">
                                     <label class="parametros" for="cliente">Cliente:</label>  
@@ -623,9 +623,9 @@ if(isset($objCliente)&&is_object($objCliente)){
                             si es en todos pone iguala por defecto,
                             configura el ajax articulo para saber si viene la lista de precio seleccionarla. -->
                             <label class="parametros" for="listaDePrecios">Lista de precios: </label>  
-                                <select name="listaDePrecios" id="listaDePrecios"></select>
-                            
+                            <select name="listaDePrecios" id="listaDePrecios"></select>
                         </div>
+
                         <?php if($_SESSION['tipousuario']=='cliente'):?>
                             <div class="control" >
                                 <input type="checkbox" name="buscaMiConsumo" id="buscaMiConsumo" value="si">
@@ -666,7 +666,7 @@ if(isset($objCliente)&&is_object($objCliente)){
                     <div class="panelesBloqueInforme" style="justify-content: flex-start;">
                         <div class="titulo">Búsqueda rápida - Producto</div>
 
-                        <div class="controlContainer">
+                        <div class="panelesBloqueInforme-interno">
                             <div class="barra-busqueda">
                         
                                 
@@ -692,7 +692,7 @@ if(isset($objCliente)&&is_object($objCliente)){
                     <div  class="panelesBloqueInforme" style="justify-content: flex-start;" id="divBuscaRubro">
                         <div class="titulo">Búsqueda avanzada</div>
 
-                        <div class="controlContainer">
+                        <div class="panelesBloqueInforme-interno">
                             <div class="control">
                                 <label class="parametros" for="tipoCliente">Tipo Negocio: </label>  
                                     <select name="tipoCliente" id="tipoCliente">

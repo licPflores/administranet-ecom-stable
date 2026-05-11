@@ -906,36 +906,40 @@ $tabla_domicilios = completa_tabla($cli);
 								</label>
 							</div>
 							<div class="renglonForm">
-								<label >Horario Entrega <em>*</em></label><br>
-								
-								<select name="horaDesde" id="horaDesde" style="width:20%">
-								<?php for($i="0";$i<24;$i++):?>
-									<option value="<?php echo str_pad($i, 2, "0", STR_PAD_LEFT); ?>"><?php echo str_pad($i, 2, "0", STR_PAD_LEFT);?></option>
-								<?php endfor;?>    
-								</select> 
-									:
-								<select name="minutoDesde" id="minutoDesde" style="width:20%">
-									<option value="00">00</option>
-									<option value="15">15</option>
-									<option value="30">30</option>
-									<option value="45">45</option>
+								<div class="bloque-renglon">
+									<label >Horario Entrega <em>*</em></label>
 									
-								</select>
-								A
-								<select name="horaHasta" id="horaHasta" style="width:20%">
-								<?php for($i="0";$i<24;$i++):?>
-									<option value="<?php echo str_pad($i, 2, "0", STR_PAD_LEFT); ?>"><?php echo str_pad($i, 2, "0", STR_PAD_LEFT);?></option>
-								<?php endfor;?>    
-								</select>
-									:
-								<select name="minutoHasta" id="minutoHasta" style="width:20%">
-									<option value="00">00</option>
-									<option value="15">15</option>
-									<option value="30">30</option>
-									<option value="45">45</option>
-									
-								</select>
-								hs
+									<div class="horarios">
+										<select name="horaDesde" id="horaDesde" style="width:20%">
+										<?php for($i="0";$i<24;$i++):?>
+											<option value="<?php echo str_pad($i, 2, "0", STR_PAD_LEFT); ?>"><?php echo str_pad($i, 2, "0", STR_PAD_LEFT);?></option>
+										<?php endfor;?>    
+										</select> 
+											:
+										<select name="minutoDesde" id="minutoDesde" style="width:20%">
+											<option value="00">00</option>
+											<option value="15">15</option>
+											<option value="30">30</option>
+											<option value="45">45</option>
+											
+										</select>
+										A
+										<select name="horaHasta" id="horaHasta" style="width:20%">
+										<?php for($i="0";$i<24;$i++):?>
+											<option value="<?php echo str_pad($i, 2, "0", STR_PAD_LEFT); ?>"><?php echo str_pad($i, 2, "0", STR_PAD_LEFT);?></option>
+										<?php endfor;?>    
+										</select>
+											:
+										<select name="minutoHasta" id="minutoHasta" style="width:20%">
+											<option value="00">00</option>
+											<option value="15">15</option>
+											<option value="30">30</option>
+											<option value="45">45</option>
+											
+										</select>
+										hs
+									</div>
+								</div>
 							</div>
 							<div class="renglonForm">
 								<label for="visitaVendedor">Visitar:<em>*</em>
@@ -949,11 +953,12 @@ $tabla_domicilios = completa_tabla($cli);
 								</label>
 							</div>
 							<div class="renglonForm">
-								<label for="intervaloVisita" id="labelIntervaloVisita">Cuando:<em>*</em>                        
-								</label> 
-								<select name="intervaloVisita" id="intervaloVisita">
+								<div class="bloque-renglon">
+								<label for="intervaloVisita" id="labelIntervaloVisita">Cuando:<em>*</em></label>                         
+									<select name="intervaloVisita" id="intervaloVisita">
 										<option value="No" selected>No</option>                                    
 									</select>
+								</div>
 							</div>
 							
 							
@@ -1033,9 +1038,11 @@ $tabla_domicilios = completa_tabla($cli);
 									<input type="text" id="numeroClienteEd" name="numeroClienteEd"  placeholder="Numero de calle..." required="required">
 								</label>
 							</div>
-							<div class="renglonForm">        
-								<label >Horario entrega <em>*</em></label><br>
+							<div class="renglonForm">
+								<div class="bloque-renglon">  
+								<label >Horario entrega <em>*</em></label>
 								
+								<div class="horarios">
 									<select name="horaDesdeEd" id="horaDesdeEd" style="width:20%">
 									<?php for($i="0";$i<24;$i++):?>
 										<option value="<?php echo str_pad($i, 2, "0", STR_PAD_LEFT); ?>"><?php echo str_pad($i, 2, "0", STR_PAD_LEFT);?></option>
@@ -1065,8 +1072,9 @@ $tabla_domicilios = completa_tabla($cli);
 										
 									</select>
 									hs
-								
-									
+
+										</div>
+									</div>
 								</div>
 								<div class="renglonForm">
 									<label for="visitaVendedorEd">Visitar:<em>*</em>
@@ -1080,11 +1088,13 @@ $tabla_domicilios = completa_tabla($cli);
 									</label>
 								</div>
 								<div class="renglonForm">
+									<div class="bloque-renglon">
 									<label for="intervaloVisitaEd" id="labelIntervaloVisitaEd">Cuando:<em>*</em>                        
 									</label> 
 									<select name="intervaloVisitaEd" id="intervaloVisitaEd">
 											<option value="No" selected>No</option>                                    
 										</select>
+									</div>
 								</div>        
 									
 								<div class="renglonForm">    

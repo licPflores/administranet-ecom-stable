@@ -964,8 +964,6 @@ if ($hacerVendedor) {
 						</select>
                     </div>
                    
-
-
                 </div>
 
                 <div class="panelesBloqueInformeAccion">

@@ -429,65 +429,62 @@ $usaLaboratorio = $_SESSION["usa_laboratorio"];
             <div class="paneles filtroInformes">  
             <h1 id="tituloListaP">Catálogo de productos al <?php echo date("d/m/Y"); ?></h1>
                 <form id="formBusca" name="formBusca" method="POST" action="">
-                <div class='panelesBloqueInforme' style="justify-content: flex-start;">
+
+                	<div class='panelesBloqueInforme' style="justify-content: flex-start;">
                         <div class="control" >
                             <label class="parametros" for="imagenProducto">Imagen:</label> 
-                                    <select id="imagenProducto" name="imagenProducto">
-                                        <option selected="selected" value="Si">Si</option>
-                                        <!-- <option  value="No">No</option> -->
-                                    </select>
-                               
+							<select id="imagenProducto" name="imagenProducto">
+								<option selected="selected" value="Si">Si</option>
+								<!-- <option  value="No">No</option> -->
+							</select>   
                         </div>
-                        
-
-                        
-                    
-                        
 
                         <div class="control" >
                             <label class="parametros" for="sizeFoto">Tamaño:</label> 
-                                    <select id="sizeFoto" name="sizeFoto">
-                                        <option selected="selected" value="chica">Chica</option>
-                                        <option value="mediana">Mediana</option>
-                                        <option value="grande">Grande</option>
-                                      
-                                    </select>
-                               
+							<select id="sizeFoto" name="sizeFoto">
+								<option selected="selected" value="chica">Chica</option>
+								<option value="mediana">Mediana</option>
+								<option value="grande">Grande</option>
+								
+							</select>
                         </div>
+
                         <div class="control">
-                                    <label class="parametros" for="ordenarPor">Ordenar Por:</label>
-                                        <select id="ordenarPor" name="ordenarPor">
-                                            <option value="nombre" selected="selected">Nombre</option> 
-                                            <option value="sistema">Código Sistema</option> 
-                                            <option value="manual">Código Manual</option> 
-                                        </select>
-                                    
-                                </div>
-                                <div class="control">
-                                    <label class="parametros" for="direccionOrden">Tipo Orden:</label>
-                                        <select id="direccionOrden" name="direccionOrden">
-                                            <option value="ASC">menor a mayor</option> 
-                                            <option value="DESC">mayor a menor</option> 
-                                        </select>
-                                    
-                                </div>
+							<label class="parametros" for="ordenarPor">Ordenar Por:</label>
+							<select id="ordenarPor" name="ordenarPor">
+								<option value="nombre" selected="selected">Nombre</option> 
+								<option value="sistema">Código Sistema</option> 
+								<option value="manual">Código Manual</option> 
+							</select>
+						</div>
+
+						<div class="control">
+							<label class="parametros" for="direccionOrden">Tipo Orden:</label>
+							<select id="direccionOrden" name="direccionOrden">
+								<option value="ASC">menor a mayor</option> 
+								<option value="DESC">mayor a menor</option> 
+							</select>
+						</div>
                     </div>
-                <div class='panelesBloqueInforme' style="justify-content: flex-start;">
-                    <div class="titulo">Búsqueda rápida</div>
-                    
 
-                    <label for="nombreBuscaRapido">Producto: </label>
+					<div class="panelesBloque-sin-grilla">
 
-                        <input type="search" id="nombreBuscaRapido" name="nombreBuscaRapido" placeholder="nombre o id ..." class="input-buscar-rapido" autocomplete="off" />
-                        <button title="Buscar" alt="Buscar" type="button" id="botonBuscarRapido" name="botonBuscarRapido" class="boton-busca-rapido">
-                            <i class="fab fa-sistrix"></i> Buscar
-                        </button>
-                        <input type="hidden" name="itemId" id="itemId">
-                    
+						<div class="titulo">Búsqueda rápida</div>
+						
+						<div class="control">
+							<label for="nombreBuscaRapido">Producto: </label>
+							
+							<div class="barra-busqueda">
+								<input type="search" id="nombreBuscaRapido" name="nombreBuscaRapido" placeholder="nombre o id ..." class="input-buscar-rapido" autocomplete="off" />
+							
+								<button title="Buscar" alt="Buscar" type="button" id="botonBuscarRapido" name="botonBuscarRapido" class="boton-busca-rapido">
+									<i class="fab fa-sistrix"></i> Buscar
+								</button>
 
-                </div>
-                    
-
+								<input type="hidden" name="itemId" id="itemId">
+							</div>
+						</div>
+					</div>
                     
                     <div  class='panelesBloqueInforme' style="justify-content: flex-start;" id="divBuscaRubro">
                     <div class="titulo">Búsqueda avanzada</div>

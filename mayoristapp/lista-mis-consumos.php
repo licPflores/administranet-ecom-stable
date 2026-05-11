@@ -441,56 +441,60 @@ $('#parametrosInformes').on('click', function() {
 					
 									
 						<div class='panelesBloqueInforme' id="divBuscaRubro">
+
 							<div class="titulo" >
 								<label>Fecha: </label>
 							</div>
-						
-							<div id="buscaFecha" class="control-fechas grid-column-2">
-								<div class="control">
-									<label class="parametros" for="fechaDesde">Desde: </label>
-									<input type="date" name="fechaDesde" id="fechaDesde">
-								</div>
-								<div class="control">
-									<label class="parametros" for="fechaHasta">Hasta: </label>
-									<input type="date" name="fechaHasta" id="fechaHasta">
+
+							<div class="panelesBloqueInforme-interno">
+								<div id="buscaFecha" class="control-fechas grid-column-2">
+									<div class="control">
+										<label class="parametros" for="fechaDesde">Desde: </label>
+										<input type="date" name="fechaDesde" id="fechaDesde">
+									</div>
+									<div class="control">
+										<label class="parametros" for="fechaHasta">Hasta: </label>
+										<input type="date" name="fechaHasta" id="fechaHasta">
+									</div>
 								</div>
 							</div>
 
 							<div class="titulo" >
 								<label>Filtros: </label>
-							</div>   
-														
-							<div class="control" >
-								<label class="parametros" for="buscaRubro">Categoría: </label>
-								<select id="buscaCategoria" name="buscaCategoria">
-									<option value="">- todas -</option>
-								<?php $articulos->muestra_categorias();?>  
-								</select>                                
-							</div>
+							</div> 
 
-							<div class="control" >
-								<label class="parametros" for="buscaRubro">Rubro:</label> 
-								<select id="buscaRubro" name="buscaRubro">
-									<option value=""> rubro</option>                               
-								</select>
-							</div>
+							<div class="panelesBloqueInforme-interno">  							
+								<div class="control" >
+									<label class="parametros" for="buscaRubro">Categoría: </label>
+									<select id="buscaCategoria" name="buscaCategoria">
+										<option value="">- todas -</option>
+									<?php $articulos->muestra_categorias();?>  
+									</select>                                
+								</div>
 
-							<div class="control">
-								<label class="parametros" for="buscaSubRubro">Sub Rubro:</label> 
-								<select id="buscaSubRubro" name="buscaSubRubro">
-									<option value=""></option>    
-								</select>
-							</div>
+								<div class="control" >
+									<label class="parametros" for="buscaRubro">Rubro:</label> 
+									<select id="buscaRubro" name="buscaRubro">
+										<option value=""> rubro</option>                               
+									</select>
+								</div>
 
-							<div class="control">
-								<label class="parametros" for="buscaMarca">Marca:</label>
-								<select id="buscaMarca" name="buscaMarca">
-									<option value="">- todas -</option> 
-									<?php $articulos->muestra_marcas();?>
-								</select>
+								<div class="control">
+									<label class="parametros" for="buscaSubRubro">Sub Rubro:</label> 
+									<select id="buscaSubRubro" name="buscaSubRubro">
+										<option value=""></option>    
+									</select>
+								</div>
+
+								<div class="control">
+									<label class="parametros" for="buscaMarca">Marca:</label>
+									<select id="buscaMarca" name="buscaMarca">
+										<option value="">- todas -</option> 
+										<?php $articulos->muestra_marcas();?>
+									</select>
+								</div>
 							</div>
-						
-												
+													
 							<?php if(isset($_SESSION['cliente'])):?>
 
 								<div class="control-botones">
@@ -501,6 +505,7 @@ $('#parametrosInformes').on('click', function() {
 
 							<?php endif;?>
 
+							
 						</div>
 
 				</form>

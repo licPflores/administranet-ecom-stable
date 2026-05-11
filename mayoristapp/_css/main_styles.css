@@ -1356,7 +1356,7 @@ label.ventana{
 
     
 
-    .panelesBloqueInforme{
+    .panelesBloqueInforme {
         width:100%;
         
         margin-bottom: 12px;        
@@ -1369,6 +1369,39 @@ label.ventana{
         /*margin: 2px;*/
         border-radius: 5px;
         padding: 6px;
+
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: 10px;
+		align-items: start;
+    }
+
+	.panelesBloque-sin-grilla {
+        width:100%;
+        
+        margin-bottom: 12px;        
+        /*display:flex;*/
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+        border: 2px solid #2A3E72;
+        /*margin: 2px;*/
+        border-radius: 5px;
+        padding: 6px;
+    }
+
+	.panelesBloque-sin-grilla .barra-busqueda {
+		width: calc(100% - 2px);
+	}
+
+	.panelesBloqueInforme-interno {
+		grid-column: 1 / -1;
+        width:100%;
+        
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
 
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -1411,14 +1444,16 @@ label.ventana{
         margin-bottom: 10px;
     }
 
-    .panelesBloqueInforme .control label{
+    .panelesBloqueInforme .control label,
+	.panelesBloque-sin-grilla .control label {
         line-height: 24px;
         color: #2A3E72;
         font-size: 12px;
         font-weight: bold;
 		padding-left: 2px;
     }
-    .panelesBloqueInforme .control select{
+    .panelesBloqueInforme .control select,
+	.panelesBloque-sin-grilla .control select {
 		width: 100%;
         color: #2A3E72;
         background-color: #b5ddff;
@@ -1427,7 +1462,8 @@ label.ventana{
         padding: 2px;
         border-radius: 3px;
     }
-    .panelesBloqueInforme .control input{
+    .panelesBloqueInforme .control input,
+	.panelesBloque-sin-grilla .control input {
 		width: 100%;
         color: #2A3E72;
         background-color: #b5ddff;
