@@ -583,70 +583,59 @@ if($hacerVendedor){
             <div class='panelesBloqueInforme'>
                 <!-- <label>Filtros:</label> <i class="fa fa-filter fa-lg " id="verFiltros"></i> -->
                 <div class="control">
-                        <label for="filtraVendedor">Vendedor / Viajante:  
-                            <select name="filtraVendedor" id="filtraVendedor">
-                                
-                                <?php if($codPuesto==1):?>
-                                    <option value="todos" >- Todos -</option>
-                                    <?php 
-                                    if(!empty($arrVendedores)){
-                                        foreach($arrVendedores as $vendedor){
-                                        echo '<option value="'.$vendedor['valor'].'">'.$vendedor['texto'].'</option>'.PHP_EOL;
+                        <label for="filtraVendedor">Vendedor / Viajante: </label>
+						<select name="filtraVendedor" id="filtraVendedor">
+							
+							<?php if($codPuesto==1):?>
+								<option value="todos" >- Todos -</option>
+								<?php 
+								if(!empty($arrVendedores)){
+									foreach($arrVendedores as $vendedor){
+									echo '<option value="'.$vendedor['valor'].'">'.$vendedor['texto'].'</option>'.PHP_EOL;
 
-                                        }
-                                    }
-                                    ?>    
-                                <?php endif;?>    
-                                <?php if($codPuesto!=1):?>
-                                <?php    
-                                        if(!empty($arrVendedores)){
-                                            foreach($arrVendedores as $vendedor){
-                                                echo '<option selected="selected"  value="'.$vendedor['valor'].'">'.$vendedor['texto'].'</option>'.PHP_EOL;
+									}
+								}
+								?>    
+							<?php endif;?>    
+							<?php if($codPuesto!=1):?>
+							<?php    
+									if(!empty($arrVendedores)){
+										foreach($arrVendedores as $vendedor){
+											echo '<option selected="selected"  value="'.$vendedor['valor'].'">'.$vendedor['texto'].'</option>'.PHP_EOL;
 
-                                            }
-                                        }
-                                    ?>
-                                <?php endif;?>    
-                                
-                            </select>
-                        </label>
+										}
+									}
+								?>
+							<?php endif;?>    
+							
+						</select>
                     </div>
                     <div class="control">
                         <label class="parametros" for="estadoPedido">Clientes:   </label>
-                            <select name="listaTodos" id="listaTodos">
-                                <option value="cliente">Seleccionado</option>
-                                <option selected value="todos">Todos </option>
-                            </select>
-                       
+						<select name="listaTodos" id="listaTodos">
+							<option value="cliente">Seleccionado</option>
+							<option selected value="todos">Todos </option>
+						</select>
                     </div>
 
-
-
-
-                   <div class="control">
+                   	<div class="control">
                         <label class="parametros" for="estadoPedido">Estado:</label>  
-                            <select name="estadoPedido" id="estadoPedido">
-                                <option value="1">-</option>
-                               
-                                <option value="En Remito">En Remito</option>
-                                <option value="Facturado">Facturado</option>
-                                <option value="Pendiente">Pendiente</option>
-                                <option value="En Pedido">En Pedido</option>
-                                <option value="Imput manual">Imput manual</option>
-                                <option value="Aprobado">Aprobado</option>
-                                <option value="Completo">Completo</option>
-                                <option value="Parcial">Parcial</option>
-                                <option value="Cerrado">Cerrado</option>
-                                <option value="En preparación">En preparación</option>
-                                <option value="Preparado">Preparado</option>
-                            </select>
-                        
+						<select name="estadoPedido" id="estadoPedido">
+							<option value="1">-</option>
+							
+							<option value="En Remito">En Remito</option>
+							<option value="Facturado">Facturado</option>
+							<option value="Pendiente">Pendiente</option>
+							<option value="En Pedido">En Pedido</option>
+							<option value="Imput manual">Imput manual</option>
+							<option value="Aprobado">Aprobado</option>
+							<option value="Completo">Completo</option>
+							<option value="Parcial">Parcial</option>
+							<option value="Cerrado">Cerrado</option>
+							<option value="En preparación">En preparación</option>
+							<option value="Preparado">Preparado</option>
+						</select>
                     </div>
-
-
-                  
-
-
 
                     
                     <div class="control">
@@ -686,7 +675,7 @@ if($hacerVendedor){
                         
                         
                     </div>
-</div>
+				</div>
                  
                 <div class="panelesBloqueInformeAccion">
                         <span class="centro w100p">
@@ -782,7 +771,7 @@ if($hacerVendedor){
                <div class="texto">Procesando...</div>
             </div> -->
             <div class="paneles table-responsive"   id="contiene-tabla" >
-            <?php if(isset($_REQUEST['cartel'])&&($_REQUEST['cartel']=='5' || $_REQUEST['cartel']=='6' )):?>
+            	<?php if(isset($_REQUEST['cartel'])&&($_REQUEST['cartel']=='5' || $_REQUEST['cartel']=='6' )):?>
                     <?php
                         $textoCartel = '<div id="alertas-formulario" class="alerta-exito">'
                                 . 'Se ha generado:<br>';
@@ -797,6 +786,7 @@ if($hacerVendedor){
 
                     </div>
                 <?php endif;?>
+				
                 <h1>Listado de presupuestos</h1>
                 <table class="display" cellspacing="1" id="myTable" ></table>
 

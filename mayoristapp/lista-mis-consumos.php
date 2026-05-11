@@ -427,118 +427,108 @@ $('#parametrosInformes').on('click', function() {
  
 </script>
 </head>
-<body>
-    <div id="wrapper">
-        <?php 
-            require_once $barra;
-        ?>
-        
-             <div id="content" class="paneles filtroInformes">
+	<body>
+		<div id="wrapper">
+			<?php 
+				require_once $barra;
+			?>
+			
+			<div id="content" class="paneles filtroInformes">
+								
+				<h1>Mis Consumos <span ><i id="parametrosInformes" class="fas fa-angle-up fa-lg fa-fw"></i></span></h1>
 
+				<form id="formBusca" name="formBusca" method="POST" action="">
+					
+									
+						<div class='panelesBloqueInforme' id="divBuscaRubro">
+							<div class="titulo" >
+								<label>Fecha: </label>
+							</div>
+						
+							<div id="buscaFecha" class="control-fechas grid-column-2">
+								<div class="control">
+									<label class="parametros" for="fechaDesde">Desde: </label>
+									<input type="date" name="fechaDesde" id="fechaDesde">
+								</div>
+								<div class="control">
+									<label class="parametros" for="fechaHasta">Hasta: </label>
+									<input type="date" name="fechaHasta" id="fechaHasta">
+								</div>
+							</div>
 
+							<div class="titulo" >
+								<label>Filtros: </label>
+							</div>   
+														
+							<div class="control" >
+								<label class="parametros" for="buscaRubro">Categoría: </label>
+								<select id="buscaCategoria" name="buscaCategoria">
+									<option value="">- todas -</option>
+								<?php $articulos->muestra_categorias();?>  
+								</select>                                
+							</div>
 
-                            
-             <h1>Mis Consumos <span ><i id="parametrosInformes" class="fas fa-angle-up fa-lg fa-fw"></i></span></h1>
-                                    <form id="formBusca" name="formBusca" method="POST" action="">
-                                    <div class='panelesBloqueInforme' style="justify-content: flex-start;">
-                                    
-                                                    
-                                            
-                                        
-                                                    <div  class="paneles" id="divBuscaRubro">
-                                                    <div class="titulo" >
-                                                        <label>Fecha: </label>
-                                                    </div>
+							<div class="control" >
+								<label class="parametros" for="buscaRubro">Rubro:</label> 
+								<select id="buscaRubro" name="buscaRubro">
+									<option value=""> rubro</option>                               
+								</select>
+							</div>
 
-                                                        
-                                                    <div id="buscaFecha" class="control">
-                                                        
-                                                        <label class="parametros" for="fechaDesde">Desde: </label><input type="date" name="fechaDesde" id="fechaDesde">
-                                                        
-                                                        <label class="parametros" for="fechaHasta">Hasta: </label><input type="date" name="fechaHasta" id="fechaHasta">
-                                                    </div>
+							<div class="control">
+								<label class="parametros" for="buscaSubRubro">Sub Rubro:</label> 
+								<select id="buscaSubRubro" name="buscaSubRubro">
+									<option value=""></option>    
+								</select>
+							</div>
 
-                                                        <div class="titulo" >
-                                                        <label>Filtros: </label>
-                                                    </div>   
-                                                        
-                                                        <div class="control" >
-                                                            <label class="parametros" for="buscaRubro">Categoría: </label>
-                                                                <select id="buscaCategoria" name="buscaCategoria">
-                                                                    <option value="">- todas -</option>
-                                                                <?php $articulos->muestra_categorias();?>  
-                                                                </select>
-                                                            
-                                                        </div>
-                                                        <div class="control" >
-                                                            <label class="parametros" for="buscaRubro">Rubro:</label> 
-                                                                <select id="buscaRubro" name="buscaRubro">
-                                                                    <option value=""> rubro</option>                               
-                                                                </select>
-                                                            
-                                                        </div>
+							<div class="control">
+								<label class="parametros" for="buscaMarca">Marca:</label>
+								<select id="buscaMarca" name="buscaMarca">
+									<option value="">- todas -</option> 
+									<?php $articulos->muestra_marcas();?>
+								</select>
+							</div>
+						
+												
+							<?php if(isset($_SESSION['cliente'])):?>
 
-                                                    <div class="control">
-                                                                <label class="parametros" for="buscaSubRubro">Sub Rubro:</label> 
-                                                                <select id="buscaSubRubro" name="buscaSubRubro">
-                                                                    <option value=""></option>    
-                                                                </select>
-                                                                
-                                                    </div>
-                                                        <div class="control">
+								<div class="control-botones">
+									<button title="Buscar" alt="Buscar" type="button" id="botonBuscar" name="botonBuscar" class="botonNuevo">
+										<i class="fas fa-search fa-lg fa-fw"></i> Buscar
+									</button>
+								</div>
 
-                                                            <label class="parametros" for="buscaMarca">Marca:</label>
-                                                                <select id="buscaMarca" name="buscaMarca">
-                                                                    <option value="">- todas -</option> 
-                                                                    <?php $articulos->muestra_marcas();?>
-                                                                </select>
-                                                            
-                                                        </div>
-                                                    </div>
-                                                
+							<?php endif;?>
 
-                                                    <?php if(isset($_SESSION['cliente'])):?>
+						</div>
 
+				</form>
+								
+				<div id="basic-modal-content" > </div>
 
-                                                        <div class="panelesBloqueInformeAccion" id="divBotonBuscar">
-                                                        <span class="centro w100p">
-                                                            <button title="Buscar" alt="Buscar" type="button" id="botonBuscar" name="botonBuscar" class="botonNuevo">
-                                                                <i class="fas fa-search fa-lg fa-fw"></i> Buscar
-                                                            </button>
-                                                        </span>
-                                                    </div>
+				<!--spinner admNET-->
+				<div id="spinner" class="spinnerAdm" style="display:none;">
+					<div class="centro">
+						<img src="_img/logo-administranet-ecommerce.png">
+						<div class="texto"><i class="fas fa-circle-notch fa-spin"></i> Procesando...</div>
+					</div>
+				</div>
 
-                                                    <?php endif;?>
-                                 </div>
-                                 </form>
-                           
-                            
-                                 <div id="basic-modal-content" > </div>
-                                <!--spinner admNET-->
-                                <div id="spinner" class="spinnerAdm" style="display:none;">
-                                    <div class="centro">
-                                        <img src="_img/logo-administranet-ecommerce.png">
-                                        <div class="texto"><i class="fas fa-circle-notch fa-spin"></i> Procesando...</div>
-                                    </div>
-                                </div>
+				<div id="contiene-tabla"> 
+					<h1>Listado de consumos</h1>
+					<table class="display" cellspacing="1" id="myTable" data-page-length='25'>
+						<?php if(!isset($_SESSION['cliente'])):?>
+						<tr><td class="cartelAdvertencia"><i class="fa fa-warning fa-lg"></i> Debe seleccionar un Cliente.</td></tr>
+						<?php endif;?>
+					</table>
+				</div>
 
-                            <div id="contiene-tabla"> 
-                               <h1>Listado de consumos</h1>
-                                <table class="display" cellspacing="1" id="myTable" data-page-length='25'>
-                                    <?php if(!isset($_SESSION['cliente'])):?>
-                                    <tr><td class="cartelAdvertencia"><i class="fa fa-warning fa-lg"></i> Debe seleccionar un Cliente.</td></tr>
-                                    <?php endif;?>
-                                </table>
-                        
-                        
-
-
-                            </div>
-        </div>
- 
-        <?php require_once 'footer.php';?>   
-    
-    </div>
-     <div id="basic-modal-content" > </div>
+			</div>
+	
+			<?php require_once 'footer.php';?>   
+		
+		</div>
+		<div id="basic-modal-content" > </div>
     </body>
 </html>

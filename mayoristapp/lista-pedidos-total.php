@@ -864,100 +864,104 @@ if ($hacerVendedor) {
                             <option value="cliente">Seleccionado</option>
                             <option selected value="todos">Todos </option>
                         </select>
-
                     </div>
+
                     <div class="control">
-                        <label for="filtraVendedor">Vendedor / Viajante:
-                            <select name="filtraVendedor" id="filtraVendedor">
+                        <label for="filtraVendedor">Vendedor / Viajante: </label>
+						<select name="filtraVendedor" id="filtraVendedor">
 
-                                <?php if ($codPuesto == 1): ?>
-                                    <option value="todos">- Todos -</option>
-                                    <?php
-                                    if (!empty($arrVendedores)) {
-                                        foreach ($arrVendedores as $vendedor) {
-                                            echo '<option value="' . $vendedor['valor'] . '">' . $vendedor['texto'] . '</option>' . PHP_EOL;
-                                        }
-                                    }
-                                    ?>
-                                <?php endif; ?>
-                                <?php if ($codPuesto != 1): ?>
-                                    <?php
-                                    if (!empty($arrVendedores)) {
-                                        foreach ($arrVendedores as $vendedor) {
-                                            echo '<option selected="selected"  value="' . $vendedor['valor'] . '">' . $vendedor['texto'] . '</option>' . PHP_EOL;
-                                        }
-                                    }
-                                    ?>
-                                <?php endif; ?>
+							<?php if ($codPuesto == 1): ?>
+								<option value="todos">- Todos -</option>
+								<?php
+								if (!empty($arrVendedores)) {
+									foreach ($arrVendedores as $vendedor) {
+										echo '<option value="' . $vendedor['valor'] . '">' . $vendedor['texto'] . '</option>' . PHP_EOL;
+									}
+								}
+								?>
+							<?php endif; ?>
+							<?php if ($codPuesto != 1): ?>
+								<?php
+								if (!empty($arrVendedores)) {
+									foreach ($arrVendedores as $vendedor) {
+										echo '<option selected="selected"  value="' . $vendedor['valor'] . '">' . $vendedor['texto'] . '</option>' . PHP_EOL;
+									}
+								}
+								?>
+							<?php endif; ?>
 
-                            </select>
-                        </label>
+						</select>
                     </div>
-                    <div class="control">
-                        <label for="estadoPedido" class="parametros">Estado:
-                            <select name="estadoPedido" id="estadoPedido">
-                                <option value="">Todos</option>
-                                <option value="En Remito">En Remito</option>
-                                <option value="Facturado">Facturado</option>
-                                <option value="Pendiente">Pendiente</option>
 
-                                <option value="Imput manual">Imput manual</option>
-                                <option value="Aprobado">Aprobado</option>
-                                <option value="Completo">Completo</option>
-                                <option value="Parcial">Parcial</option>
-                                <option value="Cerrado">Cerrado</option>
-                                <option value="En preparación">En preparación</option>
-                                <option value="Preparado">Preparado</option>
-                            </select>
-                        </label>
+                    <div class="control">
+                        <label for="estadoPedido" class="parametros">Estado:</label>
+						<select name="estadoPedido" id="estadoPedido">
+							<option value="">Todos</option>
+							<option value="En Remito">En Remito</option>
+							<option value="Facturado">Facturado</option>
+							<option value="Pendiente">Pendiente</option>
+
+							<option value="Imput manual">Imput manual</option>
+							<option value="Aprobado">Aprobado</option>
+							<option value="Completo">Completo</option>
+							<option value="Parcial">Parcial</option>
+							<option value="Cerrado">Cerrado</option>
+							<option value="En preparación">En preparación</option>
+							<option value="Preparado">Preparado</option>
+						</select>
+                        
                     </div>
                     <div id="buscaTipo" class="control">
-                        <label for="tipoPedido" class="parametros">Tipo:
-                            <select id="tipoPedido" name="tipoPedido">
-                                <option value="">Todos</option>
-                                <option value="Sistema">Sistema</option>
-                                <option value="Web">Web Viajante</option>
-                                <option value="Web Cliente">Web Propío</option>
-                            </select>
-                        </label>
+                        <label for="tipoPedido" class="parametros">Tipo:</label>
+						<select id="tipoPedido" name="tipoPedido">
+							<option value="">Todos</option>
+							<option value="Sistema">Sistema</option>
+							<option value="Web">Web Viajante</option>
+							<option value="Web Cliente">Web Propío</option>
+						</select>
+                        
 
                     </div>
 
                 </div>
                 <div class='panelesBloqueInforme'>
+
                     <div class="control">
-                        <label for="campoBusca" class="parametros">Buscar por:
-                            <select name="campoBusca" id="campoBusca">
-                                <option value=""> </option>
-                                <option value="Fecha" selected="selected">Fecha</option>
-                                <option value="NroComprobante">Número</option>
-                                <option value="TipoPedido">Tipo Pedido</option>
-                            </select>
-                        </label>
+                        <label for="campoBusca" class="parametros">Buscar por:</label>
+						<select name="campoBusca" id="campoBusca">
+							<option value=""> </option>
+							<option value="Fecha" selected="selected">Fecha</option>
+							<option value="NroComprobante">Número</option>
+							<option value="TipoPedido">Tipo Pedido</option>
+						</select>
                     </div>
-                    <div id="buscaFecha" class="control">
-                        <label for="fechaDesde" class="parametros">Desde: <input type="date" name="fechaDesde" id="fechaDesde" value="<?php echo date('Y-m-d');?>"></label>
-                        <label for="fechaHasta" class="parametros">Hasta: <input type="date" name="fechaHasta" id="fechaHasta" value="<?php echo date('Y-m-d');?>"></label>
-                    </div>
+
+                    <div id="buscaFecha" class="control-fechas grid-column-0">
+						<div class="control">
+                        	<label for="fechaDesde" class="parametros">Desde: </label>
+							<input type="date" name="fechaDesde" id="fechaDesde" value="<?php echo date('Y-m-d');?>">
+							
+                        </div>
+						<div class="control">
+							<label for="fechaHasta" class="parametros">Hasta: </label>
+							<input type="date" name="fechaHasta" id="fechaHasta" value="<?php echo date('Y-m-d');?>">
+							
+						</div>
+					</div>
 
                     <div id="buscaNumero" class="control" style="display:none">
-                        <label for="numeroComp" class="parametros">Nº Comprob:
-                            <input type="text" name="numeroComp" id="numeroComp">
-                        </label>
-
+                        <label for="numeroComp" class="parametros">Nº Comprob:</label>
+                        <input type="text" name="numeroComp" id="numeroComp">
                     </div>
-
-
                 </div>
+
                 <div class='panelesBloqueInforme'>
                     <div class="control">
-                        <label for="tipoInforme" class="parametros">Tipo de Informe:
-                            <select name="tipoInforme" id="tipoInforme">
-                                <option value="resumen">Resumen </option>
-                                <option value="detallado">Detallado </option>
-                                
-                            </select>
-                        </label>
+                        <label for="tipoInforme" class="parametros">Tipo de Informe:</label>
+						<select name="tipoInforme" id="tipoInforme">
+							<option value="resumen">Resumen </option>
+							<option value="detallado">Detallado </option>
+						</select>
                     </div>
                    
 
