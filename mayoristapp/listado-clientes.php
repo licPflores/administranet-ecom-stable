@@ -444,7 +444,7 @@ if (isset($_GET['buscaOferta'])) {
             <img src="_img/logo-administranet-ecommerce.png" />
         </div>
         <div class="paneles" id="contiene-tabla" style="display:none;">
-            <table class="display compact" cellspacing="1" id="myTable"></table>
+            <table class="display compact tabla-712px" cellspacing="1" id="myTable"></table>
         </div>
 
         <!-- <div class="paneles" >

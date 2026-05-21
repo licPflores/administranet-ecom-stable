@@ -552,7 +552,7 @@ thead th {
          #contiene-tabla{
                     margin-top: 1%;
                     /*margin-left: 10px;*/
-                    float:left;
+                    /*float:left;*/
                     overflow: auto;
                     /*min-width: 960px;*/
                    
@@ -565,6 +565,11 @@ thead th {
                     border-radius: 2px;
                     margin-bottom: 20px;
                 }
+				.tabla-712px {
+					width: 100%;
+					max-width: 712px;
+					margin: auto;
+				}
 
          
                 
@@ -2688,16 +2693,18 @@ renglon x cada lote para hacerlo con par impar
     width:100%;
     text-align: center;    
 }
-
+#datosVendedor {
+	position: absolute !important;
+	margin-top: 10px !important;
+	left: calc(100% - 212px);
+}
 .clase-tooltip:before {
-  content: "";
+  	/*content: "";
     display: block;
     width: 10px;
     height: 10px;
     background-color: #202020;
     position: absolute;
-/*    left: 20px;
-    top: 0px;*/
     margin-top: -12px;
     margin-left: 185px;
     z-index: 0;
@@ -2705,12 +2712,25 @@ renglon x cada lote para hacerlo con par impar
     -moz-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+    transform: rotate(45deg);*/
+
+	content: "";
+	display: block;
+	width: 10px;
+	height: 10px;
+	background-color: var(--primario-web-100);
+	position: absolute;
+	margin-top: -12px;
+	margin-left: 168px;
+	z-index: 0;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 .clase-tooltip{
-    color:#fafafa;
-    /*text-shadow: 0 1px 0 rgba(255,255,255,0.5);*/
-    /*background-color: #474948;*/
+    /*color:#fafafa;
     background-color: #202020;
     width: 200px;
     height: 100px;
@@ -2719,19 +2739,31 @@ renglon x cada lote para hacerlo con par impar
     position:relative;
     text-align: left;
     float:right;
-   
     font-size: 14px;
     margin-top: 5px;
-    /*margin-left: 150px;*/
-    /*border: 1px solid #474948;*/
     -webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
     padding: 7px;
-    
     -webkit-box-shadow: 0px 0px 2px 0px #474948;
-    box-shadow: 0px 0px 2px 0px #474948;
+    box-shadow: 0px 0px 2px 0px #474948;*/
 
+	line-height: var(--leading-normal);
+	background-color: var(--primario-web-100);
+	color: var(--neutro-0);
+	width: 200px;
+	height: 132px;
+	z-index: 1;
+	right: 0px;
+	text-align: left;
+	float: right;
+	font-size: var(--text-base);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	padding: 7px;
+	-webkit-box-shadow: 0px 0px 4px 0px rgba(var(--neutro-100-rgb), 0.77);
+	box-shadow: 0px 0px 4px 0px rgba(var(--neutro-100-rgb), 0.77);
 }
 .clase-tooltip i{
     margin-right: 3px;

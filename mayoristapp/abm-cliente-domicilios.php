@@ -871,7 +871,7 @@ $tabla_domicilios = completa_tabla($cli);
 					<img src="_img/logo-administranet-ecommerce.png"/>  
 				</div>
 
-				<div id="contiene-tabla">
+				<div id="contiene-tabla" class="tabla-712px">
 					<table class="display compact" cellspacing="1" id="myTable">
 						<?php echo $tabla_domicilios;?>
 					</table>
