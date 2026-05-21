@@ -164,67 +164,70 @@ $usoBultoPromedio = $_SESSION["uso_bulto_promedio"];
                 </div>
 
 
+                <div class="panelesBloqueInforme">
+					<div class="titulo">Punto de Venta</div>
 
+					<div class="panel-filtro-simple">
+						<div class="control">
+							<label class="parametros">Punto:</label>
 
+							<select name="puntoVenta" id="puntoVenta">
+								<option value="|Todos" selected="selected"> - todos - </option>
+								<?php echo $_SESSION["lista_pv_opc"]; ?>
+							</select>
 
-                <div class="panelesBloqueInforme panel-filtro-simple">
-                    <div class="titulo">Punto de Venta</div>
+							<button name="addPv" id="addPv" type="button" class="botonNuevo">
+								<i class="fas fa-plus fa-lg fa-fw"></i>
+							</button>
+						</div>
+					</div>
 
-                    <div class="control">
-                        <label class="parametros">Punto:</label>
+					<div class="subtitulo">Filtros aplicados:</div>
 
-                        <select name="puntoVenta" id="puntoVenta">
-                            <option value="|Todos" selected="selected"> - todos - </option>
-                            <?php echo $_SESSION["lista_pv_opc"]; ?>
-                        </select>
+                    <div class="panelesBloqueInforme-interno contiene-lista-filtros en-bloque">
 
-						<button name="addPv" id="addPv" type="button" class="botonNuevo">
-							<i class="fas fa-plus fa-lg fa-fw"></i>
-						</button>
-
-                    </div>
-
-                    <div class="control">
-						<label class="parametros">Aplicados: </label>
                         <ul name="listaPv" id="listaPv" class="listaSeleccionado">
                             <li id="1"><i class="fas fa-check-square fa-lg fa-fw"></i>Punto venta: Todos <a class="borrarLi" rel="listaPv|1" href="#" title="Eliminar de la lista"><i class="fa fa-trash fa-lg"></i></a></li>
                         </ul>
 
                         <input type="hidden" name="pvSelec" id="pvSelec" value="|Todos|1||" required="required">
                     </div>
-
                 </div>
 
-                <div class="panelesBloqueInforme panel-filtro-compuesto">
+                <div class="panelesBloqueInforme">
                     <div class="titulo"> Filtros </div>
 
-                    <div class="control">
-                        <label for="filtrarPor" class="parametros">Tipo:</label>
-                        <select name="filtrarPor" id="filtrarPor">
-                            <option value=""> - seleccionar -</option>
-                            <option value="cliente">Cliente</option>
-                            <option value="tipocliente">Tipo Cliente</option>
-                            <option value="vendedor">Vendedor</option>
-                            <option value="articulo">Articulo</option>
-                            <option value="proveedor">Proveedor</option>
-                            <option value="zona">Zona</option>
-                            <option value="categoria">Categorias</option>
-                            <option value="rubro">Rubro</option>
-                            <option value="subrubro">Sub Rubro</option>
-                            <option value="marca">Marca</option>
-                            <option value="usuario">Usuario</option>
-                            <option value="sucursal">Sucursal</option>
-                        </select>
-                    </div>
+					<div class="panel-filtro-compuesto">
+						<div class="control">
+							<label for="filtrarPor" class="parametros">Tipo:</label>
+							<select name="filtrarPor" id="filtrarPor">
+								<option value=""> - seleccionar -</option>
+								<option value="cliente">Cliente</option>
+								<option value="tipocliente">Tipo Cliente</option>
+								<option value="vendedor">Vendedor</option>
+								<option value="articulo">Articulo</option>
+								<option value="proveedor">Proveedor</option>
+								<option value="zona">Zona</option>
+								<option value="categoria">Categorias</option>
+								<option value="rubro">Rubro</option>
+								<option value="subrubro">Sub Rubro</option>
+								<option value="marca">Marca</option>
+								<option value="usuario">Usuario</option>
+								<option value="sucursal">Sucursal</option>
+							</select>
+						</div>
 
-                    <div class="control-con-boton">
-                        <!-- <label for="seleccionFiltro" class="parametros">Seleccionar: </label> -->
-                        <input id="seleccionFiltro" alt="" autocomplete="off" type="search" placeholder="nombre o codigo..." disabled="disabled">
-                        <button name="addFiltro" id="addFiltro" class="botonNuevo" type="button"> <i class="fas fa-plus fa-lg fa-fw"></i> </button>
-                    </div>
+						<div class="control-con-boton">
+							<!-- <label for="seleccionFiltro" class="parametros">Seleccionar: </label> -->
+							<input id="seleccionFiltro" alt="" autocomplete="off" type="search" placeholder="nombre o codigo..." disabled="disabled">
+							<button name="addFiltro" id="addFiltro" class="botonNuevo" type="button"> <i class="fas fa-plus fa-lg fa-fw"></i> </button>
+						</div>
 
-                    <div class="control w100p">
-                        <label class="parametros">Aplicados: </label>
+					</div>
+
+					<div class="subtitulo">Filtros aplicados:</div>
+
+                    <div class="panelesBloqueInforme-interno contiene-lista-filtros en-bloque">
                         <ul name="listaFiltro" id="listaFiltro" class="listaSeleccionado"></ul>
                         <input type="hidden" name="filtroSelec" id="filtroSelec" value="" required="required">
                     </div>

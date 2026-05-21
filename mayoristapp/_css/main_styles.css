@@ -1348,7 +1348,6 @@ label.ventana{
 		display: flex;
 		justify-content: flex-start;
 		align-items: flex-start;
-		margin: 0.5%;
 		flex-direction: column; 
 	}
     .paneles .control input[type="radio"] {
@@ -1448,6 +1447,15 @@ label.ventana{
         padding: 5px;
         margin-bottom: 10px;
     }
+	.panelesBloqueInforme .subtitulo{
+		grid-column: 1 / -1;
+
+        width:100%;
+        color:#2A3E72;
+        font-size: 0.775rem;
+        font-weight: 700;
+        padding: 5px;
+    }
 
     .panelesBloqueInforme .control label,
 	.panelesBloque-sin-grilla .control label {
@@ -1508,44 +1516,49 @@ label.ventana{
 	}
 
 
-	.panelesBloqueInforme.panel-filtro-simple {
+	.panel-filtro-simple {
+		grid-column: 1 / -1;
+    	max-width: calc(50% - 6px);
+
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(306px, 1fr));
 		gap: 6px;
 		align-items: start;
 	}
-	.panelesBloqueInforme.panel-filtro-simple .control {
+	.panel-filtro-simple .control {
 		display: grid;
 		grid-template-columns: 1fr 50px;
 		gap: 6px;
 		align-items: start;
 	}
-	.panelesBloqueInforme.panel-filtro-simple .control .titulo,
-	.panelesBloqueInforme.panel-filtro-simple .control .parametros {
+	.panel-filtro-simple .control .titulo,
+	.panel-filtro-simple .control .parametros {
 		grid-column: 1 / -1;
 	}
 
 
-	.panelesBloqueInforme.panel-filtro-compuesto {
+	.panel-filtro-compuesto {
+		grid-column: 1 / -1;
+
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(306px, 1fr));
 		gap: 6px;
 		align-items: start;
 	}
-	.panelesBloqueInforme.panel-filtro-compuesto .control-con-boton {
+	.panel-filtro-compuesto .control-con-boton {
 		display: grid;
 		grid-template-columns: 1fr 50px;
 		gap: 6px;
 		align-items: end;
 		height: 60px;
 	}
-	.panelesBloqueInforme.panel-filtro-compuesto .control-con-boton .titulo,
-	.panelesBloqueInforme.panel-filtro-compuesto .control-con-boton .parametros {
+	.panel-filtro-compuesto .control-con-boton .titulo,
+	.panel-filtro-compuesto .control-con-boton .parametros {
 		grid-column: 1 / -1;
 	}
 
-	.panelesBloqueInforme.panel-filtro-compuesto .control-con-boton input,
-	.panelesBloqueInforme.panel-filtro-compuesto .control-con-boton button {
+	.panel-filtro-compuesto .control-con-boton input,
+	.panel-filtro-compuesto .control-con-boton button {
 		width: 100% !important;
 		margin: 0 !important;
 	}
@@ -1609,6 +1622,73 @@ label.ventana{
         color: #ff0000;
         text-decoration: none;
     }
+
+	.contiene-lista-filtros.en-bloque ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 6px;
+		margin-top: 6px;
+	}
+	.contiene-lista-filtros #listaFiltro li {
+		display: grid;
+		grid-template-columns: 20px 1fr 20px;
+		grid-template-rows: auto auto;
+		gap: 0 6px;
+		grid-template-areas: "icono tipo borrar"        
+							"icono texto borrar";
+	}
+	.contiene-lista-filtros.en-bloque ul li {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		padding: 4px;
+		border: 2px solid rgba(var(--primario-web-100-rgb), 0.15);
+		border-radius: 4px;
+		margin: 0;
+	}
+	.contiene-lista-filtros #listaPv li .fa-check-square {
+		grid-area: icono;
+		color: var(--primario-web-80);
+	}
+	.contiene-lista-filtros #listaPv li .fa-check-square, 
+	.contiene-lista-filtros #listaFiltro li .fa-check-square {
+		grid-area: icono;
+		color: var(--exito-100);
+	}
+	.contiene-lista-filtros #listaPv li span.tipo,
+	.contiene-lista-filtros #listaFiltro li span.tipo {
+		grid-area: tipo;
+		font-size: var(--text-xs);
+		font-weight: var(--font-bold);
+		color: var(--neutro-60);
+		text-transform: uppercase;
+	}
+	.contiene-lista-filtros #listaPv li strong,
+	.contiene-lista-filtros #listaFiltro li strong {
+		grid-area: texto;
+		font-size: var(--text-md);
+		font-weight: var(--font-bold);
+		color: var(--primario-app);
+	}
+	.contiene-lista-filtros #listaPv li .borrarLi,
+	.contiene-lista-filtros #listaFiltro li .borrarLi {
+		grid-area: borrar;
+	}
+	.contiene-lista-filtros.en-bloque ul li .borrarLi {
+		line-height: var(--leading-tight);
+		color: var(--neutro-60);
+		text-decoration: none;
+		margin-left: auto;
+	}
+	.contiene-lista-filtros ul li .borrarLi {
+		line-height: var(--leading-tight);
+		color: var(--neutro-60);
+		text-decoration: none;
+		margin-left: auto;
+	}
+	.contiene-lista-filtros ul li .borrarLi:hover {
+		color: var(--advertencia-80);
+	}
 
 
     /* estilo para el item de filtro al usar la ui */
