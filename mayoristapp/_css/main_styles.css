@@ -1492,6 +1492,9 @@ label.ventana{
 		align-items: start;
 		grid-auto-flow: column;
 	}
+	.panelesBloqueInforme .control-con-boton {
+		margin-top: 23px;
+	}
 	.panelesBloqueInforme .control-botones {
 		grid-column: 1 / -1;
 		display: flex;

@@ -1803,7 +1803,7 @@
 
                 // al menos un item de filtro seleccionado
                 if (seleccion !== "" && seleccion[1] !== undefined) {
-                    listaFiltro.append('<li id="' + indiceLi + '"> <i class="fas fa-check-square fa-lg fa-fw"></i> ' + filtro + ' - <strong>' + seleccion[1] + '</strong> <a class="borrarLi" rel="listaFiltro|' + indiceLi + '" href="#" title="Eliminar de la lista"><i class="fas fa-trash fa-lg fa-fw"></i></a></li>');
+                    listaFiltro.append('<li id="' + indiceLi + '"> <i class="fas fa-check-square fa-lg fa-fw"></i><span class="tipo"> ' + filtro + ' </span> <strong>' + seleccion[1] + '</strong> <a class="borrarLi" rel="listaFiltro|' + indiceLi + '" href="#" title="Eliminar de la lista"><i class="fas fa-trash fa-lg fa-fw"></i></a></li>');
                     tFiltro = tFiltro + filtro + '|' + seleccion[0] + '|' + seleccion[1] + '|' + indiceLi + '||';
                     textFiltro.val(tFiltro);
 
@@ -1846,7 +1846,7 @@
                 var indiceLi = listaPv.children().length + 1;
                 //agregar item a la lista
                 if (seleccion !== "" && seleccion !== undefined) {
-                    listaPv.append('<li  id="' + indiceLi + '"><i class="fas fa-check-square fa-lg fa-fw"></i> Punto venta: <strong>' + seleccion[1] + '</strong> <a class="borrarLi" rel="listaPv|' + indiceLi + '" href="#" title="Eliminar de la lista"><i class="fa fa-trash fa-lg"></i></a></li>');
+                    listaPv.append('<li  id="' + indiceLi + '"><i class="fas fa-check-square fa-lg fa-fw"></i> <span class="tipo">Punto venta:</span> <strong>' + seleccion[1] + '</strong> <a class="borrarLi" rel="listaPv|' + indiceLi + '" href="#" title="Eliminar de la lista"><i class="fa fa-trash fa-lg"></i></a></li>');
                     tPv = tPv + seleccion[0] + '|' + seleccion[1] + '|' + indiceLi + '||';
                     //console.log(tPv);
                     textPv.val(tPv);
