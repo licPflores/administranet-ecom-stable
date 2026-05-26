@@ -564,72 +564,59 @@ if($hacerVendedor){
                 <form id="formBusca" name="formBusca" method="POST" action="">
                 <div class='panelesBloqueInforme'>
                 <div class="control">
-                        <label for="filtraVendedor">Vendedor / Viajante:  
-                            <select name="filtraVendedor" id="filtraVendedor">
-                                
-                                <?php if($codPuesto==1):?>
-                                    <option value="todos" >- Todos -</option>
-                                    <?php 
-                                    if(!empty($arrVendedores)){
-                                        foreach($arrVendedores as $vendedor){
-                                        echo '<option value="'.$vendedor['valor'].'">'.$vendedor['texto'].'</option>'.PHP_EOL;
+                        <label for="filtraVendedor">Vendedor / Viajante:</label>  
+						<select name="filtraVendedor" id="filtraVendedor">
+							
+							<?php if($codPuesto==1):?>
+								<option value="todos" >- Todos -</option>
+								<?php 
+								if(!empty($arrVendedores)){
+									foreach($arrVendedores as $vendedor){
+									echo '<option value="'.$vendedor['valor'].'">'.$vendedor['texto'].'</option>'.PHP_EOL;
 
-                                        }
-                                    }
-                                    ?>    
-                                <?php endif;?>    
-                                <?php if($codPuesto!=1):?>
-                                <?php    
-                                        if(!empty($arrVendedores)){
-                                            foreach($arrVendedores as $vendedor){
-                                                echo '<option selected="selected"  value="'.$vendedor['valor'].'">'.$vendedor['texto'].'</option>'.PHP_EOL;
+									}
+								}
+								?>    
+							<?php endif;?>    
+							<?php if($codPuesto!=1):?>
+							<?php    
+									if(!empty($arrVendedores)){
+										foreach($arrVendedores as $vendedor){
+											echo '<option selected="selected"  value="'.$vendedor['valor'].'">'.$vendedor['texto'].'</option>'.PHP_EOL;
 
-                                            }
-                                        }
-                                    ?>
-                                <?php endif;?>    
-                                
-                            </select>
-                        </label>
+										}
+									}
+								?>
+							<?php endif;?>    
+							
+						</select>
                     </div>
+
                     <div class="control">
-                        <label for="filtraCliente">Cliente:  
-                            <select name="filtraCliente" id="filtraCliente">
-                                <option value="todos" >- Todos -</option>
-                                <?php if(isset($clienteObj)):?>
-                                <option selected="selected"  value="<?php echo $clienteObj->Codigo;?>"><?php echo $clienteObj->cliente.'(Cod:'.$clienteObj->Codigo.')';?></option>
-                                <?php endif;?>
-                            </select>
-                        </label>
+                        <label for="filtraCliente">Cliente:</label>  
+						<select name="filtraCliente" id="filtraCliente">
+							<option value="todos" >- Todos -</option>
+							<?php if(isset($clienteObj)):?>
+							<option selected="selected"  value="<?php echo $clienteObj->Codigo;?>"><?php echo $clienteObj->cliente.'(Cod:'.$clienteObj->Codigo.')';?></option>
+							<?php endif;?>
+						</select>
                     </div>
                   
                     <div class="control">
-                        <label for="campoBusca">Buscar por:
-                            <select name="campoBusca" id="campoBusca">
-                                <option value="" >-</option>
-                                <option value="Fecha" selected="selected">Fecha</option>
-                                
-                                
-                            </select>
-                        </label>
-                        
+                        <label for="campoBusca">Buscar por:</label>
+						<select name="campoBusca" id="campoBusca">
+							<option value="" >-</option>
+							<option value="Fecha" selected="selected">Fecha</option>
+						</select>
                     </div>
                   
                     <div id="buscaFecha" class="control">
-                    <label> Desde: 
-                                <input type="date" name="fechaDesde" id="fechaDesde" value="<?php echo  date("Y-m-d", strtotime("-15 day"));?>">
-                                </label> 
-                            
-                            
-                        <label> Hasta: 
-                            <input type="date" name="fechaHasta" id="fechaHasta" value="<?php echo date("Y-m-d");?>">
-                            </label> 
-                        </div>
-                    
-                    
-                    
-                  
-                  
+                    	<label> Desde:</label> 
+						<input type="date" name="fechaDesde" id="fechaDesde" value="<?php echo  date("Y-m-d", strtotime("-15 day"));?>">
+                        <label> Hasta:</label> 
+                        <input type="date" name="fechaHasta" id="fechaHasta" value="<?php echo date("Y-m-d");?>">       
+                    </div>
+
                     <div class="panelesBloqueInformeAccion">
                         <span class="centro w100p">
                             <button title="Buscar" alt="Buscar" type="button" id="botonBuscar" name="botonBuscar" class="botonNuevo">

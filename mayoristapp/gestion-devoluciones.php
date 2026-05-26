@@ -512,8 +512,6 @@ $iconoDisabled = 1;
             <h1>Devoluciones <span><i class="fas fa-angle-up fa-lg fa-fw" style="cursor: pointer;" id="verFiltros"></i></span></h1>
             <form id="formBusca" name="formBusca" method="POST" action="">
 
-
-
                 <div class='panelesBloqueInforme'>
 
                     <div class="titulo">
@@ -527,12 +525,7 @@ $iconoDisabled = 1;
                             <option value="Pendiente">Pendiente</option>
                             <option value="Computada">Computada</option>
                         </select>
-
                     </div>
-
-
-
-
 
                     <div class="control">
                         <label class="parametros" for="campoBusca">Buscar por:</label>
@@ -540,14 +533,8 @@ $iconoDisabled = 1;
                             <option value="1">-</option>
                             <option value="Fecha">Fecha</option>
                             <option value="NroComprobante">Número</option>
-
                         </select>
-
                     </div>
-
-
-
-
 
                     <div id="buscaFecha" style="display:none" class="control">
                         <label class="parametros" for="fechaDesde">Desde: </label>
@@ -557,58 +544,48 @@ $iconoDisabled = 1;
                         <input type="date" name="fechaHasta" id="fechaHasta">
                     </div>
 
-
                     <div id="buscaNumero" class="control" style="display:none">
                         <label class="parametros" for="numeroComp">Nº Comprob:</label>
                         <input type="number" name="numeroComp" id="numeroComp">
-
-
                     </div>
                 </div>
+
                 <div class='panelesBloqueInforme'>
-
-
-
-
 
                     <div class="titulo">
                         Filtros
                     </div>
 
-                    <div class="control">
+					<div class="panel-filtro-compuesto">
+						<div class="control">
+							<label class="parametros" for="filtrarPor">Tipo:</label>
+							<select name="filtrarPor" id="filtrarPor">
+								<option value="1"> - seleccionar -</option>
+								<option value="cliente">Cliente</option>
+								<!--<option value="tipocliente">Tipo Cliente</option>-->
+								<option value="vendedor">Vendedor</option>
+								<option value="articulo">Articulo</option>
+								<option value="proveedor">Proveedor</option>
+								<!--<option value="zona">Zona</option>-->
+								<option value="rubro">Rubro</option>
+								<option value="subrubro">Sub Rubro</option>
+							</select>
+						</div>
 
-                        <label class="parametros" for="filtrarPor">Tipo:</label>
-                        <select name="filtrarPor" id="filtrarPor">
-                            <option value="1"> - seleccionar -</option>
-                            <option value="cliente">Cliente</option>
-                            <!--<option value="tipocliente">Tipo Cliente</option>-->
-                            <option value="vendedor">Vendedor</option>
-                            <option value="articulo">Articulo</option>
-                            <option value="proveedor">Proveedor</option>
-                            <!--<option value="zona">Zona</option>-->
-                            <option value="rubro">Rubro</option>
-                            <option value="subrubro">Sub Rubro</option>
+						<div class="control-con-boton">
+							<!--<label class="parametros" for="seleccionFiltro">Valor: </label>-->
+							<input id="seleccionFiltro" alt="" type="search" placeholder="Seleccione un valor...">
+							<button name="addFiltro" id="addFiltro" class="botonNuevo chico azul" type="button"><i class="fa fa-check"></i> </button>
+						</div>
+					</div>
 
-                        </select>
+					<div class="subtitulo">Filtros aplicados:</div>
 
+                    <div class="panelesBloqueInforme-interno contiene-lista-filtros en-bloque">
+                        <!--<label class="parametros" for="listaFiltro">A filtrar:</label>-->
+                        <ul name="listaFiltro" id="listaFiltro" class="listaSeleccionado"></ul>
+                        <input type="hidden" name="filtroSelec" id="filtroSelec" value="" required="required">
                     </div>
-
-                    <div class="control">
-                        <label class="parametros" for="seleccionFiltro">Valor: </label>
-                        <input id="seleccionFiltro" alt="" type="search" placeholder="Seleccione un valor...">
-                        <button name="addFiltro" id="addFiltro" class="botonNuevo chico azul" type="button"><i class="fa fa-check"></i> </button>
-                    </div>
-
-
-
-                    <div class="control">
-                        <label class="parametros" for="listaFiltro">A filtrar:
-                            <ul name="listaFiltro" id="listaFiltro" class="listaSeleccionado"></ul>
-                            <input type="hidden" name="filtroSelec" id="filtroSelec" value="" required="required">
-
-                        </label>
-                    </div>
-
 
                 </div>
 

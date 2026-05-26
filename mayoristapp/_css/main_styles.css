@@ -1493,7 +1493,7 @@ label.ventana{
 		grid-auto-flow: column;
 	}
 	.panelesBloqueInforme .control-con-boton {
-		margin-top: 23px;
+		/*margin-top: 23px;*/
 	}
 	.panelesBloqueInforme .control-botones {
 		grid-column: 1 / -1;
@@ -1855,6 +1855,7 @@ input[type=search]{
 	float: left;
 	position: relative;
 	list-style: none;
+	z-index: 9999;
 }
 /* main level link */
 #nav a {

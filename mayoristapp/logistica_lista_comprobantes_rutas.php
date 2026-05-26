@@ -1048,7 +1048,7 @@ $motivos_no_entrega = array(
                 <div class='panelesBloqueInforme'>
                     <div class="control">
                         <label for="inputClientes"> Cliente:</label>
-                        <input type="text" id="inputClientes" placeholder="Buscar cliente..."  style="width: 100%;">
+                        <input type="text" id="inputClientes" placeholder="Buscar cliente...">
                         <input type="hidden" id="inputClientesId" name="inputClientesId">
                     <!-- </div> -->
                     <!-- <div class="control">
@@ -1058,46 +1058,42 @@ $motivos_no_entrega = array(
                     </div> -->
                     <!-- <div class="control"> -->
                         <label for="inputRutas">Ruta:</label>
-                        <input type="text" id="inputRutas" placeholder="Buscar hoja de ruta..." style="width: 100%;">
+                        <input type="text" id="inputRutas" placeholder="Buscar hoja de ruta...">
                         <input type="hidden" id="inputRutasId" name="inputRutasId">
                     </div>
                 </div>
                 <div class='panelesBloqueInforme'>
                     <div class="control">
-                        <label for="entregadoRemito" class="parametros">Estado:
-                            <select name="entregadoRemito" id="entregadoRemito">
-                                <option value="">Todos</option>
-                                <option value="SinDatos">Sin datos</option>                                
-                                <option value="Si">Entregado </option>
-                                <option value="No">No Entregado</option>
-
-                            </select>
-                        </label>
+                        <label for="entregadoRemito" class="parametros">Estado:</label>
+						<select name="entregadoRemito" id="entregadoRemito">
+							<option value="">Todos</option>
+							<option value="SinDatos">Sin datos</option>                                
+							<option value="Si">Entregado </option>
+							<option value="No">No Entregado</option>
+						</select>
                     </div>
 
                     <div class="control">
-                        <label for="campoBusca" class="parametros">Buscar por:
-                            <select name="campoBusca" id="campoBusca">
-                                <option value=""> </option>
-                                <option value="Fecha" selected="selected">Fecha</option>
-                                <option value="NroComprobante">Número</option>
-                                <!-- <option value="TipoPedido">Tipo </option> -->
-                            </select>
-                        </label>
+                        <label for="campoBusca" class="parametros">Buscar por:</label>
+						<select name="campoBusca" id="campoBusca">
+							<option value=""> </option>
+							<option value="Fecha" selected="selected">Fecha</option>
+							<option value="NroComprobante">Número</option>
+							<!-- <option value="TipoPedido">Tipo </option> -->
+						</select>
                     </div>
+
                     <div id="buscaFecha" class="control">
-                        <label for="fechaDesde" class="parametros">Desde: <input type="date" name="fechaDesde" id="fechaDesde"></label>
-                        <label for="fechaHasta" class="parametros">Hasta: <input type="date" name="fechaHasta" id="fechaHasta"></label>
+                        <label for="fechaDesde" class="parametros">Desde:</label>
+						<input type="date" name="fechaDesde" id="fechaDesde">
+                        <label for="fechaHasta" class="parametros">Hasta:</label>
+						<input type="date" name="fechaHasta" id="fechaHasta">
                     </div>
 
                     <div id="buscaNumero" class="control" style="display:none">
-                        <label for="numeroComp" class="parametros">Nº Comprob:
-                            <input type="text" name="numeroComp" id="numeroComp">
-                        </label>
-
+                        <label for="numeroComp" class="parametros">Nº Comprob:</label>
+                        <input type="text" name="numeroComp" id="numeroComp">
                     </div>
-
-
                 </div>
 
                 <div class="panelesBloqueInformeAccion">
@@ -1119,8 +1115,8 @@ $motivos_no_entrega = array(
         <div class="paneles" id="contiene-tabla">
             <h1>Comprobantes en ruta</h1>
             <table class="display" id="myTable" data-page-length='10'></table>
-
         </div>
+		
         <!-- Modales -->
         <div id="modal-actualiza" class="modal">
             <div class="modal-content">
