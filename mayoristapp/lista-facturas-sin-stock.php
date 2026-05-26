@@ -652,23 +652,26 @@ $usaZoom = 0;
         
         <div id="content" class="noPrint">           
             
-           <div id="spinner" class="spinner" style="display:none;">
+           	<div id="spinner" class="spinner" style="display:none;">
                <img src="_img/logo-administranet-ecommerce.png">   
                <div class="texto">Procesando...</div>
             </div>
+
             <div id="contiene-tabla"  style="float:left;" >
-             <div class="cartelContacto" id="cartelContacto"></div> 
+
+             	<div class="cartelContacto" id="cartelContacto"></div>
+
                 <h1>1. Responsable </h1>
                 <h1><?php echo $objCliente->cliente ; ?></h1>
+
                 <div class="renglonForm">
-                   
                     <label for="selContacto"> 
                         <button class="botonNuevo grande azul" id="agregarContacto" name="agregarContacto"><i class="fa fa-plus fa-lg"></i> Agregar</button>
                         <?php echo $botonContacto;?>
-                        <select name="selContacto" id="selContacto">
-                            <?php echo $txtLista;?>
-                        </select>
-                    </label>
+						<select name="selContacto" id="selContacto">
+							<?php echo $txtLista;?>
+						</select>
+					</label>
                 </div>
             </div>
 
@@ -677,9 +680,9 @@ $usaZoom = 0;
                 <h3>Alta Responsable</h3>
                 
                 <div class="renglonForm">
-                            <label for="calleCliente">Apellido y Nombre:<em>*</em>
-                                <input type="text" id="nombreContacto" name="nombreContacto"  placeholder="Apellido y Nom..." required="required">
-                            </label>
+					<label for="calleCliente">Apellido y Nombre:<em>*</em>
+						<input type="text" id="nombreContacto" name="nombreContacto"  placeholder="Apellido y Nom..." required="required">
+					</label>
                 </div>
                 
                 <div class="renglonForm">

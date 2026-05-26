@@ -617,12 +617,11 @@ if($hacerVendedor){
                         <input type="date" name="fechaHasta" id="fechaHasta" value="<?php echo date("Y-m-d");?>">       
                     </div>
 
-                    <div class="panelesBloqueInformeAccion">
-                        <span class="centro w100p">
-                            <button title="Buscar" alt="Buscar" type="button" id="botonBuscar" name="botonBuscar" class="botonNuevo">
-                                <i class="fas fa-check fa-lg fa-fw"></i> Generar
-                            </button>
-                        </span>
+                    <div class="control control-con-boton">
+						<label></label>
+						<button title="Buscar" alt="Buscar" type="button" id="botonBuscar" name="botonBuscar" class="botonNuevo">
+							<i class="fas fa-check fa-lg fa-fw"></i> Generar
+						</button>
                     </div>
                     
                </form>
