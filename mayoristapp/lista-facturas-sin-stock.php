@@ -657,154 +657,145 @@ $usaZoom = 0;
                <div class="texto">Procesando...</div>
             </div>
 
-            <div id="contiene-tabla"  style="float:left;" >
+            <div id="contiene-tabla">
+            	<div class="cartelContacto" id="cartelContacto"></div> 
 
-             	<div class="cartelContacto" id="cartelContacto"></div>
+					<h2>1. Responsable </h2>
+					<h4><?php echo $objCliente->cliente ; ?></h4>
 
-                <h1>1. Responsable </h1>
-                <h1><?php echo $objCliente->cliente ; ?></h1>
-
-                <div class="renglonForm">
-                    <label for="selContacto"> 
-                        <button class="botonNuevo grande azul" id="agregarContacto" name="agregarContacto"><i class="fa fa-plus fa-lg"></i> Agregar</button>
-                        <?php echo $botonContacto;?>
+					<div class="renglonForm">
+						<label for="selContacto"> 
+							<button class="botonNuevo grande azul" id="agregarContacto" name="agregarContacto"><i class="fa fa-plus fa-lg"></i> Agregar</button>
+							<?php echo $botonContacto;?>
+						</label>
+					</div>
+					<div class="renglonForm">
 						<select name="selContacto" id="selContacto">
 							<?php echo $txtLista;?>
 						</select>
-					</label>
-                </div>
-            </div>
+					</div>
+				</div>
+			</div>	
 
-            <div id="contiene-tabla"  style="float:left;" class="form-alta-contacto">
+            <div id="contiene-tabla" class="form-alta-contacto">
                 <div class="cartelCliente" id="cartelNuevo"></div> 
                 <h3>Alta Responsable</h3>
                 
-                <div class="renglonForm">
-					<label for="calleCliente">Apellido y Nombre:<em>*</em>
+				<div class="panelesBloqueInforme">
+					<div class="control">
+						<label for="calleCliente">Apellido y Nombre:<em>*</em></label>
 						<input type="text" id="nombreContacto" name="nombreContacto"  placeholder="Apellido y Nom..." required="required">
-					</label>
-                </div>
-                
-                <div class="renglonForm">
-                        <label for="tipoDocContacto">Tipo Doc<em>*</em><br>
-                            <select name="tipoDocContacto" id="tipoDocContacto">
-                                <option value="">- tipo documento -</option>
-                                <option value="DNI">DNI</option>
-                                <option value="LE">LE</option>
-                                <option value="LC">LC</option>
-                                <option value="CIE">CIE</option>
-                                <option value="PAS">PAS</option>
-                                
-                            </select>
-                        </label>
-                </div>    
-                <div class="renglonForm">    
-                    <label for="nroDocCliente">Nro<em>*</em><br>
-                        <input type="number" id="nroDocContacto" name="nroDocContacto" placeholder="documento de identidad...">
-                    </label>
-                </div>
-                <?php if($completo=="Si"):?>
-                <div class="renglonForm">
-                            <label for="telefonoCliente">Telefono<em>*</em>
-                                <input type="tel" id="telefonoContacto" name="telefonoContacto"  placeholder="Telefono..." required="required">
-                            </label>
-                </div>
-                <div class="renglonForm">
-                            <label for="emailContacto">E-mail:<em>*</em>
-                                <input type="email" id="emailContacto" name="emailContacto"  placeholder="email..." required="required">
-                            </label>
-                </div>
-                <?php endif;?>
-                <div class="renglonForm">    
-                    <button id="altaContacto" class="botonNuevo grande azul"><i class="fa fa-check fa-lg"></i> Guardar</button>                   
-                    <input type="hidden" name="completo" id="completo" value="<?php echo $completo;?>">
-                </div>
+					</div>
+					
+					<div class="control">
+						<label for="tipoDocContacto">Tipo Doc<em>*</em><br></label>
+						<select name="tipoDocContacto" id="tipoDocContacto">
+							<option value="">- tipo documento -</option>
+							<option value="DNI">DNI</option>
+							<option value="LE">LE</option>
+							<option value="LC">LC</option>
+							<option value="CIE">CIE</option>
+							<option value="PAS">PAS</option>
+						</select>
+					</div>    
+					<div class="control">    
+						<label for="nroDocCliente">Nro<em>*</em><br></label>
+						<input type="number" id="nroDocContacto" name="nroDocContacto" placeholder="documento de identidad...">
+					</div>
+					<?php if($completo=="Si"):?>
+						<div class="control">
+							<label for="telefonoCliente">Telefono<em>*</em></label>
+							<input type="tel" id="telefonoContacto" name="telefonoContacto"  placeholder="Telefono..." required="required">
+						</div>
+						<div class="control">
+							<label for="emailContacto">E-mail:<em>*</em></label>
+							<input type="email" id="emailContacto" name="emailContacto"  placeholder="email..." required="required">
+						</div>
+					<?php endif;?>
+					<div class="control">    
+						<button id="altaContacto" class="botonNuevo grande azul"><i class="fa fa-check fa-lg"></i> Guardar</button>                   
+						<input type="hidden" name="completo" id="completo" value="<?php echo $completo;?>">
+					</div>
+				</div>
             </div>
-            <div id="contiene-tabla"  style="float:left;" >    
-            <form method="post" name="formFactura" id="formFactura" action="">    
-                
-               
-                <?php if(!empty($facturas)):?>
-                <h1>2. Seleccionar facturas pendientes</h1>
-                    <table class="display" cellspacing="1" id="myTable">
-                        <thead>
-                            <tr>
-                                <th>&nbsp</th>
-                                <th>Fecha</th>                               
-                                <th>N°Comp.</th>
-                               
-                               
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach($facturas as $factura):?>
-                                <tr>
-                                    <td class="acciones">
-                                        <a href="#" class="selFactura" title="Remitar Factura" alt="Remitar Factura" mov="<?php echo $factura->CodigoMovimiento;?>" comprobante="<?php echo $factura->Factura;?>" numero="<?php echo $factura->NroComprobante;?>">
-                                           <i class='fa fa-check-circle fa-lg fa-3x' ></i> 
-                                        </a>
 
-                                    </td>
-                                    <td class="dt-nowrap">
-                                       
-                                        <?php echo $factura->FechaB;?>
-                                    </td>
-                                    
-                                    <td class="dt-nowrap" >
-                                        <span><strong><?php echo $factura->TipoComprobante.'</strong> '.$factura->NroComprobante;?></span><br>
-                                        <span><?php echo $factura->Detalle;?></span><br>
-                                        <span><strong>Total: </strong>$<?php echo number_format($factura->Total,2,",",".");?></span>
-                                        </td>
-                                </tr>
-                            <?php endforeach;?>
-                        </tbody>
-                    </table>                   
+            <div id="contiene-tabla">    
+				<form method="post" name="formFactura" id="formFactura" action="">    
+					
+					<?php if(!empty($facturas)):?>
 
-            <?php endif;?>
-            <?php if(isset($facturaLista)&&!empty($facturaLista)):?>
-                <h1>3. Facturas previas finalizadas</h1>
-                    <table class="display" cellspacing="1" id="myTableFin">
-                        <thead>
-                            <tr>
-                                <th>Fecha</th>                               
-                                <th>N°Comp.</th>
-                                
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach($facturaLista as $factura):?>
-                                <tr>
-                                    
-                                    <td class="dt-nowrap" data-order="<?php echo $factura->FechaOrden;?>">
-                                       
-                                        <?php echo $factura->FechaB;?>
-                                    </td>
-                                    
-                                    <td class="dt-nowrap" >
-                                        <?php echo $factura->TipoComprobante.' '.$factura->NroComprobante;?>
-                                        <span><?php echo $factura->Detalle;?></span><br>
-                                        <span>Total: <?php echo $factura->Total;?></span>
-                                        
-                                    </td>
-                                    
-                                    
-                                    
-                                    
+						<h2>2. Seleccionar facturas pendientes</h2>
 
-                                </tr>
-                            <?php endforeach;?>
-                        </tbody>
-                    </table>                  
-            <?php endif;?>    
-                 <input type="hidden" name="codMovFactura" id="codMovFactura" value="<?php echo $codMovEstado;?>">
-                    <input type="hidden" name="nroFactura" id="nroFactura">
-                    <input type="hidden" name="contactoCliente" id="contactoCliente">
-            </div>
-            
-            <div id="basic-modal-content" ></div>
-        </form>
+						<table class="display" cellspacing="1" id="myTable">
+							<thead>
+								<tr>
+									<th>&nbsp</th>
+									<th>Fecha</th>                               
+									<th>N°Comp.</th>
+								
+								</tr>
+							</thead>
+							<tbody>
+								<?php foreach($facturas as $factura):?>
+									<tr>
+										<td class="acciones">
+											<a href="#" class="selFactura" title="Remitar Factura" alt="Remitar Factura" mov="<?php echo $factura->CodigoMovimiento;?>" comprobante="<?php echo $factura->Factura;?>" numero="<?php echo $factura->NroComprobante;?>">
+											<i class='fa fa-check-circle fa-lg fa-3x' ></i> 
+											</a>
+										</td>
+
+										<td class="dt-nowrap">
+											<?php echo $factura->FechaB;?>
+										</td>
+										
+										<td class="dt-nowrap" >
+											<span><strong><?php echo $factura->TipoComprobante.'</strong> '.$factura->NroComprobante;?></span><br>
+											<span><?php echo $factura->Detalle;?></span><br>
+											<span><strong>Total: </strong>$<?php echo number_format($factura->Total,2,",",".");?></span>
+										</td>
+									</tr>
+								<?php endforeach;?>
+							</tbody>
+						</table>                   
+
+					<?php endif;?>
+					<?php if(isset($facturaLista)&&!empty($facturaLista)):?>
+						<h2>3. Facturas previas finalizadas</h2>
+							<table class="display" cellspacing="1" id="myTableFin">
+								<thead>
+									<tr>
+										<th>Fecha</th>                               
+										<th>N°Comp.</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php foreach($facturaLista as $factura):?>
+										<tr>
+											
+											<td class="dt-nowrap" data-order="<?php echo $factura->FechaOrden;?>">
+												<?php echo $factura->FechaB;?>
+											</td>
+											
+											<td class="dt-nowrap" >
+												<?php echo $factura->TipoComprobante.' '.$factura->NroComprobante;?>
+												<span><?php echo $factura->Detalle;?></span><br>
+												<span>Total: <?php echo $factura->Total;?></span>
+											</td>
+
+										</tr>
+									<?php endforeach;?>
+								</tbody>
+							</table>                  
+					<?php endif;?>    
+
+					<input type="hidden" name="codMovFactura" id="codMovFactura" value="<?php echo $codMovEstado;?>">
+					<input type="hidden" name="nroFactura" id="nroFactura">
+					<input type="hidden" name="contactoCliente" id="contactoCliente">
+
+				</div>
+				
+				<div id="basic-modal-content" ></div>
+			</form>
         </div>
  
         <?php require_once 'footer.php';?>   

@@ -490,7 +490,6 @@ thead th {
 		/*padding: 10px 5px 5px 5px;*/
         width: 100%;
         min-height: 400px;
-        background-color: white;
         margin-bottom: 1%;
         overflow: visible;
          float:left;
@@ -549,12 +548,9 @@ thead th {
 
                 /* la tabla de la busqueda rapida */
                        
-         #contiene-tabla{
+         /*#contiene-tabla{
                     margin-top: 1%;
-                    /*margin-left: 10px;*/
-                    /*float:left;*/
                     overflow: auto;
-                    /*min-width: 960px;*/
                    
                     
                     font-size: 0.775rem;
@@ -564,7 +560,22 @@ thead th {
                     color:#092211;
                     border-radius: 2px;
                     margin-bottom: 20px;
-                }
+                }*/
+				#contiene-tabla {
+					font-size: var(--text-sm);
+					padding: 12px;
+					-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+					-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+					box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+					color: var(--neutro-100);
+					background-color: var(--neutro-0);
+					width: 100%;
+					margin-top: 16px;
+					margin-bottom: 20px;
+					border-radius: 5px;
+					box-sizing: border-box;
+					overflow: auto;
+				}
 				.tabla-712px {
 					width: 100%;
 					max-width: 712px;
@@ -673,12 +684,10 @@ margin: 10px;
     }
 
 h2 {
-/*	color: #333333;*/
     color:  #565C59;
 	font-size: 20px;
 	font-weight: bold;
 	margin: 15px 10px 15px 20px;
-	text-align:right;
 }
 h2.tituloPromo{
         color: #333333;
@@ -721,8 +730,6 @@ h4 {
     font-weight: bold;
     margin-bottom:20px;
     text-shadow: 0 5px 0 rgba(255,255,255,0.3);
-    /* width:  200px; */
-    text-align: center;
     border-bottom: 4px solid #E36673;
     padding-top:10px;
     padding-bottom: 10px;
@@ -1473,6 +1480,7 @@ label.ventana{
         font-size: 12px;
         border: 1px solid #2A3E72;
         padding: 2px;
+		height: 32px;
         border-radius: 3px;
     }
     .panelesBloqueInforme .control input,
@@ -1483,6 +1491,7 @@ label.ventana{
         font-size: 12px;
         border: 1px solid #2A3E72;
         padding: 2px;
+		height: 32px;
         border-radius: 3px;
     }
 	.panelesBloqueInforme .control-fechas {
