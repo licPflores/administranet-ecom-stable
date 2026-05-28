@@ -103,7 +103,7 @@ if ($_SESSION['utiliza_display'] == "Si") {
 
                     <!-- <div id="divBuscaArticulo" > -->
                     
-                    <div class="barra-busqueda">
+                    <div class="barra-busqueda con-filtros">
 
                         <!-- <div class="control" id="divBarraArticulo"> -->
 
@@ -114,81 +114,87 @@ if ($_SESSION['utiliza_display'] == "Si") {
                                 <i class="fab fa-sistrix"></i> Buscar
                         </button> -->
 
-                         
-                        <input type="search" id="nombreBuscaRapido" name="nombreBuscaRapido" placeholder="Producto nombre o id ..." class="input-buscar-rapido" autocomplete="off" />
-                        <button title="Buscar" alt="Buscar" type="button" id="botonBuscarRapido" name="botonBuscarRapido" class="boton-busca-rapido">
-                            <i class="fab fa-sistrix"></i> Buscar
-                        </button>
-                        <input type="hidden" name="itemId" id="itemId">
+                        <div class="barra">
+							<input type="search" id="nombreBuscaRapido" name="nombreBuscaRapido" placeholder="Producto nombre o id ..." class="input-buscar-rapido" autocomplete="off" />
+							<button title="Buscar" alt="Buscar" type="button" id="botonBuscarRapido" name="botonBuscarRapido" class="boton-busca-rapido">
+								<i class="fab fa-sistrix"></i> Buscar
+							</button>
+						</div>
 
-                    </div>
-                    <h3 class="paneles-titulo">Filtros: <i id="filtroAvanzado" class="fas fa-angle-down fa-lg fa-fw"></i></h3>
-                    <div class="div-busqueda-avanzada-producto ocultar" id="divBuscaRubro">
+						<button type="button" class="btn btn-filtro fa-angle-down botonAccionSecundario" id="filtroAvanzado">
+							Filtros <i class="fas fa-angle-down fa-lg fa-fw"></i><i class="fas fa-angle-up fa-lg fa-fw"></i>
+						</button>
+
+						<input type="hidden" name="itemId" id="itemId">
+					</div>
+
+                    <!--<h3 class="paneles-titulo">Filtros: <i id="filtroAvanzado" class="fas fa-angle-down fa-lg fa-fw"></i></h3>-->
+                    
+					<div class="div-busqueda-avanzada-producto ocultar" id="divBuscaRubro">
                         <!-- <h4>Filtros</h4> -->
                        
-                            <div class="div-opciones-busqueda">
-                                <label for="buscaPromo">
-                                    <input type="checkbox" name="buscaPromo" id="buscaPromo" value="si"> Promociones
-                                </label>
-                                <label for="buscaMisConsumos">
-                                    <input type="checkbox" name="buscaMisConsumos" id="buscaMisConsumos" value="si"> Mis consumos
-                                </label>
-                            </div>
-                            
+						<div class="controlContainer-50">
+							<div class="check-control div-opciones-busqueda">
+								<label for="buscaPromo"></label>
+								<input type="checkbox" name="buscaPromo" id="buscaPromo" value="si"> Promociones
+								
+								<label for="buscaMisConsumos"></label>
+								<input type="checkbox" name="buscaMisConsumos" id="buscaMisConsumos" value="si"> Mis consumos
+							</div>
+						</div>
 
-                            <div class="div-opciones-busqueda">
-                                <label for="buscaRubro">Categoría:
-                                    <select id="buscaCategoria" name="buscaCategoria">
-                                        <option value="" selected>- todas -</option>
-                                        <?php $articulos->muestra_categorias(); ?>
-                                    </select>
-                                </label>
-                            </div>
-                            <div class="div-opciones-busqueda">
-                                <label for="buscaRubro">Rubro:
-                                    <select id="buscaRubro" name="buscaRubro">
-                                        <option value=""> - todos -</option>
+						<div class="controlContainer">
+							<div class="control div-opciones-busqueda">
+								<label for="buscaRubro">Categoría:</label>
+								<select id="buscaCategoria" name="buscaCategoria">
+									<option value="" selected>- todas -</option>
+									<?php $articulos->muestra_categorias(); ?>
+								</select>
+							</div>
 
-                                    </select>
-                                </label>
-                            </div>
+							<div class="control div-opciones-busqueda">
+								<label for="buscaRubro">Rubro:</label>
+								<select id="buscaRubro" name="buscaRubro">
+									<option value=""> - todos -</option>
 
-                            <div class="div-opciones-busqueda">
-                                <label for="buscaSubRubro">Sub Rubro:
-                                    <select id="buscaSubRubro" name="buscaSubRubro">
-                                        <option value="">- todos -</option>
-                                    </select>
-                                </label>
-                            </div>
-                            <div class="div-opciones-busqueda">
+								</select>
+							</div>
 
-                                <label for="buscaMarca">Marca:
-                                    <select id="buscaMarca" name="buscaMarca">
-                                        <option value="">- todas -</option>
-                                        <?php $articulos->muestra_marcas(); ?>
-                                    </select>
-                                </label>
-                            </div>
-                            <div class="div-opciones-busqueda">
-                                <label for="buscaModelo">Modelo:
-                                    <select id="buscaModelo" name="buscaModelo">
-                                        <option value="">- todos -</option>
-                                    </select>
-                                </label>
-                            </div>
-                            <!-- <div class="div-opciones-busqueda">
-                                <label for="buscaModelo">Proveedor:
-                                    <select id="buscaModelo" name="buscaModelo">
-                                        <option value="">- todos -</option>
-                                    </select>
-                                </label>
-                            </div> -->
-                            <div class="div-opciones-busqueda accion">
-                                <button title="Filtrar" alt="Filtrar" type="button" id="botonBuscarFiltrar" name="botonBuscarFiltrar" class="botonAccionPrimario">
-                                    <i class="fas fa-sliders-h"></i> Aplicar
-                                </button>
-                            </div>
-                       
+							<div class="control div-opciones-busqueda">
+								<label for="buscaSubRubro">Sub Rubro:</label>
+								<select id="buscaSubRubro" name="buscaSubRubro">
+									<option value="">- todos -</option>
+								</select>
+							</div>
+
+							<div class="control div-opciones-busqueda">
+								<label for="buscaMarca">Marca:</label>
+								<select id="buscaMarca" name="buscaMarca">
+									<option value="">- todas -</option>
+									<?php $articulos->muestra_marcas(); ?>
+								</select>
+							</div>
+
+							<div class="control div-opciones-busqueda">
+								<label for="buscaModelo">Modelo:</label>
+								<select id="buscaModelo" name="buscaModelo">
+									<option value="">- todos -</option>
+								</select>
+							</div>
+
+							<!-- <div class="control div-opciones-busqueda">
+								<label for="buscaModelo">Proveedor:</label>
+								<select id="buscaModelo" name="buscaModelo">
+									<option value="">- todos -</option>
+								</select>
+							</div> -->
+						</div>
+
+						<div class="controlButton div-opciones-busqueda accion">
+							<button title="Filtrar" alt="Filtrar" type="button" id="botonBuscarFiltrar" name="botonBuscarFiltrar" class="botonAccionPrimario">
+								<i class="fas fa-sliders-h"></i> Aplicar
+							</button>
+						</div>
                         
                     </div>
 
