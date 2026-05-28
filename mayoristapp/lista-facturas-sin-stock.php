@@ -681,7 +681,7 @@ $usaZoom = 0;
                 <div class="cartelCliente" id="cartelNuevo"></div> 
                 <h3>Alta Responsable</h3>
                 
-				<div class="panelesBloqueInforme">
+				<div class="paneles panelesBloqueInforme">
 					<div class="control">
 						<label for="calleCliente">Apellido y Nombre:<em>*</em></label>
 						<input type="text" id="nombreContacto" name="nombreContacto"  placeholder="Apellido y Nom..." required="required">
@@ -712,8 +712,9 @@ $usaZoom = 0;
 							<input type="email" id="emailContacto" name="emailContacto"  placeholder="email..." required="required">
 						</div>
 					<?php endif;?>
-					<div class="control">    
-						<button id="altaContacto" class="botonNuevo grande azul"><i class="fa fa-check fa-lg"></i> Guardar</button>                   
+					<div class="control control-con-boton">
+						<label></label>
+						<button id="altaContacto" class="botonNuevo"><i class="fa fa-check fa-lg"></i> Guardar</button>                   
 						<input type="hidden" name="completo" id="completo" value="<?php echo $completo;?>">
 					</div>
 				</div>
