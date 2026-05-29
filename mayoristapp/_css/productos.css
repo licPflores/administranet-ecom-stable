@@ -292,7 +292,7 @@
 
   .tituloComprobante {
     font-size: 1rem;
-    border-bottom: 2px solid #e36673;
+    /*border-bottom: 2px solid #e36673;*/
     background-color: white;
     /* display:flex; */
     display: flex;

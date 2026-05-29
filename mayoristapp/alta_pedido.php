@@ -73,7 +73,7 @@ if ($_SESSION['utiliza_display'] == "Si") {
 	<div id="wrapper">
 		<input type="hidden" id="usoZona" name="usoZona" value="<?php echo $usoZona; ?>">
 		<?php require_once $barra; ?>
-
+		
 
 		<div class="paneles busqueda-productos" id="paneles content">
 			<div class="paneles-titulo  tituloComprobante">
@@ -93,8 +93,6 @@ if ($_SESSION['utiliza_display'] == "Si") {
 					</button>
 				</span>
 			</div>
-			<!-- <div id="cartelItemAgregado">Item agregado! <i class="fa fa-check-circle fa-1x"></i></div> -->
-
 			<div id="panelBuscaRapido">
 
 				<form method="get" action="" id="formBusca">
@@ -125,8 +123,6 @@ if ($_SESSION['utiliza_display'] == "Si") {
 
 						<input type="hidden" name="itemId" id="itemId">
 					</div>
-
-					<!--<h3 class="paneles-titulo">Filtros: <i id="filtroAvanzado" class="fas fa-angle-down fa-lg fa-fw"></i></h3>-->
 
 					<div class="div-busqueda-avanzada-producto ocultar" id="divBuscaRubro">
 						<!-- <h4>Filtros</h4> -->
