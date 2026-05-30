@@ -79,19 +79,19 @@ if ($_SESSION['utiliza_display'] == "Si") {
 			<div class="paneles-titulo  tituloComprobante">
 				<span class="textoTituloComprobante"><i class="fa-solid fa-truck-arrow-right fa-flip-horizontal fa-fw"></i> Devolución</span>
 
-				<span>
+				<div class="controles-titulo">
 					<button type="button" class="botonAccionPrimario" onclick="mostrarBuscarProductos()">Productos</button>
 
-					<button type="button" class="botonAccionPrimario" onclick="mostrarCarrito()">
+					<button type="button" class="botonAccionSecundario" onclick="mostrarCarrito()">
 						Carrito
 						<?php if (isset($_SESSION["totalCarrito"])) : ?>
-							<span class="fa-stack">
+							<span class="badge">
 								<i class="fas fa-circle fa-stack-2x" style="color:Tomato"></i>
-								<strong id="totalCarrito" class="fa-stack-1x fa-inverse"><?php echo $_SESSION["totalCarrito"]; ?></strong>
+								<strong id="totalCarrito" class="total-carrito"><?php echo $_SESSION["totalCarrito"]; ?></strong>
 							</span>
 						<?php endif; ?>
 					</button>
-				</span>
+				</div>
 			</div>
 			<div id="panelBuscaRapido">
 

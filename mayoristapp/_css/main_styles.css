@@ -197,6 +197,40 @@ body {
     align-items: center !important;
     gap: 4px !important;
 }
+
+.paneles .paneles-titulo .controles-titulo {
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 4px;
+}
+
+.paneles .paneles-titulo button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 34px;
+    font-size: var(--text-md) !important;
+    float: none !important;
+    margin: 0 0 0 auto !important;
+	padding: 3px 9px;
+}
+
+.paneles .paneles-titulo button .badge {
+    font-size: var(--text-xs) !important;
+    padding: 2px 6px !important;
+    position: relative;
+    top: 4px;
+    margin-left: 4px;
+}
+
+.paneles .paneles-titulo button .badge .total-carrito {
+  font-size: .7rem;
+  color: #fff !important;
+  position: relative;
+  z-index: 99;
+  top: -4px;
+  left: 0px;
+}
 /* Remove padding and margin */
 
 #buscador-cliente {
