@@ -90,6 +90,7 @@ $codPuesto = $objVendedor->id_puesto;
                     <li><a href="lista-articulo-remito.php"> Lista articulo remitados</a></li>
                     <li><a href="lista-cuenta-corriente.php"> Cuenta corriente</a></li>
                     <li><a href="lista-comprobantes-ncancelados.php"> Comprobantes no cancelados</a></li>
+                    <li><a href="listado-stock-existencias.php">Stock y Existencias</a></li>
 
 
                 </ul>

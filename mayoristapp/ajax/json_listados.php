@@ -375,14 +375,23 @@ function armar_catalogo_producto_pdf($conexion, $param){
                             AND cat.anulado='No'
                         {$where}
                     ORDER BY {$orden} {$direccionOrden};";
-$sqlArticulo;
-//exit();
+//  echo '<pre>' . $sqlArticulo . '</pre>';
+//  exit();
     $hacer = mysqli_query($conexion, $sqlArticulo);
     $arrArticulo = array();
     if ($hacer) {
         while ($producto = mysqli_fetch_assoc($hacer)) {
             $arrArticulo[$producto['IDArt']] = $producto;
         }
+// si no hay productos que mostrar, muestro un mensaje de error.
+        if (empty($arrArticulo)) {
+            // echo '<pre>' . $sqlArticulo . '</pre>';
+// exit();
+            $vuelta = array('error' => 'No se encontraron productos con los filtros seleccionados', 'sql' => $sqlArticulo);
+            echo json_encode($vuelta);
+            exit;
+        }
+
     }
     if(!$hacer){
         $vuelta = array('error' => 'Error al buscar los productos', 'sql' => $sqlArticulo,'descripcion'=>mysqli_error($conexion));
@@ -725,7 +734,7 @@ $sqlArticulo;
        // Guardar el PDF en el servidor y devolver la URL
         $pdfFilePath = 'catalogo-productos-' . date('Y-m-d_h_i') . '.pdf';
         // echo json_encode(array('url' => '_tmp/catalogo-productos-' . date('Y-m-d_h_i') . '.pdf'));
-        $mpdf->Output($pdfFilePath, 'D');
+        // $mpdf->Output($pdfFilePath, 'D');
     //    $mpdf->Output($pdfFilePath);
 
             

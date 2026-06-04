@@ -195,6 +195,7 @@ require_once '_scripts/php/funciones.php';
                             <li><a href="lista-comprobantes-ncancelados.php"> Comprobantes No Cancelados</a></li>
                             <li><a href="lista-cuenta-corriente.php"> Cuenta Corriente</a></li>
                             <li><a href="lista-articulo-remito.php">Artículos Remitados</a></li>
+                            <li><a href="listado-stock-existencias.php">Stock y Existencias</a></li>
                         </ul>
                     </li>
 

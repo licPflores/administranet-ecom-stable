@@ -52,7 +52,7 @@ if(!defined('servidor_db')){
     // define('servidor_db','190.15.193.181'); #jayna
     // define('servidor_db','chapinidorrego.dyndns.org'); 
    // define('servidor_db','201.181.0.172'); // don orione https://201.181.0.172:8090/administraweb/
-    define('servidor_db',administranetEXTERNO); #administranet afuera
+    // define('servidor_db',administranetEXTERNO); #administranet afuera
     // define('servidor_db','192.168.0.1'); #administranet adentro interno
     // define('servidor_db','190.15.204.148'); #inca
     // define('servidor_db','127.0.0.1'); #local 
@@ -66,14 +66,14 @@ if(!defined('servidor_db')){
     // define('servidor_db','190.15.193.181'); #jayna
     //define('servidor_db','190.15.204.191'); #repuestos maldonad.
     //define('servidor_db','192.99.4.182'); # la nacional
-    //define('servidor_db','181.116.127.95'); # angelita
+    define('servidor_db','181.116.127.95'); # angelita
 
 
 
 }
 if(!defined('puerto_db')){
-    // define('puerto_db','30804'); # puerto nuevo local
-    define('puerto_db','3306');#puerto administranet 
+     define('puerto_db','30804'); # puerto nuevo local
+    // define('puerto_db','3306');#puerto administranet 
     // define('puerto_db','36000');#puerto RDP
     // define('puerto_db','12036');#puerto martin representaciones 
     //define('servidor_db','192.168.0.1'); #administranet adentro interno
