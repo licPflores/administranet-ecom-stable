@@ -48,6 +48,14 @@ function buscarCliente($arrOpciones){
         exit();
     } // There is a queryString.
 
+    if (isset($_SESSION['permiso_uso_vendedor_cliente']) && $_SESSION['permiso_uso_vendedor_cliente'] == 'Si') {
+        // dentro de arrayOpciones['listaClientesVendedor'] viene un array con los codigos de clientes que puede ver el vendedor, si esta vacio no se hace nada, si tiene datos entonces se agrega al where de la busqueda.
+        if (isset($arrOpciones['listaClientesVendedor']) && !empty($arrOpciones['listaClientesVendedor'])) {
+            $listaClientesVendedor = $arrOpciones['listaClientesVendedor'];
+            $where .= " AND cliente.Codigo IN(" . implode(',', $listaClientesVendedor) . ') ' . PHP_EOL;
+        }
+    }
+    
     if ($tipoBusqueda == "codigo") {
         $where .= " AND cliente.Codigo = '{$codCliente}'" . PHP_EOL;
     }
@@ -126,12 +134,12 @@ function buscarCliente($arrOpciones){
                 $where
                 
                 ORDER BY cliente.nombre_cliente  LIMIT 0,10";
-
-
-        $hacer = mysqli_query($connV, $query) or die('No puedo ubicar el busqueda rapida Art.' .  mysqli_error($connV) . '<br>' . $query);
-        //          echo "<pre>";
+        //  echo "<pre>";
         //  print_r($query).PHP_EOL;
         //  echo "</pre>";
+
+        $hacer = mysqli_query($connV, $query) or die('No puedo ubicar el busqueda rapida Art.' .  mysqli_error($connV) . '<br>' . $query);
+        
         $clientes = array();
         if ($hacer) {
             // While there are results loop through them - fetching an Object (i like PHP5 btw!).
@@ -143,7 +151,7 @@ function buscarCliente($arrOpciones){
             //                        $textoCliente .= "      <th>Tipo</th>";
             //                        $textoCliente .= "      <th>Telefono</th>";
             // $textoCliente .= "      <th>IVA</th>";
-            $textoCliente .= "      <th>&nbsp</th>";
+        $textoCliente .= "      <th>&nbsp</th>";
             $textoCliente .= "   </tr>";
             $textoCliente .= "</thead>";
             $textoCliente .= "<tbody>";
@@ -297,6 +305,14 @@ if (isset($_POST['buscarCliente']) && $_POST['buscarCliente'] == "1") {
     $parametros['modoBus']          = mysqli_real_escape_string($connV, $_POST["claseBusqueda"]); // codigo o texto
     $parametros['codCliente']          = mysqli_real_escape_string($connV, $_POST["codigo"]);
     $parametros['connV']            = $connV;
+
+    // agregar si existe la sesion que valida el uso de vendedores cliente, revisar si el listado de clientes no viene vacio,
+    // si viene vacio no hacer nada, si viene con datos entonces agregar de forma fija el filtro de clientes de esta lista
+    if (isset($_SESSION['permiso_uso_vendedor_cliente']) && $_SESSION['permiso_uso_vendedor_cliente'] == 'Si') {
+        if (!empty($_SESSION['lista_clientes_vendedor'])) {
+            $parametros['listaClientesVendedor'] = $_SESSION['lista_clientes_vendedor'];
+        }
+    }
     buscarCliente($parametros);
 }
 

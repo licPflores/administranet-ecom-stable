@@ -145,7 +145,8 @@ if ($formulario != "" && $cliente != "") {
     header('Location:' . $uFormulario);
 }
 
-//echo "<pre>";
+// echo "<pre>";
+
 //
 //print_r($objCliente);
 //echo "<br>";

@@ -9,6 +9,52 @@
 // console.log()
 
 // console.log('SoyMobil==>',soyMobil);
+
+function validarCantidadMultiplo(idArt, cantidadIngresada) {
+    let jsonArticulo = document.getElementById('mi-json' + idArt);
+    if (!jsonArticulo) {
+        return true;
+    }
+
+    let objArt = JSON.parse(jsonArticulo.value);
+    let multiplicador = parseInt(objArt.multiplo_cantidad_vta || 1);
+    let cantidad = parseFloat(cantidadIngresada);
+
+    if (!multiplicador || multiplicador <= 1) {
+        return true;
+    }
+
+    if (isNaN(cantidad) || cantidad <= 0) {
+        if (typeof Swal !== 'undefined') {
+            Swal.fire('Cantidad incorrecta', 'Ingresá una cantidad válida.', 'warning');
+        } else {
+            alert('Cantidad incorrecta');
+        }
+        return false;
+    }
+
+    if (cantidad % multiplicador !== 0) {
+        let cantidadCorregida = Math.ceil(cantidad / multiplicador) * multiplicador;
+        let mensaje = 'Cantidad de ' + multiplicador + ' en ' + multiplicador + '. ' +
+                      'Ej: ' + multiplicador + ', ' + (multiplicador * 2) + ', ' + (multiplicador * 3) + '.';
+
+        if (typeof Swal !== 'undefined') {
+            Swal.fire('Cantidad inválida', mensaje, 'warning');
+        } else {
+            alert(mensaje);
+        }
+
+        let inputCantidad = document.getElementById('mi-cantidad-' + idArt);
+        if (inputCantidad) {
+            inputCantidad.value = cantidadCorregida;
+        }
+        return false;
+    }
+
+    return true;
+}
+
+
 // * funcion uniad display bulto para articulos
 // funcion que cambia el precio segun el bulto promedio cambia todos los precios. display bulto o demas
 function cambiaPrecioTipoUnidad(idArt,comoCuento,checkClick){
@@ -355,7 +401,11 @@ const funcionDescArt =
                     cantBulto       = $('#mi-bulto'+quien).val(),
                     ensambladoVta   = $('#mi-ensamblado-vta'+quien).val(),
                     tipoPromoP      = $('#mi-promotipo'+quien).val(),   
-                    comoCuento      = $('#mi-como-cuento'+quien).val();   
+                    comoCuento      = $('#mi-como-cuento'+quien).val();  
+                    
+                    if (!validarCantidadMultiplo(quien, cantidad)) {
+                        return false;
+                    } 
 
                     let jsonArticulo = JSON.parse($('#mi-json'+quien).val());  
                     nombre = jsonArticulo.NombreArticulo;

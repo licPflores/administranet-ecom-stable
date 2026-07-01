@@ -507,6 +507,32 @@ if($hay>0){
         }
        }
         
+
+        // bloque limito clientes a solo los clientes que coloco ena la tabla vendedor_cliente.
+        $permisoUsoVendedoCliente ='No';
+        $permisoUsoVendedoMarca ='No';
+        $listaClientesVendedor = array();
+        $listaArticulosVendedor = array();
+        if ( mysqli_num_rows(mysqli_query($conexionT,"SHOW TABLES LIKE 'vendedor_cliente'")) == 1 ){ 
+            $permisoUsoVendedoCliente ='Si' ;
+            // la tabla esta pero si esta tengo que buscar con mi codviajante si estoy en esa lista,
+            // si estoy en la lista recuperar los codigos de clientes que puedo vender.
+            // sin no estoy en la lista puedo vender a todos los clientes. no filtro.
+        } 
+        // bloque limite articulos a solo los articulos que estan en vendedor_marca 
+        if ( mysqli_num_rows(mysqli_query($conexionT,"SHOW TABLES LIKE 'vendedor_marca'")) == 1 ){ 
+            $permisoUsoVendedoMarca ='Si' ;
+            // la tabla esta pero si esta tengo que buscar con mi codviajante si estoy en esa lista,
+            // si estoy en la lista recuperar los codigos de articulos que puedo vender.
+            // sin no estoy en la lista puedo vender a todos los articulos. no filtro.
+        }        
+
+        // para testing voy a forzar los codigos de clientes y articulos que puede vender el viajante.
+        $permisoUsoVendedoCliente ='Si';
+        $permisoUsoVendedoMarca ='Si';
+        $listaClientesVendedor = array(14,15,16,17,18,19,20,21,22,23,24);
+        $listaArticulosVendedor = array(8,9,10,11,12);        
+
        /*
         * Busqueda rapida de clientes , luego articulos 
         */
@@ -528,6 +554,20 @@ if($hay>0){
             
         } 
 
+        // si tengo el permiso de vendeor cliente activo lo piso.  si tengo permiso de ver todos clientes ...no aplica     
+        // echo '<pre>';
+        // echo 'permiso ';
+        // var_dump($permisoUsoVendedoCliente);
+        // echo 'verTodosClientes ';
+        // var_dump($verTodosClientes);  
+        // echo '</pre>';
+        // tiene mal seteado el permiso lo configuro asi por testing
+        // if($permisoUsoVendedoCliente=='Si' && $verTodosClientes=='No'){ 
+       if($permisoUsoVendedoCliente=='Si'){
+            // piso el filtro.
+            $whereC = " AND cliente.Codigo IN (" . implode(',', $listaClientesVendedor) . ")";
+        }
+
         $sqlClientes= "SELECT 
                             {$campoId} AS codigo,
                             CONCAT(LTRIM(cliente.nombre_cliente), ' Cod: ',{$campoId}) AS nombre,
@@ -542,7 +582,8 @@ if($hay>0){
 
                         ORDER BY cliente.nombre_cliente";
 
-// echo '<pre>',$sqlClientes,'</pre>';                    
+// echo '<pre>',$sqlClientes,'</pre>';  
+// exit;                  
         $hacerCli = mysqli_query($conexionT,$sqlClientes) or die('No puedo ubicar el busqueda rapida Cliente.'.  mysqli_error($conexionT) .'<br>'.$sqlClientes);
         $cRapido=array();
         while($cli=mysqli_fetch_assoc($hacerCli)){
@@ -553,6 +594,10 @@ if($hay>0){
         }
 
         $arrArtRapido = array();
+        $whereArticuloRapido="";
+        if($permisoUsoVendedoMarca=='Si'){
+            $whereArticuloRapido = " AND articulo.IDArt IN (" . implode(',', $listaArticulosVendedor) . ")";
+        }
         
         if($usaIdManual=='Si'){
             $sqlArticuloRapido="SELECT
@@ -574,7 +619,7 @@ if($hay>0){
                    articulo.tipo_art='Articulo'     
                    AND articulo.Discontinuo='No'    
                    AND articulo.disponible_vta='Si'
-                   
+                   {$whereArticuloRapido}                   
                   
             
                    ORDER BY articulo.NombreArticulo ASC";
@@ -598,7 +643,7 @@ if($hay>0){
                            articulo.tipo_art='Articulo'     
                            AND articulo.Discontinuo='No' 
                            AND articulo.disponible_vta='Si'   
-                           
+                           {$whereArticuloRapido}
                           
                            ORDER BY articulo.NombreArticulo ASC";
            }
@@ -762,6 +807,13 @@ if($hay>0){
         // informes gerenciales ventas y cobranzas.
 
         $_SESSION['tipoCliente'] = '';
+
+        // filtro clientes por viajante fijos
+        // filtro articulos por marca viajante fijos.
+        $_SESSION['permiso_uso_vendedor_cliente'] = $permisoUsoVendedoCliente;
+        $_SESSION['permiso_uso_vendedor_marca'] = $permisoUsoVendedoMarca;
+        $_SESSION['lista_clientes_vendedor'] = $listaClientesVendedor;
+        $_SESSION['lista_articulos_vendedor'] = $listaArticulosVendedor;
 
         
         //header('Location: escritorio.php');
