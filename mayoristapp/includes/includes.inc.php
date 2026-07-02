@@ -30,7 +30,8 @@
 // fenix jayna
 //$servidor = ":30804";#pepe
 define('administranetLOCAL','192.168.0.1');
-define('administranetEXTERNO','190.15.214.142');
+define('administranetEXTERNO','190.15.214.142'); // itc
+define('administranetEXTERNOCLARO','190.3.87.143'); // itc
 if(isset($_SESSION['servidor'])){
     $arrSrv= explode(':',$_SESSION['servidor']);
     
@@ -53,7 +54,9 @@ if(!defined('servidor_db')){
     // define('servidor_db','chapinidorrego.dyndns.org'); 
    // define('servidor_db','201.181.0.172'); // don orione https://201.181.0.172:8090/administraweb/
     // define('servidor_db',administranetEXTERNO); #administranet afuera
-    define('servidor_db','192.168.0.1'); #administranet adentro interno
+    define('servidor_db',administranetEXTERNOCLARO); #administranet afuera claro
+    // define('servidor_db','192.168.0.1'); #administranet adentro interno
+
     // define('servidor_db','190.15.204.148'); #inca
     // define('servidor_db','127.0.0.1'); #local 
     // define('servidor_db','190.3.87.55'); #amico
