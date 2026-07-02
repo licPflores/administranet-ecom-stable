@@ -99,8 +99,8 @@ function setCardIntro(origen) {
     createCardTitle({
         target: '#header-intro-1',
         id: '',
-        title: 'Cod: '+search.articulo.IDArt,
-        subTitle: search.articulo.NombreArticulo,
+		title: search.articulo.NombreArticulo + ' - ' + search.articulo.Marca,
+        subTitle: 'Cod: '+search.articulo.IDArt,
         finalPrice: '$ '+formatearNumero(search.precios.precioFinal)+' <span style="font-size:.9rem;">('+search.presentacion[1].cantidadUnidadMinima+' un.)</span> | $ '+formatearNumero(precioUnidadDisplay)+ ' <span style="font-size:.9rem;">x un.</span>',
         image: imgBtn
     })
