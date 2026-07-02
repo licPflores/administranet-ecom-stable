@@ -399,7 +399,7 @@ function setCardListaProducto(arrLista, limite) {
             class: 'item-listado',
             onclick: 'getNewSearch("id", null, "'+arrLista[i].articulo.IDArt+'", null)',
             value: '',
-            htmlText: '<div class="image"><img src="'+img+'" width="50" height="50"></div> <span class="numero-indicador" style="background-color:'+colorMezclado+';">'+numero+'</span> <div class="text-start pt-1"><span class="txt">'+arrLista[i].articulo.NombreArticulo+' - '+arrLista[i].articulo.Marca+' - '+arrLista[i].articulo.Modelo+'</span> <br> <span class="codigo">Cod: '+arrLista[i].articulo.IDArt+'</span></div>'
+            htmlText: '<div class="image"><img src="'+img+'" width="50" height="50"></div> <span class="numero-indicador" style="background-color:'+colorMezclado+';">'+numero+'</span> <div class="text-start pt-1"><span class="txt">'+arrLista[i].articulo.NombreArticulo+' - '+arrLista[i].articulo.Marca+'</span> <br> <span class="codigo">Cod: '+arrLista[i].articulo.IDArt+'</span></div>'
         }); 
         
     }
