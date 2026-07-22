@@ -2,6 +2,9 @@
 
 
 require_once '../sesion.inc.php';
+require_once '../conexion.inc.php';
+
+$conexionVendedor = isset($connV) ? $connV : null;
 
 
 $codViajante = $_SESSION['vendedor']->CodViajante;
@@ -18,11 +21,13 @@ if($_SESSION['usa_id_manual'] == 'Si'){
 
 
 $fechaFinal = new DateTime();
-$fechaFinal->modify('last day of this month');
+// $fechaFinal->modify('last day of this month');
+// poner fecha hoy
+$fechaFinal->modify('today');
 
-// Calcular la fecha de inicio restando 2 meses a la fecha final
+// Calcular la fecha de inicio restando 2 meses a la fecha final ahora cambia solo el mes actual
 $fechaInicio = clone $fechaFinal;
-$fechaInicio->modify('-2 months');
+//$fechaInicio->modify('-2 months');
 $fechaInicio->modify('first day of this month');
 
 // Formatear las fechas a 'Y-m-d' para que sean cadenas de texto
@@ -36,10 +41,19 @@ $fechaFinal = $fechaFinal->format('Y-m-d');
 function traerCompPed($codViajante,$connV,$fechaInicio,$fechaFinal){
 
     $sqlInformacion = " SELECT
-                                TipoComprobante,Codigo,ImporteVenta,Anulado,Estado, CodigoMovimiento
-                        FROM comp_ped as pd  
+                                pd.TipoComprobante,
+                                pd.Codigo,
+                                pd.ImporteVenta,
+                                pd.Anulado,
+                                pd.Estado, 
+                                pd.CodigoMovimiento,     
+                                c.nombre_cliente as nombre
+                        FROM comp_ped as pd 
+                        LEFT JOIN cliente as c ON pd.Codigo = c.Codigo 
                         WHERE 
-                            pd.CodViajante=$codViajante AND  pd.Fecha BETWEEN '$fechaInicio' and '$fechaFinal'; ";
+                            c.CodViajante=$codViajante 
+                            AND  pd.Fecha BETWEEN '$fechaInicio' and '$fechaFinal'
+                        ORDER BY pd.Fecha ASC;";
 
 
     $hacer = mysqli_query($connV,$sqlInformacion) or die('No puedo consultar la informacion del usuario '.$sqlInformacion);
@@ -69,35 +83,76 @@ function traerCompPed($codViajante,$connV,$fechaInicio,$fechaFinal){
 function traerCliente($clientes,$connV){
 
     $datosCliente = array();
+
     foreach($clientes as $cli){
 
         
 
-        $codigo = $cli['codigo'];
+    //     $codigo = $cli['codigo'];
 
-        $sqlInformacion = " SELECT
-        cc.nombre_cliente as nombre
-        FROM cliente as cc  
-        WHERE 
-        cc.Codigo=$codigo ; ";
+    //     $sqlInformacion = " SELECT
+    //     cc.nombre_cliente as nombre
+    //     FROM cliente as cc  
+    //     WHERE 
+    //     cc.Codigo=$codigo ; ";
 
 
-        $hacer = mysqli_query($connV,$sqlInformacion) or die('No puedo consultar la informacion de cuentacliente '.$sqlInformacion);
+    //     $hacer = mysqli_query($connV,$sqlInformacion) or die('No puedo consultar la informacion de cuentacliente '.$sqlInformacion);
 
-        if($hacer){
+    //     if($hacer){
             
-            $p=  mysqli_fetch_object($hacer);
+    //         $p=  mysqli_fetch_object($hacer);
 
-            $datos = array(
-                'codigo' => $cli['codigo'],
-                'nombre' => $p -> nombre,
-                'saldo' => intval($cli['saldo']),
-            );
+    //         $datos = array(
+    //             'codigo' => $cli['codigo'],
+    //             'nombre' => $p -> nombre,
+    //             'saldo' => intval($cli['saldo']),
+    //         );
 
 
 
-            $datosCliente[] = $datos;
+    //         $datosCliente[] = $datos;
+    //     }
+
+    // }
+
+        // la fucion tiene que ir acumulando el saldo del para cada cliente y armar un array de datos clientes con codigo, nombre saldo, el nombra ya viene en el array 
+        // con esta estructura
+        // [25] => stdClass Object
+        // (
+        //     [TipoComprobante] => PED
+        //     [Codigo] => 2206
+        //     [ImporteVenta] => 85756.72
+        //     [Anulado] => No
+        //     [Estado] => Facturado
+        //     [CodigoMovimiento] => 331939
+        //     [nombre] => RUIZ CECILIA 
+        // )
+        // importante: solo sumar los pedidos que no esten cancelados
+        $codigo = $cli['Codigo'];
+        $nombre = $cli['nombre'];
+        $saldo = $cli['ImporteVenta'];
+
+        // agregar al array datos cliente, de tal forma que si el cliente ya existe se sume el saldo
+        $existe = false;
+        foreach($datosCliente as &$dato){
+            if($dato['codigo'] == $codigo){
+                $dato['saldo'] += $saldo;
+                $existe = true;
+                break;
+            }
         }
+        if (!$existe) {
+            $datosCliente[] = array(
+                'codigo' => $codigo,
+                'nombre' => $nombre,
+                // el dato maneja dinero puese ser con decimales?
+                'saldo' => floatval($saldo)
+                
+
+            );
+        }
+
 
     }
         // echo '<pre>';
@@ -114,13 +169,28 @@ function traerArticulosMasVendidos($datos,$connV){
 
     $codigos = codMovimiento($datos);
 
-    $sql = " SELECT s.Cantidad, s.$codigoArticulo, s.Descripcion 
+    $sql = " SELECT 
+                SUM(
+                    CASE 
+                        -- Si el peso por unidad es mayor a 0, convierte kilos a unidades
+                        WHEN s.unidad_art_peso IS NOT NULL AND s.unidad_art_peso > 0 
+                            THEN s.Cantidad / s.unidad_art_peso
+                        -- Si no tiene peso definido o es 0, toma la cantidad directa
+                        ELSE s.Cantidad 
+                    END
+                ) AS Cantidad,
+                s.$codigoArticulo, 
+                s.Descripcion 
             FROM stockp as s
             WHERE s.CodigoMovimiento IN $codigos
-            GROUP BY s.$codigoArticulo
-            ORDER BY s.Cantidad desc
+            GROUP BY 
+                s.$codigoArticulo
+            ORDER BY Cantidad desc
             LIMIT 5; 
     ";
+    // echo '<pre>';
+    // print_r($sql);
+    // echo '</pre>';
     $hacer = mysqli_query($connV,$sql) or die('No puedo consultar la informacion de los articulos '.$sql);
 
     if($hacer){
@@ -205,7 +275,7 @@ function cantidadPedidosFacturados($datos){
     return $totalFacturados;
 }
 
-function cincoPrimerosClientes($arr,$connV){
+function cincoPrimerosClientes($arr){
     
     usort($arr, function($a, $b) {
         return $b['saldo'] - $a['saldo'];
@@ -214,12 +284,13 @@ function cincoPrimerosClientes($arr,$connV){
     $primerosCincoElementos = array_slice($arr, 0, 5);
 
     //print('Clientes que mas compraron');
-    return traerCliente($primerosCincoElementos,$connV);
+    // return traerCliente($primerosCincoElementos);
+    return $primerosCincoElementos;
 
 }
 
 
-function cincoUltimosClientes($arr,$connV){   
+function cincoUltimosClientes($arr){   
 
     usort($arr, function($a, $b) {
         return $b['saldo'] - $a['saldo'];
@@ -227,7 +298,8 @@ function cincoUltimosClientes($arr,$connV){
     $ultimosCincoElementos = array_slice($arr, -5);
 
     //print('clientes que menos compraron');
-    return traerCliente($ultimosCincoElementos,$connV);
+    // return traerCliente($ultimosCincoElementos);
+    return $ultimosCincoElementos;
 }
 
 
@@ -251,6 +323,7 @@ function crearArrayClientes($datosCuentaCliente){
 
         $arrCliente = array();
         $arrCliente['codigo'] = $dato->Codigo;
+        $arrCliente['nombre'] = $dato->nombre;
         $arrCliente['saldo'] = $dato->ImporteVenta;
 
 
@@ -276,6 +349,118 @@ function crearArrayClientes($datosCuentaCliente){
 
 }
 
+// Esta función va a traer el importe de ventas netas, el total de descuentos otorgados y el porcentaje de descuentos sobre el total de ventas netas.
+function traerVentaNeta($codViajante,$connV,$fechaInicio,$fechaFinal){
+$porcentajeDescuento =0;
+    $sql = "SELECT
+            vend.Nombre,
+            SUM(
+              
+              IF(
+                stock.TipoComp ='Venta' OR
+                stock.TipoComp ='Venta TPV'                 
+                #stock.TipoComp ='ND Anul NC'
+				OR stock.TipoComp ='ND Anul NC'
+            	,stock.PrecioNetoxR,
+            	stock.PrecioNetoxR * -1) 
+            
+           ) AS totalVentaNeta ,
+           
+           SUM(
+             IF(
+                stock.TipoComp ='Venta' OR
+                stock.TipoComp ='Venta TPV'                 
+                #stock.TipoComp ='ND Anul NC'
+				OR stock.TipoComp ='ND Anul NC'
+            	,stock.ImpDesc,
+            	stock.ImpDesc * -1) 
+           ) AS descuentoOtorgado
+            
+            FROM stock
+                LEFT JOIN cuentacliente AS cc ON (cc.CodigoMovimiento= stock.CodigoMovimiento) 
+                LEFT JOIN articulo AS arti ON arti.IDArt = stock.IDArt               
+                LEFT JOIN cliente AS cli ON (cli.Codigo= stock.CodigoCP)
+                LEFT JOIN viajantes AS vend ON (vend.CodViajante= cli.CodViajante)
+                #LEFT JOIN viajantes AS vend ON (vend.CodViajante= cc.CodViajante)
+                LEFT JOIN usuarios AS usu ON (usu.id_usuario=stock.IdUsuario)
+                
+           WHERE
+                ( (stock.Fecha BETWEEN '$fechaInicio' AND '$fechaFinal') )
+               
+               AND stock.anulado='No'
+               AND stock.visualiza_ensamble='No'
+               
+                AND (stock.TipoComp = 'Venta' 
+                    OR stock.TipoComp = 'Venta TPV' 
+                    OR stock.TipoComp = 'Devol - Cliente'                                
+					OR stock.TipoComp = 'ND Anul NC'                   
+                    )
+                  AND vend.CodViajante IN ($codViajante)
+
+            GROUP BY vend.CodViajante 
+            ORDER BY cli.nombre_cliente ASC,  stock.Fecha ASC;";
+
+    $hacer = mysqli_query($connV, $sql) or die('No puedo consultar la información de ventas netas ' . $sql);
+
+    if ($hacer) {
+        $datos = mysqli_fetch_assoc($hacer);
+        if (!$datos) {
+            return array(
+                'totalVentaNeta' => 0,
+                'descuentoOtorgado' => 0,
+            );
+        }
+
+        return $datos;
+    }
+
+    return array(
+        'totalVentaNeta' => 0,
+        'descuentoOtorgado' => 0,
+    );
+}
+
+function normalizarMonto($valor)
+{
+    if ($valor === null || $valor === '') {
+        return 0;
+    }
+
+    return round((float)$valor, 2);
+}
+
+function calcularPorcentajeDescuento($ventaNeta, $descuento)
+{
+    $ventaNeta = (float)$ventaNeta;
+    $descuento = (float)$descuento;
+
+    if ($ventaNeta <= 0) {
+        return 0;
+    }
+
+    return round(($descuento / $ventaNeta) * 100, 2);
+}
+
+function mesActualEnEspanol()
+{
+    $meses = array(
+        1 => 'enero',
+        2 => 'febrero',
+        3 => 'marzo',
+        4 => 'abril',
+        5 => 'mayo',
+        6 => 'junio',
+        7 => 'julio',
+        8 => 'agosto',
+        9 => 'septiembre',
+        10 => 'octubre',
+        11 => 'noviembre',
+        12 => 'diciembre'
+    );
+
+    $mes = (int)date('n');
+    return $meses[$mes] . ' ' . date('Y');
+}
 
 
 function general($codViajante,$connV,$fechaInicio,$fechaFinal){
@@ -284,6 +469,12 @@ function general($codViajante,$connV,$fechaInicio,$fechaFinal){
 
 
     $datos = traerCompPed($codViajante,$connV,$fechaInicio,$fechaFinal);
+    // funcion traer venta Neta trae el importe de ventas netas , y el total de descuentos otorgados y el porcentaje de descuentos sobre el total de ventas netas.
+    $datosVentaNeta=traerVentaNeta($codViajante,$connV,$fechaInicio,$fechaFinal);
+
+    $estadisticas['articulos'] = array();
+    $estadisticas['cincoPrimerosClientes'] = array();
+    $estadisticas['cincoUltimosClientes'] = array();
 
     if($datos){
 
@@ -297,13 +488,32 @@ function general($codViajante,$connV,$fechaInicio,$fechaFinal){
 
         $estadisticas['pedidosFacturados'] = cantidadPedidosFacturados($datos);
 
+        
+        $ventasNetas = normalizarMonto($datosVentaNeta['totalVentaNeta']);
+        $descuentosOtorgados = normalizarMonto($datosVentaNeta['descuentoOtorgado']);
+        $porcentajeDescuento = calcularPorcentajeDescuento($ventasNetas, $descuentosOtorgados);
+
+        $estadisticas['rendimiento'] = array(
+            'ventasNetas' => $ventasNetas,
+            'descuentosOtorgados' => $descuentosOtorgados,
+            'porcentajeDescuento' => $porcentajeDescuento,
+            'periodo' => mesActualEnEspanol(),
+        );
+
+        $estadisticas['importeVentasNetas'] = $ventasNetas;
+        $estadisticas['importeDescuentosOtorgados'] = $descuentosOtorgados;
+        $estadisticas['porcentajeDescuentosOtorgados'] = $porcentajeDescuento;
+
+
 
         //$datosCuentaCliente = traerCuentaCliente($codViajante,$connV,$fechaInicio,$fechaFinal);
 
 
         $arr =  crearArrayClientes($datos);
 
-
+        // echo '<pre>';
+        // print_r($datos);
+        // echo '</pre>';
 
         $estadisticas['cincoPrimerosClientes'] = cincoPrimerosClientes($arr,$connV);
 
@@ -324,6 +534,15 @@ function general($codViajante,$connV,$fechaInicio,$fechaFinal){
         $estadisticas['pedidosCancelados'] = 0;
 
         $estadisticas['pedidosFacturados'] = 0;
+        $estadisticas['rendimiento'] = array(
+            'ventasNetas' => 0,
+            'descuentosOtorgados' => 0,
+            'porcentajeDescuento' => 0,
+            'periodo' => mesActualEnEspanol(),
+        );
+        $estadisticas['importeVentasNetas'] = 0;
+        $estadisticas['importeDescuentosOtorgados'] = 0;
+        $estadisticas['porcentajeDescuentosOtorgados'] = 0;
 
 
 
@@ -355,13 +574,10 @@ function general($codViajante,$connV,$fechaInicio,$fechaFinal){
 
 if (isset($_GET['estadisticas']) && $_GET['estadisticas'] == true){
 
-    general($codViajante,$connV,$fechaInicio,$fechaFinal);
+    general($codViajante,$conexionVendedor,$fechaInicio,$fechaFinal);
 
 }
 
-
-
- 
 ?>
 
 
