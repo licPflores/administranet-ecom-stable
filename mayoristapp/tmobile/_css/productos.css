@@ -6,7 +6,7 @@
   grid-gap: 20px; */
   display: grid;
     grid-template-columns: 85% 10%;
-    grid-gap: 15px;
+    grid-gap: 12px;
     align-items: flex-start;
     justify-content: center;
     min-width: 300px;
@@ -17,24 +17,34 @@
 
 /* Estilo para cada producto */
 .producto {
-  display: grid;
+  /*display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: min-content 1fr min-content;
-  /* background-color: #fff; */
-  /* box-shadow: 0 0 5px rgba(0,0,0,0.3); */
-  /* border-radius: 10px; */
-  overflow: hidden;
+  grid-template-rows: min-content 1fr min-content;*/
+
+  	display: grid;
+	grid-template-columns: 70px 1fr;
+	grid-template-rows: repeat(3, auto);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+
+	grid-template-areas:
+		"imagen nombre"
+		"detalle detalle"
+		"precios precios";
+
+
+  	overflow: hidden;
 }
 
 
 /* Estilo para el nombre del producto */
 .producto-nombre {
-
+	grid-area: nombre;
   color: #2A3E72;
   font-weight: 700;
-  padding: 5px 0px 7px 0px;
+  padding: 12px 0px 7px 0px;
   text-align: left;
-  font-size: 0.655rem;
+  font-size: 0.7rem;
 }
 
 /* .image-container {
@@ -55,7 +65,7 @@
 
 
 .producto-imagen{
-    float: left;
+    grid-area: imagen;
     
     /* width: 60px; */
     max-width: 70px;
@@ -77,6 +87,8 @@
 }
 
 .producto-detalle {
+	grid-area: detalle;
+
   font-size: 0.600 rem;
   /* line-height: 14px; */
   display: flex;
@@ -128,6 +140,8 @@
 
 /* Estilo para la columna de precios */
 .precios {
+	grid-area: precios;
+
   display: flex;
   flex-direction: row;
   justify-content:space-between;
