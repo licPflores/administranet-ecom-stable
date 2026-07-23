@@ -94,6 +94,192 @@
 	Mommy feet
 ----------------------------------------------*/
 
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  min-height: 38px;
+  font-size: var(--text-sm);
+  font-weight: var(--font-extrabold);
+  line-height: var(--leading-normal);
+  color: var(--neutro-100);
+  background-color: var(--neutro-0);
+  background-clip: padding-box;
+  border: 1px solid var(--neutro-40);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: .375rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  color: var(--primario-web-100);
+  background-color: rgba(var(--primario-web-opcion-clara-rgb), 0.2);
+  border: 1px solid var(--primario-web-100);
+}
+
+input:focus,
+textarea:focus {
+  color: var(--neutro-100);
+  background-color: var(--neutro-0);
+  border-color: var(--primario-web-opcion-clara);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+select {
+  display: block;
+  width: 100%;
+  padding: .375rem 2.25rem .375rem .75rem;
+  min-height: 38px;
+  -moz-padding-start: calc(0.75rem - 3px);
+  font-size: var(--text-sm);
+  font-weight: var(--font-extrabold);
+  line-height: var(--leading-normal);
+  color: var(--neutro-100);
+  background-color: var(--neutro-0);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right .75rem center;
+  background-size: 16px 12px;
+  border: 1px solid var(--neutro-40);
+  border-radius: .375rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: var(--primario-web-100);
+  background-color: rgba(var(--primario-web-opcion-clara-rgb), 0.2);
+  border: 1px solid var(--primario-web-100);
+}
+
+select :focus {
+  border-color: var(--primario-web-opcion-clara);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+select[multiple],
+select[size]:not([size="1"]) {
+  padding-right: .75rem !important;
+  background-image: none;
+}
+
+select option:checked {
+  background-color: rgba(var(--primario-web-80-rgb), 0.3) !important;
+  color: var(--neutro-80) !important;
+  font-weight: var(--font-bold);
+}
+
+/* Estado cuando el campo fue modificado */
+input.modificado, textarea.modificado, select.modificado {
+  border-color: var(--primario-web-120);
+  background-color: var(--primario-web-opcion-clara);
+}
+
+input[type=checkbox],
+input[type=radio] {
+  width: 16px;
+  height: 16px;
+  min-height: 16px;
+  margin-top: .25em;
+  padding: 0;
+  vertical-align: top;
+  background-color: var(--neutro-0);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: .25rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-print-color-adjust: exact;
+  color-adjust: exact;
+}
+
+input[type=checkbox]:checked,
+input[type=radio]:checked {
+  background-color: var(--primario-web-100);
+  border-color: var(--primario-web-100);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+
+label {
+  display: inline-block;
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  margin: 0 0 4px 0;
+  padding: 0;
+  color: var(--primario-web-100);
+}
+
+label select,
+label input {
+  margin-top: 8px !important;
+}
+
+label.ventana {
+  color: var(--neutro-0);
+}
+
+button,
+.button {
+  --bs-btn-color: var(--neutro-0);
+  --bs-btn-bg: var(--bootstrap-primary);
+  --bs-btn-border-color: var(--bootstrap-primary);
+  --bs-btn-hover-color: var(--neutro-0);
+  --bs-btn-hover-bg: var(--bootstrap-primary);
+  --bs-btn-hover-border-color: var(--bootstrap-primary);
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: var(--neutro-0);
+  --bs-btn-active-bg: var(--bootstrap-primary);
+  --bs-btn-active-border-color: var(--bootstrap-primary);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--neutro-0);
+  --bs-btn-disabled-bg: var(--bootstrap-primary);
+  --bs-btn-disabled-border-color: var(--bootstrap-primary);
+}
+
+button,
+.button {
+  --bs-btn-padding-x: 0.75rem;
+  --bs-btn-padding-y: 0.375rem;
+  --bs-btn-font-family: ;
+  --bs-btn-font-size: var(--text-md);
+  --bs-btn-font-weight: var(--font-normal);
+  --bs-btn-line-height: var(--leading-normal);
+  --bs-btn-border-width: 1px;
+  --bs-btn-border-radius: 0.375rem;
+  --bs-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+  --bs-btn-disabled-opacity: 0.65;
+  --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);
+  display: inline-block;
+  padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+  font-family: var(--bs-btn-font-family);
+  font-size: var(--bs-btn-font-size);
+  font-weight: var(--bs-btn-font-weight);
+  line-height: var(--bs-btn-line-height);
+  color: var(--bs-btn-color);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+  border-radius: var(--bs-btn-border-radius);
+  background-color: var(--bs-btn-bg);
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+button:hover,
+.button:hover {
+  color: var(--bs-btn-hover-color) !important;
+  background-color: var(--bs-btn-hover-bg) !important;
+  border-color: var(--bs-btn-hover-border-color) !important;
+}
+
 /*
 ** Detecto el dispositvo  ya se que es mobil
 */
@@ -793,17 +979,16 @@ label.ventana{
         text-align: left;
     }
 
-    .paneles select{
-		color: #092211;
+    .paneles select {
+		color: var(--neutro-100);
 		margin: 1px;
 		position: relative;
-        border:   1px solid #DDDDDD;
-       font-size: 0.775rem;
-    font-weight: 700;
-         max-width: 100%;       
+		border: 1px solid var(--neutro-20);
+		font-size: var(--text-sm);
+		font-weight: var(--font-bold);
+		max-width: 100%;
 	}
 	.paneles select.param {
-
          max-width: 65%;       
 	}
         
@@ -2030,10 +2215,13 @@ input[type=search]{
     
 }
 .div-busqueda-avanzada-producto.ocultar{    
-    
     display:none;
-    
-    
+}
+.div-busqueda-avanzada-producto .botonAccionPrimario {
+    margin-top: 12px;
+    min-width: 168px;
+    height: 38px;
+    font-size: var(--text-base);
 }
 .div-opciones-busqueda{
     padding:3px;
@@ -4145,4 +4333,253 @@ div .codArt {
 .div-opciones-busqueda.accion {
   width: 100%;
   text-align: center;
+}
+
+.controlContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr !important;
+    align-items: start;
+    flex-direction: column;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .controlContainer-50 {
+    width: 100%;
+  }
+}
+
+.controlContainer .control {
+  grid-row-gap: 0;
+}
+
+.controlContainer .mobil-2-col {
+  grid-column: span 2;
+}
+
+.controlContainer-dos-boton {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+}
+
+.controlContainer-tres-boton {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+}
+
+.controlContainer-cuatro-boton {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+}
+
+.controlContainer,
+.controlContainer-50,
+.controlContainer-dos-boton,
+.controlContainer-tres-boton,
+.controlContainer-cuatro-boton {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  align-items: start;
+}
+
+.controlContainer .check-control,
+.controlContainer-50 .check-control,
+.controlContainer-dos-boton .check-control,
+.controlContainer-tres-boton .check-control,
+.controlContainer-cuatro-boton .check-control {
+  display: flex;
+  gap: 10px;
+  align-items: start;
+}
+
+.controlContainer .control,
+.controlContainer-50 .control,
+.controlContainer-dos-boton .control,
+.controlContainer-tres-boton .control,
+.controlContainer-cuatro-boton .control {
+  display: grid;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: repeat(2, auto) !important;
+  grid-column-gap: 0px !important;
+  grid-row-gap: 4px;
+  width: -webkit-fill-available !important;
+}
+
+.controlContainer .control button,
+.controlContainer-50 .control button,
+.controlContainer-dos-boton .control button,
+.controlContainer-tres-boton .control button,
+.controlContainer-cuatro-boton .control button {
+  grid-area: 2 / 1 / 3 / 2;
+  height: 38px;
+  background-color: var(--primario-web-100);
+  border: 2px solid var(--primario-web-100);
+  margin: 20px auto 0 auto;
+}
+
+.controlContainer .control ul label,
+.controlContainer .control .listaSeleccionado label,
+.controlContainer-50 .control ul label,
+.controlContainer-50 .control .listaSeleccionado label,
+.controlContainer-dos-boton .control ul label,
+.controlContainer-dos-boton .control .listaSeleccionado label,
+.controlContainer-tres-boton .control ul label,
+.controlContainer-tres-boton .control .listaSeleccionado label,
+.controlContainer-cuatro-boton .control ul label,
+.controlContainer-cuatro-boton .control .listaSeleccionado label {
+  margin-bottom: 12px;
+}
+
+.controlContainer .control ul li,
+.controlContainer .control .listaSeleccionado li,
+.controlContainer-50 .control ul li,
+.controlContainer-50 .control .listaSeleccionado li,
+.controlContainer-dos-boton .control ul li,
+.controlContainer-dos-boton .control .listaSeleccionado li,
+.controlContainer-tres-boton .control ul li,
+.controlContainer-tres-boton .control .listaSeleccionado li,
+.controlContainer-cuatro-boton .control ul li,
+.controlContainer-cuatro-boton .control .listaSeleccionado li {
+  display: grid;
+  grid-template-columns: 22px auto 22px;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  align-items: center;
+  padding: 4px;
+}
+
+.controlContainer .control ul li:nth-child(odd),
+.controlContainer .control .listaSeleccionado li:nth-child(odd),
+.controlContainer-50 .control ul li:nth-child(odd),
+.controlContainer-50 .control .listaSeleccionado li:nth-child(odd),
+.controlContainer-dos-boton .control ul li:nth-child(odd),
+.controlContainer-dos-boton .control .listaSeleccionado li:nth-child(odd),
+.controlContainer-tres-boton .control ul li:nth-child(odd),
+.controlContainer-tres-boton .control .listaSeleccionado li:nth-child(odd),
+.controlContainer-cuatro-boton .control ul li:nth-child(odd),
+.controlContainer-cuatro-boton .control .listaSeleccionado li:nth-child(odd) {
+  background-color: var(--neutro-0);
+}
+
+.controlContainer .control ul li:nth-child(even),
+.controlContainer .control .listaSeleccionado li:nth-child(even),
+.controlContainer-50 .control ul li:nth-child(even),
+.controlContainer-50 .control .listaSeleccionado li:nth-child(even),
+.controlContainer-dos-boton .control ul li:nth-child(even),
+.controlContainer-dos-boton .control .listaSeleccionado li:nth-child(even),
+.controlContainer-tres-boton .control ul li:nth-child(even),
+.controlContainer-tres-boton .control .listaSeleccionado li:nth-child(even),
+.controlContainer-cuatro-boton .control ul li:nth-child(even),
+.controlContainer-cuatro-boton .control .listaSeleccionado li:nth-child(even) {
+  background-color: var(--neutro-10);
+}
+
+.controlContainer .control ul li > i,
+.controlContainer .control .listaSeleccionado li > i,
+.controlContainer-50 .control ul li > i,
+.controlContainer-50 .control .listaSeleccionado li > i,
+.controlContainer-dos-boton .control ul li > i,
+.controlContainer-dos-boton .control .listaSeleccionado li > i,
+.controlContainer-tres-boton .control ul li > i,
+.controlContainer-tres-boton .control .listaSeleccionado li > i,
+.controlContainer-cuatro-boton .control ul li > i,
+.controlContainer-cuatro-boton .control .listaSeleccionado li > i {
+  grid-column: 1;
+  /* primera columna */
+}
+
+.controlContainer .control ul li > a,
+.controlContainer .control .listaSeleccionado li > a,
+.controlContainer-50 .control ul li > a,
+.controlContainer-50 .control .listaSeleccionado li > a,
+.controlContainer-dos-boton .control ul li > a,
+.controlContainer-dos-boton .control .listaSeleccionado li > a,
+.controlContainer-tres-boton .control ul li > a,
+.controlContainer-tres-boton .control .listaSeleccionado li > a,
+.controlContainer-cuatro-boton .control ul li > a,
+.controlContainer-cuatro-boton .control .listaSeleccionado li > a {
+  grid-column: 3;
+  /* última columna */
+}
+
+.controlContainer .control ul li > *:not(i):not(a),
+.controlContainer .control .listaSeleccionado li > *:not(i):not(a),
+.controlContainer-50 .control ul li > *:not(i):not(a),
+.controlContainer-50 .control .listaSeleccionado li > *:not(i):not(a),
+.controlContainer-dos-boton .control ul li > *:not(i):not(a),
+.controlContainer-dos-boton .control .listaSeleccionado li > *:not(i):not(a),
+.controlContainer-tres-boton .control ul li > *:not(i):not(a),
+.controlContainer-tres-boton .control .listaSeleccionado li > *:not(i):not(a),
+.controlContainer-cuatro-boton .control ul li > *:not(i):not(a),
+.controlContainer-cuatro-boton .control .listaSeleccionado li > *:not(i):not(a) {
+  grid-column: 2;
+  /* todos los demás elementos al centro */
+  display: contents;
+}
+
+.controlContainer .control.control-en-linea,
+.controlContainer-50 .control.control-en-linea,
+.controlContainer-dos-boton .control.control-en-linea,
+.controlContainer-tres-boton .control.control-en-linea,
+.controlContainer-cuatro-boton .control.control-en-linea {
+  grid-column: span 2;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+  gap: 10px !important;
+}
+
+.controlContainer .controlButton,
+.controlContainer-50 .controlButton,
+.controlContainer-dos-boton .controlButton,
+.controlContainer-tres-boton .controlButton,
+.controlContainer-cuatro-boton .controlButton {
+  display: grid !important;
+  grid-template-columns: 1fr auto !important;
+  grid-template-rows: repeat(2, auto) !important;
+  grid-column-gap: 4px !important;
+  grid-row-gap: 4px !important;
+  width: -webkit-fill-available !important;
+  justify-content: space-between !important;
+}
+
+.controlContainer .controlButton label,
+.controlContainer-50 .controlButton label,
+.controlContainer-dos-boton .controlButton label,
+.controlContainer-tres-boton .controlButton label,
+.controlContainer-cuatro-boton .controlButton label {
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+.controlContainer .controlButton button,
+.controlContainer-50 .controlButton button,
+.controlContainer-dos-boton .controlButton button,
+.controlContainer-tres-boton .controlButton button,
+.controlContainer-cuatro-boton .controlButton button {
+  grid-area: 2 / 2 / 3 / 3;
+  margin: 0 auto 0 auto;
+  height: 38px;
+}
+
+.controlContainer-dos-boton button,
+.controlContainer-tres-boton button,
+.controlContainer-cuatro-boton button {
+  width: 100%;
+  margin-top: 22px !important;
+}
+
+.controlContainer .controlButton,
+.controlContainer-50 .controlButton,
+.controlContainer-dos-boton .controlButton,
+.controlContainer-tres-boton .controlButton,
+.controlContainer-cuatro-boton .controlButton {
+  grid-row-gap: 1px !important;
+}
+
+.controlContainer .mobil-multi-boton {
+  display: flex;
+  gap: 4px !important;
+}
+
+.controlContainer .mobil-multi-boton button {
+  display: block;
+  width: 100%;
+  grid-area: unset;
 }
