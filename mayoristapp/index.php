@@ -114,7 +114,7 @@ $( document ).ready( LOGIN.onReady);
                     <img src="tmobile/_img/logo-administranet-ecommerce.png">
                    
             </div> 
-            <h4>Mayorista y preventista</h4>                 
+            <h4 style="padding: 0 20px 10px 20px; text-align: center;">Mayorista y preventista</h4>                 
             <form name="loginForm" id="loginForm" action="control.php" method="post">
                 <div id="loginControls" class="w90p">
                     <div class="formRow">

@@ -469,21 +469,30 @@ if (isset($_GET['buscaOferta'])) {
 						<a href="javascript:void(0);" onclick="miFormulario(3)">
 							<div class="card-modulo presupuesto">
 								<div class="card-icon"><i class="fas fa-file-invoice fa-fw"></i></div>
-								<div class="card-title">Presupuesto</div>
+								<div class="card-title">
+									<span class="escritorio">Presupuesto</span>
+									<span class="mobil">Pre</span>
+								</div>
 							</div>
 						</a>
 						
 						<a href="javascript:void(0);" onclick="miFormulario(0)">
 							<div class="card-modulo pedido">
 								<div class="card-icon"><i class="fas fa-shipping-fast fa-fw"></i></div>
-								<div class="card-title">Pedido</div>
+								<div class="card-title">
+									<span class="escritorio">Pedido</span>
+									<span class="mobil">Ped</span>
+								</div>
 							</div>
 						</a>
 						
 						<a href="javascript:void(0);" onclick="miFormulario(5)">
 							<div class="card-modulo devolucion">
 								<div class="card-icon"><i class="fa-solid fa-truck-arrow-right fa-flip-horizontal fa-fw"></i></div>
-								<div class="card-title">Devolución</div>
+								<div class="card-title">
+									<span class="escritorio">Devolución</span>
+									<span class="mobil">Dev</span>
+								</div>
 							</div>
 						</a>
 
@@ -508,7 +517,10 @@ if (isset($_GET['buscaOferta'])) {
 						<a href="javascript:void(0);" onclick="miFormulario(4)">
 							<div class="card-modulo">
 								<div class="card-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
-								<div class="card-title">Recibo</div>
+								<div class="card-title">
+									<span class="escritorio">Recibo</span>
+									<span class="mobil">Rec</span>
+								</div>
 							</div>
 						</a>
 

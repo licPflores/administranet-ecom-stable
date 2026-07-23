@@ -211,14 +211,11 @@ width: 100%;
         <?php require_once $barra; ?>
 
         <div id="dashboard-container">
-                    <div id="informacion">
-                        
-                        <div id="informacion" class="info-header">
-                            <h1 id="saludo"></h1>
-                            <span id="ultimaActualizacion" class="badge-time">Cargando datos...</span>
-                        </div>
-                    </div>
                     
+					<div id="informacion" class="info-header">
+						<h1 id="saludo"></h1>
+						<span id="ultimaActualizacion" class="badge-time">Cargando datos...</span>
+					</div>
 
                     <div id="spinner" class="spinnerAdm" style="display:none;">
                         <div class="spinner-border" role="status">

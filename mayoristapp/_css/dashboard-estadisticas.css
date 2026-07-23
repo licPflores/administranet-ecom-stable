@@ -216,7 +216,7 @@ span.destacado {
 
 @media screen and (max-width: 576px) {
   #dashboard-container {
-    padding-top: 60px;
+    /*padding-top: 60px;*/
   }
 }
 
@@ -254,6 +254,12 @@ span.destacado {
 
 .estadisticas-section, .clientes-section {
   margin-bottom: 48px;
+}
+
+@media screen and (max-width: 576px) {
+	.estadisticas-section, .clientes-section {
+		margin-bottom: 22px;
+	}
 }
 
 .estadisticas-section .div-contenedor {

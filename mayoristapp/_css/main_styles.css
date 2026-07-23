@@ -4484,6 +4484,18 @@ table.dataTable tbody td div.estado-entregado-no {
     color: var(--neutro-60);
 }
 
+
+#dashboard-container .card-title .escritorio,
+.dashboard-container .card-title .escritorio {
+	display: block;
+}
+
+
+#dashboard-container .card-title .mobil,
+.dashboard-container .card-title .mobil {
+	display: none;
+}
+
 /*
 PEDIDO
 */

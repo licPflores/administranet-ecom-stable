@@ -364,9 +364,5 @@ table.dataTable.compact tbody th, table.dataTable.compact tbody td {
     padding:3px;
     cursor:pointer;
 }
-.textoTituloComprobante{
-    width:50%;
-    font-weight: bold;
-    color:#2A3E72;
-}
+
 
