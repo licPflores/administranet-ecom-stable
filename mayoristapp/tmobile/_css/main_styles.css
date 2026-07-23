@@ -1403,9 +1403,25 @@ label.ventana{
         cursor:pointer;
     }
 
-    
+    .panelesBloque-sin-grilla .control {
+		display: grid;
+		grid-template-columns: 1fr !important;
+		grid-template-rows: repeat(2, auto) !important;
+		grid-column-gap: 0px !important;
+		grid-row-gap: 4px;
+		width: -webkit-fill-available !important;
 
-    .panelesBloqueInforme{
+		grid-column: span 2;
+		 .barra-busqueda {
+			position: relative;
+			display: flex;
+			margin-bottom: 12px;
+			grid-column: span 2;
+		}
+	}
+
+    .panelesBloqueInforme,
+	.panelesBloque-sin-grilla {
         width:100%;
         
         margin-bottom: 5px;        
@@ -1420,10 +1436,12 @@ label.ventana{
         padding: 5px;
 
     }
+
 	.panelesBloqueInforme,
 	.panelesBloqueInforme-interno,
 	.control-fechas,
-	.panel-filtro-compuesto {
+	.panel-filtro-compuesto,
+	.panelesBloque-sin-grilla {
 		display: grid;
 		grid-template-columns: 1fr 1fr !important;
 		gap: 12px;
@@ -1435,6 +1453,13 @@ label.ventana{
 	.panelesBloqueInforme-interno,
 	.control-fechas,
 	.panel-filtro-compuesto {
+		grid-column: span 2;
+	}
+
+	.panelesBloqueInforme-interno .barra-busqueda {
+		position: relative;
+		display: flex;
+		margin-bottom: 12px;
 		grid-column: span 2;
 	}
 
@@ -1500,7 +1525,8 @@ label.ventana{
 		}
 	}
 
-    .panelesBloqueInformeAccion{
+    .panelesBloqueInformeAccion,
+	.panelesBloqueInformeAccion .centro {
         width:100%;
         
         margin-bottom: 5px;        
@@ -1511,22 +1537,25 @@ label.ventana{
         margin-top:10px;
     }
 
-	.panelesBloqueInforme .control-botones {
+	.panelesBloqueInforme .control-botones,
+	.panelesBloqueInforme .control-con-boton {
 		grid-column: span 2;
 	}
 
 	.panelesBloqueInformeAccion button,
-	.panelesBloqueInforme .control-botones button {
+	.panelesBloqueInforme .control-botones button,
+	.panelesBloqueInforme .control-con-boton button {
 		width: 100%;
 		font-size: 1rem;
 		height: 32px;
 		line-height: 1.2;
 		padding: .375rem 2.25rem;
 		min-height: 38px;
-		margin: 6px auto;
+		margin: 6px auto !important;
 	}
 
-    .panelesBloqueInforme .titulo {
+    .panelesBloqueInforme .titulo,
+	.panelesBloque-sin-grilla .titulo {
 		font-size: var(--text-md) !important;
 		font-weight: bold;
 		text-align: left;
