@@ -458,7 +458,7 @@ if (isset($_GET['buscaOferta'])) {
         <?php if (isset($objCliente) && is_object($objCliente)) : ?> 
 
 			<div class="dashboard-container">
-				<div class="dashboard-title">
+				<div class="dashboard-title-comprobantes">
 					<i class="fa fa-th-large"></i> Comprobantes
 				</div>
 

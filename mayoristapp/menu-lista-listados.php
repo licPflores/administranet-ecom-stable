@@ -30,74 +30,74 @@ $codPuesto = $objVendedor->id_puesto;
         ?>
 
        
+			<div class="dashboard-container">
+                <div class="dashboard-title">Informes generales</div>
+				<div class="menu-informes">
+					<!-- informes y listados de vendedor -->
+					<h4>Consulta de Comprobantes</h4>
+					<?php if($codPuesto !=1): ?>
+					<ul class="misOpciones">
+					
+						<li><a href="lista-presupuestos-vendedor.php"> Presupuestos</a></li>
+						
+						<li><a href="lista-pedidos-total.php"> Pedidos</a></li>
+						
+						<li><a href="gestion-devoluciones.php"> Devoluciones</a></li>                   
 
-            <div class="paneles buscador">
-                <h1>Informes generales</h1>
-                <h4>Consulta de Comprobantes</h4>
-				<!-- informes y listados de vendedor -->
-				<?php if($codPuesto !=1): ?>
-                <ul class="misOpciones">
-                   
-                    <li><a href="lista-presupuestos-vendedor.php"> Presupuestos</a></li>
-                    
-                    <li><a href="lista-pedidos-total.php"> Pedidos</a></li>
-                    
-                    <li><a href="gestion-devoluciones.php"> Devoluciones</a></li>                   
-
-                    <li><a href="lista-remitos.php"> Remitos</a></li>
-                    <li><a href="lista_facturas_electronicas.php"> Facturas</a></li>
-                    <li><a href="lista-recibos.php"> Recibos Web</a></li>
-                    <li><a href="lista_nota_credito.php"> Nota de Crédito</a></li>
-                </ul>
-                <h4>Listados</h4>
-                <ul class="misOpciones">
-                    <li> <a href="logistica_lista_comprobantes_rutas.php" class="textField"> Comprobantes en ruta</a></li>
-                    <li> <a href="lista_precio.php" class="textField"> Lista de precios</a></li>
-                    <li> <a href="lista_catalogo_productos.php" class="textField"> Catálogo de Productos</a></li>
-                    <li><a href="lista-mis-consumos.php"> Mis consumos</a></li>
-                    <li><a href="lista-promociones.php"> Lista de promociones</a></li>
-                    <li><a href="lista-articulo-remito.php"> Lista articulo remitados</a></li>
-                    <li><a href="lista-cuenta-corriente.php"> Cuenta corriente</a></li>
-                    <li><a href="lista-comprobantes-ncancelados.php"> Comprobantes no cancelados</a></li>
-
-
-                </ul>
-				<?php endif;?>
-				<!-- fin infomres y listados de vendedor -->
-				
-				<!-- informes y listados de Supervisor -->
-				<?php if($codPuesto==1):?>
-				<ul class="misOpciones">
-                   
-                    <li><a href="lista-presupuestos-vendedor.php"> Presupuestos</a></li>
-                    
-                    <li><a href="lista-pedidos-total.php"> Pedidos</a></li>
-                    
-                    <li><a href="gestion-devoluciones.php"> Devoluciones</a></li>                   
-
-                    <li><a href="lista-remitos.php"> Remitos</a></li>
-                    <li><a href="lista_facturas_electronicas.php"> Facturas</a></li>
-                    <li><a href="lista-recibos.php"> Recibos Web</a></li>
-                    <li><a href="lista_nota_credito.php"> Nota de Crédito</a></li>
-                </ul>
-                <h4>Listados</h4>
-                <ul class="misOpciones">
-                    <li> <a href="logistica_lista_comprobantes_rutas.php" class="textField"> Comprobantes en ruta</a></li>
-                    <li> <a href="lista_precio.php" class="textField"> Lista de precios</a></li>
-                    <li> <a href="lista_catalogo_productos.php" class="textField"> Catálogo de Productos</a></li>
-                    <li><a href="lista-mis-consumos.php"> Mis consumos</a></li>
-                    <li><a href="lista-promociones.php"> Lista de promociones</a></li>
-                    <li><a href="lista-articulo-remito.php"> Lista articulo remitados</a></li>
-                    <li><a href="lista-cuenta-corriente.php"> Cuenta corriente</a></li>
-                    <li><a href="lista-comprobantes-ncancelados.php"> Comprobantes no cancelados</a></li>
-                    <li><a href="listado-stock-existencias.php">Stock y Existencias</a></li>
+						<li><a href="lista-remitos.php"> Remitos</a></li>
+						<li><a href="lista_facturas_electronicas.php"> Facturas</a></li>
+						<li><a href="lista-recibos.php"> Recibos Web</a></li>
+						<li><a href="lista_nota_credito.php"> Nota de Crédito</a></li>
+					</ul>
+					<h4>Listados</h4>
+					<ul class="misOpciones">
+						<li> <a href="logistica_lista_comprobantes_rutas.php" class="textField"> Comprobantes en ruta</a></li>
+						<li> <a href="lista_precio.php" class="textField"> Lista de precios</a></li>
+						<li> <a href="lista_catalogo_productos.php" class="textField"> Catálogo de Productos</a></li>
+						<li><a href="lista-mis-consumos.php"> Mis consumos</a></li>
+						<li><a href="lista-promociones.php"> Lista de promociones</a></li>
+						<li><a href="lista-articulo-remito.php"> Lista articulo remitados</a></li>
+						<li><a href="lista-cuenta-corriente.php"> Cuenta corriente</a></li>
+						<li><a href="lista-comprobantes-ncancelados.php"> Comprobantes no cancelados</a></li>
 
 
-                </ul>
-				<?php endif;?>
-				<!-- fin informe y listados supervisor -->
-				
+					</ul>
+					<?php endif;?>
+					<!-- fin infomres y listados de vendedor -->
+					
+					<!-- informes y listados de Supervisor -->
+					<?php if($codPuesto==1):?>
+					<ul class="misOpciones">
+					
+						<li><a href="lista-presupuestos-vendedor.php"> Presupuestos</a></li>
+						
+						<li><a href="lista-pedidos-total.php"> Pedidos</a></li>
+						
+						<li><a href="gestion-devoluciones.php"> Devoluciones</a></li>                   
 
+						<li><a href="lista-remitos.php"> Remitos</a></li>
+						<li><a href="lista_facturas_electronicas.php"> Facturas</a></li>
+						<li><a href="lista-recibos.php"> Recibos Web</a></li>
+						<li><a href="lista_nota_credito.php"> Nota de Crédito</a></li>
+					</ul>
+					<h4>Listados</h4>
+					<ul class="misOpciones">
+						<li> <a href="logistica_lista_comprobantes_rutas.php" class="textField"> Comprobantes en ruta</a></li>
+						<li> <a href="lista_precio.php" class="textField"> Lista de precios</a></li>
+						<li> <a href="lista_catalogo_productos.php" class="textField"> Catálogo de Productos</a></li>
+						<li><a href="lista-mis-consumos.php"> Mis consumos</a></li>
+						<li><a href="lista-promociones.php"> Lista de promociones</a></li>
+						<li><a href="lista-articulo-remito.php"> Lista articulo remitados</a></li>
+						<li><a href="lista-cuenta-corriente.php"> Cuenta corriente</a></li>
+						<li><a href="lista-comprobantes-ncancelados.php"> Comprobantes no cancelados</a></li>
+						<li><a href="listado-stock-existencias.php">Stock y Existencias</a></li>
+
+
+					</ul>
+					<?php endif;?>
+					<!-- fin informe y listados supervisor -->
+					
+				</div>
 
             </div>
         
