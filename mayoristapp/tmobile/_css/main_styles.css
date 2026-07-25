@@ -1430,11 +1430,10 @@ label.ventana{
         flex-wrap: wrap;
         justify-content: space-between;
         width: 99%;
-        border: 2px solid #2A3E72;
-        margin: 2px;
+        border: 2px solid #2a3e7270;
+    	margin: 12px 0px;
         border-radius: 5px;
         padding: 5px;
-
     }
 
 	.panelesBloqueInforme,
@@ -1520,7 +1519,7 @@ label.ventana{
 		}
 		button {
 			grid-area: 2 / 2 / 3 / 3;
-			margin: 0 auto 0 auto;
+			margin: 0 auto 0 auto !important;
 			height: 38px;
 		}
 	}
@@ -1565,6 +1564,37 @@ label.ventana{
 		color: var(--neutro-60);
 		border-radius: 6px 6px 0 0;
 		grid-column: span 2;
+	}
+	.panelesBloqueInforme .subtitulo {
+		font-size: var(--text-md) !important;
+		font-weight: bold;
+		text-align: left;
+		margin: 0 0 12px 0;
+		padding: 0 0 6px 0;
+		color: var(--neutro-60);
+		grid-column: span 2;
+	}
+	.panel-filtro-simple {
+		grid-column: 1 / -1;
+		max-width: 100%;
+
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(306px, 1fr));
+		gap: 6px;
+		align-items: start;
+	}
+	.panel-filtro-simple .control {
+		display: grid;
+		grid-template-columns: 1fr 50px !important;
+		gap: 6px;
+		align-items: start;
+	}
+	.panel-filtro-simple .control .titulo,
+	.panel-filtro-simple .control .parametros {
+		grid-column: 1 / -1;
+	}
+	.panel-filtro-simple .control button {
+		height: 40px;
 	}
     .paneles label.parametros{
         font-size: 0.655rem;

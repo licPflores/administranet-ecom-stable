@@ -187,7 +187,7 @@ $usoBultoPromedio = $_SESSION["uso_bulto_promedio"];
                     <div class="panelesBloqueInforme-interno contiene-lista-filtros en-bloque">
 
                         <ul name="listaPv" id="listaPv" class="listaSeleccionado">
-                            <li id="1"><i class="fas fa-check-square fa-lg fa-fw"></i><span class="tipo">Punto venta:</span> <strong>Todos</strong> <a class="borrarLi" rel="listaPv|1" href="#" title="Eliminar de la lista"><i class="fa fa-trash fa-lg"></i></a></li>
+                            <li id="1"><i class="fas fa-check-square fa-lg fa-fw"></i><span class="tipo">Punto venta: <strong>Todos</strong></span><a class="borrarLi" rel="listaPv|1" href="#" title="Eliminar de la lista"><i class="fa fa-trash fa-lg"></i></a></li>
                         </ul>
 
                         <input type="hidden" name="pvSelec" id="pvSelec" value="|Todos|1||" required="required">
